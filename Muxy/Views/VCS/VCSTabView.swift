@@ -1050,7 +1050,7 @@ struct PRPopover: View {
 
             VStack(alignment: .leading, spacing: UIMetrics.spacing2) {
                 infoRow(label: "Base", value: info.baseBranch)
-                if let label = mergeableLabel {
+                if let label = PRMergeabilityPresentation.make(info: info) {
                     infoRow(
                         label: "Mergeable",
                         value: label.text,
@@ -1196,28 +1196,6 @@ struct PRPopover: View {
                 return "Checks are still running. You will be asked to confirm before merging."
             }
             return "Merge PR #\(info.number)"
-        }
-    }
-
-    private var mergeableLabel: (text: String, color: Color)? {
-        switch info.mergeStateStatus {
-        case .dirty:
-            return ("Conflicts", MuxyTheme.diffRemoveFg)
-        case .behind:
-            return ("Behind base", MuxyTheme.diffRemoveFg)
-        case .blocked:
-            return ("Blocked", MuxyTheme.diffRemoveFg)
-        case .draft:
-            return ("Draft", MuxyTheme.fgMuted)
-        case .clean,
-             .hasHooks:
-            return ("Yes", MuxyTheme.diffAddFg)
-        case .unstable:
-            return ("Yes (checks failing)", MuxyTheme.diffAddFg)
-        case .unknown:
-            if info.mergeable == true { return ("Yes", MuxyTheme.diffAddFg) }
-            if info.mergeable == false { return ("Conflicts", MuxyTheme.diffRemoveFg) }
-            return nil
         }
     }
 
