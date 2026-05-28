@@ -33,6 +33,7 @@ struct Sidebar: View {
     @Environment(ProjectGroupStore.self) private var projectGroupStore
     @Environment(WorktreeStore.self) private var worktreeStore
     @State private var dragState = ProjectDragState()
+    @State private var projectPendingRemoval: Project?
     let expanded: Bool
     @AppStorage(SidebarCollapsedStyle.storageKey) private var collapsedStyleRaw = SidebarCollapsedStyle.defaultValue.rawValue
     @AppStorage(SidebarExpandedStyle.storageKey) private var expandedStyleRaw = SidebarExpandedStyle.defaultValue.rawValue
@@ -67,6 +68,23 @@ struct Sidebar: View {
         .opacity(isHidden ? 0 : 1)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Sidebar")
+        .alert(
+            "Remove \"\(projectPendingRemoval?.name ?? "")\"?",
+            isPresented: removalAlertBinding,
+            presenting: projectPendingRemoval
+        ) { project in
+            Button("Remove", role: .destructive) {
+                performRemove(project)
+                projectPendingRemoval = nil
+            }
+            .keyboardShortcut(.defaultAction)
+            Button("Cancel", role: .cancel) {
+                projectPendingRemoval = nil
+            }
+            .keyboardShortcut(.cancelAction)
+        } message: { _ in
+            Text("This will remove the project from Muxy. Project files on disk will not be deleted.")
+        }
     }
 
     private var addButton: some View {
@@ -176,6 +194,21 @@ struct Sidebar: View {
     }
 
     private func remove(_ project: Project) {
+        projectPendingRemoval = project
+    }
+
+    private var removalAlertBinding: Binding<Bool> {
+        Binding(
+            get: { projectPendingRemoval != nil },
+            set: { newValue in
+                if !newValue {
+                    projectPendingRemoval = nil
+                }
+            }
+        )
+    }
+
+    private func performRemove(_ project: Project) {
         let capturedProject = project
         let knownWorktrees = worktreeStore.list(for: project.id)
         Task {
