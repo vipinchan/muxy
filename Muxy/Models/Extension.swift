@@ -277,7 +277,6 @@ struct ExtensionManifest: Codable, Equatable {
     let topbarItems: [ExtensionTopbarItem]
     let statusBarItems: [ExtensionStatusBarItem]
     let settings: [ExtensionSettingEntry]
-    let enabled: Bool
 
     private enum CodingKeys: String, CodingKey {
         case name
@@ -292,7 +291,6 @@ struct ExtensionManifest: Codable, Equatable {
         case topbarItems
         case statusBarItems
         case settings
-        case enabled
     }
 
     init(
@@ -307,8 +305,7 @@ struct ExtensionManifest: Codable, Equatable {
         aiProvider: ExtensionAIProvider? = nil,
         topbarItems: [ExtensionTopbarItem] = [],
         statusBarItems: [ExtensionStatusBarItem] = [],
-        settings: [ExtensionSettingEntry] = [],
-        enabled: Bool = true
+        settings: [ExtensionSettingEntry] = []
     ) {
         self.name = name
         self.version = version
@@ -322,7 +319,6 @@ struct ExtensionManifest: Codable, Equatable {
         self.topbarItems = topbarItems
         self.statusBarItems = statusBarItems
         self.settings = settings
-        self.enabled = enabled
     }
 
     init(from decoder: Decoder) throws {
@@ -339,7 +335,6 @@ struct ExtensionManifest: Codable, Equatable {
         topbarItems = try container.decodeIfPresent([ExtensionTopbarItem].self, forKey: .topbarItems) ?? []
         statusBarItems = try container.decodeIfPresent([ExtensionStatusBarItem].self, forKey: .statusBarItems) ?? []
         settings = try container.decodeIfPresent([ExtensionSettingEntry].self, forKey: .settings) ?? []
-        enabled = try container.decodeIfPresent(Bool.self, forKey: .enabled) ?? true
     }
 
     func tabType(id: String) -> ExtensionTabType? {
@@ -352,24 +347,6 @@ struct ExtensionManifest: Codable, Equatable {
 
     func statusBarItem(id: String) -> ExtensionStatusBarItem? {
         statusBarItems.first { $0.id == id }
-    }
-
-    func withEnabled(_ enabled: Bool) -> ExtensionManifest {
-        ExtensionManifest(
-            name: name,
-            version: version,
-            description: description,
-            entrypoint: entrypoint,
-            events: events,
-            commands: commands,
-            tabTypes: tabTypes,
-            permissions: permissions,
-            aiProvider: aiProvider,
-            topbarItems: topbarItems,
-            statusBarItems: statusBarItems,
-            settings: settings,
-            enabled: enabled
-        )
     }
 }
 
@@ -521,7 +498,17 @@ enum ExtensionManifestLoader {
         try validateStatusBarItems(manifest: manifest, in: muxyExtension)
         try validateSettings(manifest: manifest)
 
+        migrateLegacyEnabledFlag(rawManifest: data, extensionID: manifest.name)
+
         return muxyExtension
+    }
+
+    private static func migrateLegacyEnabledFlag(rawManifest: Data, extensionID: String) {
+        guard !ExtensionEnabledStore.hasOverride(extensionID: extensionID) else { return }
+        guard let object = try? JSONSerialization.jsonObject(with: rawManifest) as? [String: Any],
+              let legacyValue = object["enabled"] as? Bool
+        else { return }
+        ExtensionEnabledStore.setEnabled(legacyValue, extensionID: extensionID)
     }
 
     static func validate(name: String) throws {
