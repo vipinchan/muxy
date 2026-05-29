@@ -33,7 +33,7 @@
 - Text editor with syntax highlighting
 - Markdown & HTML preview (with Mermaid diagrams)
 - Image viewer
-- AI usage tracking (Claude Code, Codex, Cursor, Copilot, Amp, Factory, Droid, Kimi, MiniMax, OpenCode, Pi, Z.ai)
+- AI usage tracking (Most of the providers are supported)
 - Extensions
 - IDE integration
 - Mobile companion apps (iOS & Android)
