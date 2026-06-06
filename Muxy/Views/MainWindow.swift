@@ -194,6 +194,9 @@ struct MainWindow: View {
                 sidebarExpanded.toggle()
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: .toggleExtensionConsole)) { _ in
+            panelHost.toggle(BuiltinPanel.extensionConsole, at: .bottom, mode: .floating)
+        }
         .onReceive(NotificationCenter.default.publisher(for: .windowFullScreenDidChange)) { notification in
             isFullScreen = notification.userInfo?["isFullScreen"] as? Bool ?? false
         }
@@ -1319,23 +1322,28 @@ private final class ShortcutInterceptingView: NSView {
     var onMouseBack: (() -> Void)?
     var onMouseForward: (() -> Void)?
     private var mouseMonitor: Any?
+    private var keyMonitor: Any?
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
         if window == nil {
             removeMouseMonitor()
+            removeKeyMonitor()
         } else {
             installMouseMonitorIfNeeded()
+            installKeyMonitorIfNeeded()
         }
     }
 
-    override func performKeyEquivalent(with event: NSEvent) -> Bool {
-        guard event.type == .keyDown,
-              ShortcutContext.isMainWindow(window)
-        else { return super.performKeyEquivalent(with: event) }
-
+    private func handleShortcutEvent(_ event: NSEvent) -> Bool {
         let scopes = ShortcutContext.activeScopes(for: window, isTerminalFocused: isTerminalFocused?() ?? false)
         let layerWasActive = CommandShortcutStore.shared.isLayerActive
+        guard layerWasActive
+            || !event.modifierFlags.isDisjoint(with: [.command, .control, .option])
+        else {
+            return false
+        }
+
         if let shortcut = CommandShortcutStore.shared.shortcut(for: event, scopes: scopes) {
             CommandShortcutStore.shared.deactivateLayer()
             _ = onCommandShortcut?(shortcut)
@@ -1364,7 +1372,25 @@ private final class ShortcutInterceptingView: NSView {
             }
         }
 
-        return super.performKeyEquivalent(with: event)
+        return false
+    }
+
+    private func installKeyMonitorIfNeeded() {
+        guard keyMonitor == nil else { return }
+        keyMonitor = NSEvent.addLocalMonitorForEvents(matching: [.keyDown]) { [weak self] event in
+            guard let self,
+                  let window = self.window,
+                  window.isKeyWindow,
+                  ShortcutContext.isMainWindow(window)
+            else { return event }
+            return self.handleShortcutEvent(event) ? nil : event
+        }
+    }
+
+    private func removeKeyMonitor() {
+        guard let keyMonitor else { return }
+        NSEvent.removeMonitor(keyMonitor)
+        self.keyMonitor = nil
     }
 
     private func installMouseMonitorIfNeeded() {
