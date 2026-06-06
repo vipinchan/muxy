@@ -101,6 +101,9 @@ final class HostBridge: @unchecked Sendable {
         case "dialog.confirm",
              "dialog.alert",
              "modal.open",
+             "modal.feed",
+             "modal.finish",
+             "modal.await",
              "topbar.set",
              "statusbar.set":
             return dispatchValueReturning(verb: verb, dict: dict)
@@ -229,6 +232,24 @@ final class HostBridge: @unchecked Sendable {
             let argument = JSValue(object: payloadValue, in: box.context) ?? JSValue(nullIn: box.context)
             let dispatcher = box.context.objectForKeyedSubscript("__muxyDispatchInvoke")
             dispatcher?.call(withArguments: [parsed.callID, parsed.action, argument as Any])
+        }
+    }
+
+    func handleModalResultLine(_ line: String) {
+        guard let parsed = ExtensionModalResult.parse(line) else { return }
+        let payloadValue: Any = if let object = try? JSONSerialization.jsonObject(
+            with: parsed.payload,
+            options: [.fragmentsAllowed]
+        ) {
+            object
+        } else {
+            NSNull()
+        }
+        let box = ContextBox(context)
+        DispatchQueue.main.async {
+            let argument = JSValue(object: payloadValue, in: box.context) ?? JSValue(nullIn: box.context)
+            let deliver = box.context.objectForKeyedSubscript("__muxiDeliverModalResult")
+            deliver?.call(withArguments: [parsed.requestID, argument as Any])
         }
     }
 

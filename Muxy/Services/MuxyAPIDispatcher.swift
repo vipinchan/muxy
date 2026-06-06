@@ -92,7 +92,17 @@ enum MuxyAPIDispatcher {
             try await ExtensionDialogService.alert(request)
             return NSNull()
         case "modal.open":
-            let selected = try await ExtensionModalService.shared.present(extensionID: context.extensionID, args: args)
+            let requestID = ExtensionModalService.shared.openSession(extensionID: context.extensionID, args: args)
+            return ["requestID": requestID]
+        case "modal.feed":
+            ExtensionModalService.shared.feedSession(modalItems(args))
+            return NSNull()
+        case "modal.finish":
+            ExtensionModalService.shared.finishSession()
+            return NSNull()
+        case "modal.await":
+            let requestID = (args["requestID"] as? String) ?? ""
+            let selected = await ExtensionModalService.shared.awaitSelection(requestID: requestID)
             return selected.map(modalItemDict) ?? NSNull()
         case "tabs.list":
             return try unwrap(MuxyAPI.Tabs.list(appState: context.appState)).map(tabDict)
@@ -626,6 +636,10 @@ enum MuxyAPIDispatcher {
         } catch {
             throw APIError.invalidArguments("invalid open tab request: \(error.localizedDescription)")
         }
+    }
+
+    private static func modalItems(_ args: [String: Any]) -> [ExtensionModalService.Item] {
+        ExtensionModalService.parseItems(args["items"] as? [Any] ?? [])
     }
 
     private static func modalItemDict(_ item: ExtensionModalService.Item) -> [String: Any] {

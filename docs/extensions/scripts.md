@@ -23,14 +23,37 @@ muxy.notifications.notify({
 });
 ```
 
-A script can also present native UI and act on the choice inline — no background listener, tab, or panel needed:
+A script can also present native UI and act on the choice via `onSelect` — no background listener,
+tab, or panel needed. `modal.open` returns immediately; the choice arrives in the callback:
 
 ```js
-const choice = muxy.modal.open({
+muxy.modal.open({
   placeholder: 'Switch to worktree…',
   items: muxy.worktrees.list().map(w => ({ id: w.id, title: w.name, subtitle: w.branch })),
+  onSelect(choice) { if (choice) muxy.worktrees.switchTo(choice.id); },
 });
-if (choice) muxy.worktrees.switchTo(choice.id);
+```
+
+For large lists (e.g. a file picker over a big repo), pass `items` as a producer function instead
+of an array so the picker opens instantly and you stream rows in while Muxy filters them natively —
+see [Modal → Streaming large lists](modal.md#streaming-large-lists-items-producer):
+
+```js
+muxy.modal.open({
+  placeholder: 'Open file…',
+  items(emit) {
+    const out = muxy.exec(['git', 'ls-files']).stdout.split('\n');
+    let batch = [];
+    for (const line of out) {
+      const p = line.trim();
+      if (!p) continue;
+      batch.push({ id: p, title: p.split('/').pop(), subtitle: p });
+      if (batch.length >= 5000) { emit(batch); batch = []; }
+    }
+    if (batch.length) emit(batch);
+  },
+  onSelect(choice) { if (choice) muxy.tabs.open({ kind: 'editor', path: choice.id }); },
+});
 ```
 
 Note there is **no `await`** — see [API surface](#api-surface).

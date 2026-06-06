@@ -15,6 +15,36 @@ public enum ExtensionBridgeJS {
                 if (reply && reply.ok) return reply.value;
                 throw new Error((reply && reply.error) || 'extension api error');
             };
+            const normalizeModalItems = (raw) => (Array.isArray(raw) ? raw : (raw && raw.items) || [])
+                .map((it) => (it && it.id != null && it.title != null
+                    ? { id: String(it.id), title: String(it.title), subtitle: it.subtitle == null ? null : String(it.subtitle) }
+                    : null))
+                .filter(Boolean);
+            const modalLabels = (o) => {
+                const labels = {};
+                if (o.placeholder != null) labels.placeholder = String(o.placeholder);
+                if (o.emptyLabel != null) labels.emptyLabel = String(o.emptyLabel);
+                if (o.noMatchLabel != null) labels.noMatchLabel = String(o.noMatchLabel);
+                return labels;
+            };
+            const feedModalItems = (o) => {
+                const emit = (batch) => dispatch('modal.feed', { items: normalizeModalItems(batch) });
+                if (typeof o.items === 'function') {
+                    const produced = o.items(emit);
+                    if (produced != null) emit(produced);
+                } else {
+                    emit(o.items);
+                }
+                dispatch('modal.finish', {});
+            };
+            const modalResultHandlers = {};
+            this.__muxiDeliverModalResult = (requestID, item) => {
+                const handler = modalResultHandlers[requestID];
+                delete modalResultHandlers[requestID];
+                if (typeof handler === 'function') {
+                    try { handler(item == null ? null : item); } catch (error) { console.error(error); }
+                }
+            };
             const muxy = {
                 extensionID: \(extLiteral),
                 \(surface == .inProcess ? "toast: (opts) => dispatch('toast', opts || {})," : "")
@@ -64,11 +94,11 @@ public enum ExtensionBridgeJS {
                 modal: {
                     open(opts) {
                         const o = opts || {};
-                        const payload = { items: Array.isArray(o.items) ? o.items : [] };
-                        if (o.placeholder != null) payload.placeholder = String(o.placeholder);
-                        if (o.emptyLabel != null) payload.emptyLabel = String(o.emptyLabel);
-                        if (o.noMatchLabel != null) payload.noMatchLabel = String(o.noMatchLabel);
-                        return dispatch('modal.open', payload);
+                        const opened = dispatch('modal.open', modalLabels(o));
+                        const requestID = opened && opened.requestID;
+                        if (typeof o.onSelect === 'function' && requestID != null) modalResultHandlers[requestID] = o.onSelect;
+                        feedModalItems(o);
+                        return requestID;
                     },
                 },
                 topbar: {

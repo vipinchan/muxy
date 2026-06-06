@@ -70,6 +70,20 @@ enum ExtensionWebBridge {
                 const key = String(name);
                 return key.startsWith('extension.') && key.length > 'extension.'.length;
             };
+
+            const normalizeModalItems = (raw) => (Array.isArray(raw) ? raw : (raw && raw.items) || [])
+                .map((it) => (it && it.id != null && it.title != null
+                    ? { id: String(it.id), title: String(it.title), subtitle: it.subtitle == null ? null : String(it.subtitle) }
+                    : null))
+                .filter(Boolean);
+            const modalLabels = (o) => {
+                const labels = {};
+                if (o.placeholder != null) labels.placeholder = String(o.placeholder);
+                if (o.emptyLabel != null) labels.emptyLabel = String(o.emptyLabel);
+                if (o.noMatchLabel != null) labels.noMatchLabel = String(o.noMatchLabel);
+                return labels;
+            };
+
             window.__muxyEventDispatch = (name, payload) => {
                 const listeners = eventListeners.get(name);
                 if (!listeners) return;
@@ -158,13 +172,21 @@ enum ExtensionWebBridge {
                     },
                 },
                 modal: {
-                    open(opts) {
+                    async open(opts) {
                         const o = opts || {};
-                        const payload = { items: Array.isArray(o.items) ? o.items : [] };
-                        if (o.placeholder != null) payload.placeholder = String(o.placeholder);
-                        if (o.emptyLabel != null) payload.emptyLabel = String(o.emptyLabel);
-                        if (o.noMatchLabel != null) payload.noMatchLabel = String(o.noMatchLabel);
-                        return send('modal.open', payload);
+                        const opened = await send('modal.open', modalLabels(o));
+                        const requestID = opened && opened.requestID;
+                        const emit = (batch) => send('modal.feed', { items: normalizeModalItems(batch) });
+                        if (typeof o.items === 'function') {
+                            const produced = await o.items(emit);
+                            if (produced != null) await emit(produced);
+                        } else {
+                            await emit(o.items);
+                        }
+                        await send('modal.finish', {});
+                        const choice = await send('modal.await', { requestID });
+                        if (typeof o.onSelect === 'function') o.onSelect(choice);
+                        return choice;
                     },
                 },
                 topbar: {
