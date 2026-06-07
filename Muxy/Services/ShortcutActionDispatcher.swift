@@ -27,7 +27,9 @@ struct ShortcutActionDispatcher {
     }
 
     private var navigableProjects: [Project] {
-        projectGroupStore.filteredProjects(from: projectStore.projects)
+        let filtered = projectGroupStore.filteredProjects(from: projectStore.storedProjects)
+        guard HomeProjectPreferences.isVisible else { return filtered }
+        return [Project.home] + filtered
     }
 
     func perform(_ action: ShortcutAction, activeProject: Project?) -> Bool {
@@ -52,6 +54,11 @@ struct ShortcutActionDispatcher {
             }
             appState.createTab(projectID: projectID)
             return true
+        case .newHomeTab:
+            return HomeProjectService.openHomeTab(
+                appState: appState,
+                worktreeStore: worktreeStore
+            )
         case .reopenClosedTerminalTab:
             return appState.reopenLastClosedTerminalTab()
         case .closeTab:

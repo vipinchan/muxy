@@ -25,4 +25,21 @@ struct ProjectTests {
 
         #expect(project.preferredWorktreeParentPath == nil)
     }
+
+    @Test("home uses the reserved id, home name and expanded home path")
+    func homeIdentity() {
+        let home = Project.home
+
+        #expect(home.id == Project.homeID)
+        #expect(home.isHome)
+        #expect(home.name == Project.homeName)
+        #expect(home.path == FileManager.default.homeDirectoryForCurrentUser.path)
+    }
+
+    @Test("isHome is false for ordinary projects")
+    func ordinaryProjectIsNotHome() {
+        let project = Project(name: "Repo", path: "/tmp/repo")
+
+        #expect(!project.isHome)
+    }
 }
