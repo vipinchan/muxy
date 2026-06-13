@@ -204,13 +204,15 @@ extension MuxyAPI {
             projectIdentifier: String?,
             filter: GitRepositoryService.PRListFilter,
             limit: Int,
+            includeChecks: Bool,
             context: Context
         ) async -> Result<[GitRepositoryService.PRListItem], APIError> {
             await read(projectIdentifier, context) { repoPath, git in
                 try await git.listPullRequests(
                     repoPath: repoPath,
                     filter: filter,
-                    limit: min(max(limit, 1), maxPRListLimit)
+                    limit: min(max(limit, 1), maxPRListLimit),
+                    includeChecks: includeChecks
                 )
             }
         }

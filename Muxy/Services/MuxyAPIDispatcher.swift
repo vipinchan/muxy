@@ -428,6 +428,7 @@ enum MuxyAPIDispatcher {
                 projectIdentifier: project,
                 filter: prListFilter(args["filter"] as? String),
                 limit: intArg(args, "limit") ?? 100,
+                includeChecks: boolArg(args, "checks") ?? true,
                 context: git
             )).map(GitDTO.prListItem)
         case "git.worktrees":
@@ -737,6 +738,12 @@ enum MuxyAPIDispatcher {
     private static func intArg(_ args: [String: Any], _ key: String) -> Int? {
         if let value = args[key] as? Int { return value }
         if let value = args[key] as? NSNumber { return value.intValue }
+        return nil
+    }
+
+    private static func boolArg(_ args: [String: Any], _ key: String) -> Bool? {
+        if let value = args[key] as? Bool { return value }
+        if let value = args[key] as? NSNumber { return value.boolValue }
         return nil
     }
 

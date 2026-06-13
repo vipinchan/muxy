@@ -297,6 +297,7 @@ public enum ExtensionBridgeJS {
                         project: gitProject(o),
                         filter: (o || {}).filter == null ? null : String(o.filter),
                         limit: (o || {}).limit == null ? null : Number(o.limit),
+                        checks: (o || {}).checks == null ? null : Boolean(o.checks),
                     }),
                     create: (o) => dispatch('git.pr.create', {
                         project: gitProject(o),

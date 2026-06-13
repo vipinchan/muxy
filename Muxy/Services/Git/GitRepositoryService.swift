@@ -504,20 +504,29 @@ struct GitRepositoryService {
         case all
     }
 
+    static func pullRequestListJSONFields(includeChecks: Bool) -> String {
+        var fields = [
+            "number", "title", "author",
+            "headRefName", "headRefOid", "baseRefName",
+            "state", "isDraft", "url", "updatedAt",
+            "mergeable", "mergeStateStatus",
+        ]
+        if includeChecks {
+            fields.append("statusCheckRollup")
+        }
+        return fields.joined(separator: ",")
+    }
+
     func listPullRequests(
         repoPath: String,
         filter: PRListFilter = .open,
-        limit: Int = 100
+        limit: Int = 100,
+        includeChecks: Bool = true
     ) async throws -> [PRListItem] {
         guard let ghPath = GitProcessRunner.resolveExecutable("gh") else {
             throw PRCreateError.ghNotInstalled
         }
-        let jsonFields = [
-            "number", "title", "author",
-            "headRefName", "headRefOid", "baseRefName",
-            "state", "isDraft", "url", "updatedAt",
-            "statusCheckRollup", "mergeable", "mergeStateStatus",
-        ].joined(separator: ",")
+        let jsonFields = Self.pullRequestListJSONFields(includeChecks: includeChecks)
         let arguments = [
             "pr", "list",
             "--state", filter.rawValue,
