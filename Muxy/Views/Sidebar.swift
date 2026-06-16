@@ -354,25 +354,16 @@ struct Sidebar: View {
     }
 
     private func performRemove(_ project: Project) {
-        guard !project.isRemote else {
-            if let workspaceID = project.remoteWorkspaceID {
-                projectGroupStore.removeRemoteProject(id: project.id, fromGroup: workspaceID)
-            } else {
-                projectStore.remove(id: project.id)
-                projectGroupStore.removeProjectFromAllGroups(projectID: project.id)
-            }
-            appState.removeProject(project.id)
-            worktreeStore.removeProject(project.id)
-            return
-        }
         let capturedProject = project
-        let knownWorktrees = worktreeStore.list(for: project.id)
         Task {
             do {
-                try await WorktreeStore.cleanupOnDisk(for: capturedProject, knownWorktrees: knownWorktrees)
-                appState.removeProject(project.id)
-                projectStore.remove(id: project.id)
-                worktreeStore.removeProject(project.id)
+                try await ProjectRemovalService.remove(
+                    capturedProject,
+                    appState: appState,
+                    projectStore: projectStore,
+                    worktreeStore: worktreeStore,
+                    projectGroupStore: projectGroupStore
+                )
             } catch {
                 presentProjectRemovalFailure(project: capturedProject, error: error)
             }
