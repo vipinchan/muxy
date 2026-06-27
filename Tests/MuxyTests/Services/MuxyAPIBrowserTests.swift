@@ -123,6 +123,96 @@ struct MuxyAPIBrowserTests {
         #expect(MuxyAPI.Browser.list(appState: appState, profileStore: nil).isEmpty)
     }
 
+    @Test("eval fails for an unknown tab id")
+    func evalUnknownTabFails() async {
+        let appState = makeAppState()
+        let unknownID = UUID().uuidString
+        let result = await MuxyAPI.Browser.eval(tabIDString: unknownID, script: "1+1", appState: appState)
+        #expect(failureErrorString(result) == .browserTabNotFound(unknownID))
+    }
+
+    @Test("eval reports surface not ready for an unrendered tab")
+    func evalUnrenderedTabNotReady() async throws {
+        let appState = makeAppState()
+        let id = try MuxyAPI.Browser.open(url: "https://example.com", appState: appState).get()
+        let result = await MuxyAPI.Browser.eval(tabIDString: id.uuidString, script: "1+1", appState: appState)
+        guard case let .failure(error) = result else {
+            Issue.record("expected failure")
+            return
+        }
+        guard case .browserTabSurfaceNotReady = error else {
+            Issue.record("expected surface-not-ready, got \(error)")
+            return
+        }
+    }
+
+    @Test("automation verbs fail when the browser is disabled")
+    func automationDisabledFails() async {
+        let appState = makeAppState()
+        BrowserPreferences.isEnabled = false
+        defer { UserDefaults.standard.removeObject(forKey: BrowserPreferences.enabledKey) }
+        let tabID = UUID().uuidString
+        let eval = await MuxyAPI.Browser.eval(tabIDString: tabID, script: "1", appState: appState)
+        let click = await MuxyAPI.Browser.click(tabIDString: tabID, selector: "a", appState: appState)
+        let cookies = await MuxyAPI.Browser.cookiesClear(tabIDString: tabID, appState: appState)
+        #expect(failureErrorString(eval) == .browserDisabled)
+        #expect(failureErrorBool(click) == .browserDisabled)
+        #expect(failureErrorVoid(cookies) == .browserDisabled)
+    }
+
+    @Test("jsString produces a quoted JS literal that escapes special characters")
+    func jsStringEscapes() {
+        #expect(jsString("a\"b") == "\"a\\\"b\"")
+        #expect(jsString("a\\b") == "\"a\\\\b\"")
+        #expect(jsString("a\nb") == "\"a\\nb\"")
+        #expect(jsString("plain") == "\"plain\"")
+    }
+
+    @Test("jsString escapes Unicode line and paragraph separators")
+    func jsStringEscapesLineSeparators() {
+        #expect(jsString("a\u{2028}b") == "\"a\\u2028b\"")
+        #expect(jsString("a\u{2029}b") == "\"a\\u2029b\"")
+        #expect(!jsString("a\u{2028}b").unicodeScalars.contains("\u{2028}"))
+        #expect(!jsString("a\u{2029}b").unicodeScalars.contains("\u{2029}"))
+    }
+
+    @Test("BrowserAutomation never uses main-thread blocking primitives")
+    func automationHasNoBlockingPrimitives() throws {
+        let url = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .appendingPathComponent("Muxy/Services/BrowserAutomation.swift")
+        let source = try String(contentsOf: url, encoding: .utf8)
+        let banned = [
+            "DispatchSemaphore",
+            ".wait()",
+            "DispatchQueue.main.sync",
+            "RunLoop.current.run",
+            "RunLoop.main.run",
+            "Thread.sleep",
+        ]
+        for token in banned {
+            #expect(!source.contains(token), "BrowserAutomation.swift must not block the main thread with \(token)")
+        }
+    }
+
+    private func failureErrorString(_ result: Result<String, APIError>) -> APIError? {
+        if case let .failure(error) = result { return error }
+        return nil
+    }
+
+    private func failureErrorBool(_ result: Result<Bool, APIError>) -> APIError? {
+        if case let .failure(error) = result { return error }
+        return nil
+    }
+
+    private func failureErrorVoid(_ result: Result<Void, APIError>) -> APIError? {
+        if case let .failure(error) = result { return error }
+        return nil
+    }
+
     @Test("registry resolves a registered web view then clears on unregister")
     func registryRegistersAndUnregisters() {
         let registry = BrowserWebViewRegistry.shared

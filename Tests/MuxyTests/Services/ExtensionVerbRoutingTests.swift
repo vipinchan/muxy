@@ -41,6 +41,58 @@ struct ExtensionVerbRoutingTests {
         #expect(MuxyAPI.Permissions.required(forEvent: ExtensionEventName.paneFocused) == nil)
     }
 
+    @Test("every browser automation verb is registered and permissioned")
+    func browserAutomationVerbsAreRegistered() {
+        let verbs = [
+            "browser.eval", "browser.click", "browser.type", "browser.waitFor",
+            "browser.getText", "browser.getHTML", "browser.getAttribute",
+            "browser.reload", "browser.back", "browser.forward", "browser.waitForNavigation",
+            "browser.screenshot",
+            "browser.storage.get", "browser.storage.set", "browser.storage.clear",
+            "browser.cookies.get", "browser.cookies.set", "browser.cookies.delete", "browser.cookies.clear",
+            "browser.wait", "browser.fill", "browser.press", "browser.select", "browser.hover",
+            "browser.scrollIntoView", "browser.setChecked", "browser.is",
+            "browser.getValue", "browser.getCount", "browser.find", "browser.snapshot",
+        ]
+        for verb in verbs {
+            #expect(MuxyAPI.Permissions.verbNames.contains(verb), "verbNames missing \(verb)")
+            #expect(MuxyAPI.Permissions.required(for: verb) != nil, "no permission mapped for \(verb)")
+        }
+    }
+
+    @Test("browser write verbs require browser:write and read verbs require browser:read")
+    func browserAutomationPermissionsAreCorrect() {
+        let writeVerbs = [
+            "browser.eval", "browser.click", "browser.type", "browser.reload",
+            "browser.back", "browser.forward",
+            "browser.storage.set", "browser.storage.clear",
+            "browser.cookies.set", "browser.cookies.delete", "browser.cookies.clear",
+            "browser.fill", "browser.press", "browser.select", "browser.hover",
+            "browser.scrollIntoView", "browser.setChecked",
+        ]
+        let readVerbs = [
+            "browser.waitFor", "browser.getText", "browser.getHTML", "browser.getAttribute",
+            "browser.waitForNavigation", "browser.screenshot",
+            "browser.storage.get", "browser.cookies.get",
+            "browser.wait", "browser.is", "browser.getValue", "browser.getCount",
+            "browser.find", "browser.snapshot",
+        ]
+        for verb in writeVerbs {
+            #expect(MuxyAPI.Permissions.required(for: verb) == .browserWrite, "\(verb) should be browser:write")
+        }
+        for verb in readVerbs {
+            #expect(MuxyAPI.Permissions.required(for: verb) == .browserRead, "\(verb) should be browser:read")
+        }
+    }
+
+    @Test("browser.wait escalates to browser:write when given a function condition")
+    func browserWaitFunctionRequiresWrite() {
+        #expect(MuxyAPI.Permissions.required(for: "browser.wait", args: [:]) == .browserRead)
+        #expect(MuxyAPI.Permissions.required(for: "browser.wait", args: ["selector": "a"]) == .browserRead)
+        #expect(MuxyAPI.Permissions.required(for: "browser.wait", args: ["function": ""]) == .browserRead)
+        #expect(MuxyAPI.Permissions.required(for: "browser.wait", args: ["function": "1+1"]) == .browserWrite)
+    }
+
     @Test("MuxyAPI verbNames includes the legacy CLI verbs")
     func verbNamesIncludesLegacyVerbs() {
         let verbs = MuxyAPI.Permissions.verbNames
