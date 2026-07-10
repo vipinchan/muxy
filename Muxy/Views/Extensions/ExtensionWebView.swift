@@ -18,7 +18,7 @@ struct ExtensionWebView: NSViewRepresentable {
     @Environment(\.overlayActive) private var overlayActive
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(surfaceKind: surfaceKind, onFocus: onFocus)
+        Coordinator(onFocus: onFocus)
     }
 
     func makeNSView(context: Context) -> WKWebView {
@@ -59,9 +59,10 @@ struct ExtensionWebView: NSViewRepresentable {
         )
         context.coordinator.installBridgeScript(into: userContent)
 
-        let webView = Self.makeWebView(configuration: config, surfaceKind: surfaceKind)
+        let webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = context.coordinator
         webView.uiDelegate = context.coordinator
+        webView.setValue(false, forKey: "drawsBackground")
         webView.load(URLRequest(url: entryURL))
         bridge.attach(to: webView)
         let surfaceKey = LifecycleSurfaceKey(kind: surfaceKind, instanceID: instanceID)
@@ -95,7 +96,6 @@ struct ExtensionWebView: NSViewRepresentable {
         var consoleHandler: ExtensionConsoleHandler?
         var surfaceKey: LifecycleSurfaceKey?
         let onFocus: () -> Void
-        private let surfaceKind: LifecycleSurfaceKind
         private weak var webView: WKWebView?
         private var themeObserver: NSObjectProtocol?
         private var extensionID: String = ""
@@ -104,8 +104,7 @@ struct ExtensionWebView: NSViewRepresentable {
         private var focused = false
         private var overlayActive = false
 
-        init(surfaceKind: LifecycleSurfaceKind, onFocus: @escaping () -> Void) {
-            self.surfaceKind = surfaceKind
+        init(onFocus: @escaping () -> Void) {
             self.onFocus = onFocus
         }
 
@@ -188,7 +187,6 @@ struct ExtensionWebView: NSViewRepresentable {
 
         private func pushThemeUpdate() {
             guard let webView else { return }
-            ExtensionWebView.applyThemeBackground(to: webView, surfaceKind: surfaceKind)
             let theme = ExtensionThemeSnapshot.current()
             let script = ExtensionWebBridge.themeUpdateScript(theme: theme)
             webView.evaluateJavaScript(script, completionHandler: nil)
@@ -238,24 +236,6 @@ struct ExtensionWebView: NSViewRepresentable {
 }
 
 extension ExtensionWebView {
-    static func makeWebView(
-        configuration: WKWebViewConfiguration,
-        surfaceKind: LifecycleSurfaceKind
-    ) -> WKWebView {
-        let webView = WKWebView(frame: .zero, configuration: configuration)
-        if surfaceKind == .popover {
-            webView.setValue(false, forKey: "drawsBackground")
-        } else {
-            applyThemeBackground(to: webView, surfaceKind: surfaceKind)
-        }
-        return webView
-    }
-
-    static func applyThemeBackground(to webView: WKWebView, surfaceKind: LifecycleSurfaceKind) {
-        guard surfaceKind != .popover else { return }
-        webView.underPageBackgroundColor = MuxyTheme.nsBg
-    }
-
     static func entryURL(for muxyExtension: MuxyExtension, entry: String) -> URL? {
         guard muxyExtension.resolveResource(entry) != nil else { return nil }
         let normalized = entry.hasPrefix("/") ? String(entry.dropFirst()) : entry
