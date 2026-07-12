@@ -108,7 +108,7 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) - 2
     )
 
-    private override init() {
+    override private init() {
         super.init()
     }
 
