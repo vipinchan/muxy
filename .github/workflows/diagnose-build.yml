@@ -1,8 +1,8 @@
 name: Apply Hotkey Build Fix
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: [feature/dedicated-hotkey-window]
 
 permissions:
   contents: write
