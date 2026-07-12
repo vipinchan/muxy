@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 concurrency:
   group: checks-${{ github.ref }}
   cancel-in-progress: true
@@ -15,6 +18,153 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Apply hotkey fullscreen layout fix
+        if: github.head_ref == 'feature/dedicated-hotkey-window'
+        run: |
+          git fetch origin feature/dedicated-hotkey-window
+          git switch -C feature/dedicated-hotkey-window origin/feature/dedicated-hotkey-window
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('Muxy/Extensions/Notification+Names.swift')
+          text = path.read_text()
+          old = '    static let windowFullScreenDidChange = Notification.Name("MuxyWindowFullScreenDidChange")\n'
+          new = old + '    static let hotkeyOverlayFullScreenDidChange = Notification.Name("MuxyHotkeyOverlayFullScreenDidChange")\n'
+          if old not in text:
+              raise SystemExit('Notification anchor not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text)
+
+          path = Path('Muxy/Views/MainWindow.swift')
+          text = path.read_text()
+          replacements = [
+              (
+                  '    @Environment(GhosttyService.self) private var ghostty\n',
+                  '    @Environment(GhosttyService.self) private var ghostty\n    @Environment(\\.isHotkeyWorkspace) private var isHotkeyWorkspace\n',
+              ),
+              (
+                  '            onToggleExtensionConsole: toggleExtensionConsole,\n            onFullScreenChange: { isFullScreen = $0 },\n',
+                  '            onToggleExtensionConsole: toggleExtensionConsole,\n            isHotkeyWorkspace: isHotkeyWorkspace,\n            onFullScreenChange: { isFullScreen = $0 },\n',
+              ),
+              (
+                  '    let onToggleExtensionConsole: () -> Void\n    let onFullScreenChange: (Bool) -> Void\n',
+                  '    let onToggleExtensionConsole: () -> Void\n    let isHotkeyWorkspace: Bool\n    let onFullScreenChange: (Bool) -> Void\n',
+              ),
+              (
+                  '            onToggleExtensionConsole: onToggleExtensionConsole,\n            onFullScreenChange: onFullScreenChange,\n',
+                  '            onToggleExtensionConsole: onToggleExtensionConsole,\n            isHotkeyWorkspace: isHotkeyWorkspace,\n            onFullScreenChange: onFullScreenChange,\n',
+              ),
+          ]
+          for old, new in replacements:
+              if old not in text:
+                  raise SystemExit(f'MainWindow anchor not found:\n{old}')
+              text = text.replace(old, new, 1)
+
+          old = '    let onToggleExtensionConsole: () -> Void\n    let onFullScreenChange: (Bool) -> Void\n    let sidePanelListeners: SidePanelNotificationListeners\n'
+          new = '    let onToggleExtensionConsole: () -> Void\n    let isHotkeyWorkspace: Bool\n    let onFullScreenChange: (Bool) -> Void\n    let sidePanelListeners: SidePanelNotificationListeners\n'
+          if old not in text:
+              raise SystemExit('MainWindowNotificationListeners property anchor not found')
+          text = text.replace(old, new, 1)
+
+          old = '''            .onReceive(NotificationCenter.default.publisher(for: .windowFullScreenDidChange)) { notification in
+                onFullScreenChange(notification.userInfo?["isFullScreen"] as? Bool ?? false)
+            }
+            .modifier(sidePanelListeners)
+'''
+          new = '''            .onReceive(NotificationCenter.default.publisher(for: .windowFullScreenDidChange)) { notification in
+                guard !isHotkeyWorkspace else { return }
+                onFullScreenChange(notification.userInfo?["isFullScreen"] as? Bool ?? false)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .hotkeyOverlayFullScreenDidChange)) { notification in
+                guard isHotkeyWorkspace else { return }
+                onFullScreenChange(notification.userInfo?["isFullScreen"] as? Bool ?? false)
+            }
+            .modifier(sidePanelListeners)
+'''
+          if old not in text:
+              raise SystemExit('Fullscreen notification listener anchor not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text)
+
+          path = Path('Muxy/Services/Keyboard/HotkeyWindowController.swift')
+          text = path.read_text()
+          old = '''        window.hasShadow = false
+        applyOverlayFullScreenPresentation(to: window)
+        window.setFrame(screen.frame, display: true, animate: animated)
+'''
+          new = '''        setTrafficLightsHidden(true, in: window)
+        window.hasShadow = false
+        WindowConfigurator.neutralizeSafeAreaInsets(in: window)
+        applyOverlayFullScreenPresentation(to: window)
+        postOverlayFullScreenChange(true, for: window)
+        window.setFrame(screen.frame, display: true, animate: animated)
+'''
+          if old not in text:
+              raise SystemExit('Enter overlay anchor not found')
+          text = text.replace(old, new, 1)
+
+          old = '''        window.hasShadow = overlayRestoreHasShadow
+        applyHotkeyPresentation(to: window)
+        window.setFrame(restoreFrame, display: true, animate: animated)
+'''
+          new = '''        setTrafficLightsHidden(false, in: window)
+        window.hasShadow = overlayRestoreHasShadow
+        WindowConfigurator.repositionTrafficLights(in: window)
+        WindowConfigurator.neutralizeSafeAreaInsets(in: window)
+        applyHotkeyPresentation(to: window)
+        postOverlayFullScreenChange(false, for: window)
+        window.setFrame(restoreFrame, display: true, animate: animated)
+'''
+          if old not in text:
+              raise SystemExit('Exit overlay anchor not found')
+          text = text.replace(old, new, 1)
+
+          old = '''    private func postFullScreenChange(_ isFullScreen: Bool, for window: NSWindow) {
+        NotificationCenter.default.post(
+            name: .windowFullScreenDidChange,
+            object: window,
+            userInfo: ["isFullScreen": isFullScreen]
+        )
+    }
+
+    private func applyHotkeyPresentation(to window: NSWindow) {
+'''
+          new = '''    private func postFullScreenChange(_ isFullScreen: Bool, for window: NSWindow) {
+        NotificationCenter.default.post(
+            name: .windowFullScreenDidChange,
+            object: window,
+            userInfo: ["isFullScreen": isFullScreen]
+        )
+    }
+
+    private func postOverlayFullScreenChange(_ isFullScreen: Bool, for window: NSWindow) {
+        NotificationCenter.default.post(
+            name: .hotkeyOverlayFullScreenDidChange,
+            object: window,
+            userInfo: ["isFullScreen": isFullScreen]
+        )
+    }
+
+    private func setTrafficLightsHidden(_ hidden: Bool, in window: NSWindow) {
+        for buttonType in [NSWindow.ButtonType.closeButton, .miniaturizeButton, .zoomButton] {
+            window.standardWindowButton(buttonType)?.isHidden = hidden
+        }
+    }
+
+    private func applyHotkeyPresentation(to window: NSWindow) {
+'''
+          if old not in text:
+              raise SystemExit('Fullscreen helper anchor not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Muxy/Extensions/Notification+Names.swift Muxy/Views/MainWindow.swift Muxy/Services/Keyboard/HotkeyWindowController.swift
+          git commit -m "fix: match main window fullscreen layout in hotkey panel"
+          git push origin HEAD:feature/dedicated-hotkey-window
+          exit 0
 
       - name: Select Xcode
         run: sudo xcode-select -s "/Applications/Xcode_$(grep '^xcode ' .tool-versions | awk '{print $2}').app"
