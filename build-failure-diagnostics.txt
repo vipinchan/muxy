@@ -1,0 +1,399 @@
+exit_code=1
+---- failure diagnostics ----
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[250/302] Compiling Muxy BranchCache.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[251/302] Compiling Muxy DiffHintPolicy.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[252/302] Compiling Muxy GitCommitLogParser.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[253/302] Compiling Muxy GitDiffParser.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[254/302] Compiling Muxy GitMetadataCache.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[255/302] Compiling Muxy GitModels.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[256/302] Compiling Muxy GitPRParser.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[257/302] Compiling Muxy GitProcessRunner.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[258/302] Compiling Muxy GitRepoStatusCache.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[259/302] Compiling Muxy GitRepositoryService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[260/302] Compiling Muxy GitSignpost.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[261/302] Compiling Muxy GitStatusAggregator.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[262/302] Compiling Muxy GitStatusParser.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[263/302] Compiling Muxy GitWorktreeService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[264/302] Compiling Muxy CommandShortcutStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[265/302] Compiling Muxy HotkeyWindowController.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[266/302] Compiling Muxy KeyBindingPersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[267/302] Compiling Muxy KeyBindingStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[268/302] Compiling Muxy ModifierKeyMonitor.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[269/302] Compiling Muxy ShortcutActionDispatcher.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[270/302] Compiling Muxy ShortcutContext.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[271/302] Compiling Muxy ApprovedDevicesPersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[272/302] Compiling Muxy ApprovedDevicesStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[273/302] Compiling Muxy MobilePairingService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+[274/350] Compiling Muxy ProjectPickerWorkflow.swift
+[275/350] Compiling Muxy ClaudeCodeProvider.swift
+[276/350] Compiling Muxy CodexProvider.swift
+[277/350] Compiling Muxy CursorProvider.swift
+[278/350] Compiling Muxy DroidProvider.swift
+[279/350] Compiling Muxy GrokProvider.swift
+[280/350] Compiling Muxy OpenCodeProvider.swift
