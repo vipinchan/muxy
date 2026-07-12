@@ -21,59 +21,40 @@ jobs:
           from pathlib import Path
 
           path = Path('Muxy/Services/Keyboard/HotkeyWindowController.swift')
-          text = path.read_text()
+          lines = path.read_text().splitlines()
 
-          level_anchor = '''    private static let hotkeyWindowLevel = NSWindow.Level(
-              rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) - 2
-          )
-          '''
-          level_replacement = '''    private static let hotkeyWindowLevel = NSWindow.Level(
-              rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) - 2
-          )
+          if not any('overlayFullScreenWindowLevel' in line for line in lines):
+              start = next(i for i, line in enumerate(lines) if 'private static let hotkeyWindowLevel' in line)
+              end = next(i for i in range(start + 1, len(lines)) if lines[i] == '    )')
+              lines[end + 1:end + 1] = [
+                  '',
+                  '    private static let overlayFullScreenWindowLevel = NSWindow.Level(',
+                  '        rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) + 1',
+                  '    )',
+              ]
 
-          private static let overlayFullScreenWindowLevel = NSWindow.Level(
-              rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) + 1
-          )
-          '''
-          if 'overlayFullScreenWindowLevel' not in text:
-              if level_anchor not in text:
-                  raise SystemExit('Expected hotkeyWindowLevel anchor not found')
-              text = text.replace(level_anchor, level_replacement, 1)
+          enter_start = next(i for i, line in enumerate(lines) if 'private func enterOverlayFullScreen' in line)
+          enter_end = next(i for i in range(enter_start + 1, len(lines)) if 'private func exitOverlayFullScreen' in lines[i])
+          for i in range(enter_start, enter_end):
+              if lines[i].strip() == 'applyHotkeyPresentation(to: window)':
+                  lines[i] = lines[i].replace('applyHotkeyPresentation', 'applyOverlayFullScreenPresentation')
+                  break
+          else:
+              if not any('applyOverlayFullScreenPresentation(to: window)' in lines[i] for i in range(enter_start, enter_end)):
+                  raise SystemExit('Overlay fullscreen presentation call not found')
 
-          enter_anchor = '''        window.hasShadow = false
-          applyHotkeyPresentation(to: window)
-          postFullScreenChange(true, for: window)
-          '''
-          enter_replacement = '''        window.hasShadow = false
-          applyOverlayFullScreenPresentation(to: window)
-          postFullScreenChange(true, for: window)
-          '''
-          if enter_anchor in text:
-              text = text.replace(enter_anchor, enter_replacement, 1)
-          elif 'applyOverlayFullScreenPresentation(to: window)' not in text:
-              raise SystemExit('Expected overlay fullscreen presentation anchor not found')
+          if not any('private func applyOverlayFullScreenPresentation' in line for line in lines):
+              method_start = next(i for i, line in enumerate(lines) if 'private func applyHotkeyPresentation' in line)
+              method_end = next(i for i in range(method_start + 1, len(lines)) if lines[i] == '    }')
+              lines[method_end + 1:method_end + 1] = [
+                  '',
+                  '    private func applyOverlayFullScreenPresentation(to window: NSWindow) {',
+                  '        window.collectionBehavior = Self.hotkeyCollectionBehavior',
+                  '        window.level = Self.overlayFullScreenWindowLevel',
+                  '    }',
+              ]
 
-          method_anchor = '''    private func applyHotkeyPresentation(to window: NSWindow) {
-              window.collectionBehavior = Self.hotkeyCollectionBehavior
-              window.level = Self.hotkeyWindowLevel
-          }
-          '''
-          method_replacement = '''    private func applyHotkeyPresentation(to window: NSWindow) {
-              window.collectionBehavior = Self.hotkeyCollectionBehavior
-              window.level = Self.hotkeyWindowLevel
-          }
-
-          private func applyOverlayFullScreenPresentation(to window: NSWindow) {
-              window.collectionBehavior = Self.hotkeyCollectionBehavior
-              window.level = Self.overlayFullScreenWindowLevel
-          }
-          '''
-          if 'private func applyOverlayFullScreenPresentation' not in text:
-              if method_anchor not in text:
-                  raise SystemExit('Expected applyHotkeyPresentation anchor not found')
-              text = text.replace(method_anchor, method_replacement, 1)
-
-          path.write_text(text)
+          path.write_text('\n'.join(lines) + '\n')
           PY
       - name: Commit fix
         run: |
