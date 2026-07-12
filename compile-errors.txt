@@ -1,1105 +1,527 @@
-547-442 |                 let name = String(cString: nameBuf)
-548-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-549-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-550-444 |                 histogram[key, default: 0] += 1
-551-
-552-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-553- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-554- 48 |             if size > Self.maxAssetBytes {
-555: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-556-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-557- 50 |                 return
-558- 51 |             }
-559-
-560-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-561-31 | 
-562-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-563-33 | @protocol WKURLSchemeTask <NSObject>
-564-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-565-34 | 
-566-35 | /*! @abstract The request to load for this task.
-567-
+1727-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1728-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1729-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1730-92 |             let ip = String(cString: buffer)
+1731-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1732-93 |             if isTailscaleAddress(ip) { return ip }
+1733-94 |         }
+1734-
+1735:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1736-380 | 
+1737-381 |     deinit {
+1738-382 |         if let fullScreenShortcutMonitor {
+1739-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1740-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1741-384 |         }
+1742-[251/326] Compiling Muxy DiffHintPolicy.swift
+1743-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1744-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1745-300 |         DispatchQueue.main.async {
+1746-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1747-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-579-442 |                 let name = String(cString: nameBuf)
-580-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-581-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-582-444 |                 histogram[key, default: 0] += 1
-583-
-584-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-585- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-586- 48 |             if size > Self.maxAssetBytes {
-587: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-588-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-589- 50 |                 return
-590- 51 |             }
-591-
-592-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-593-31 | 
-594-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-595-33 | @protocol WKURLSchemeTask <NSObject>
-596-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-597-34 | 
-598-35 | /*! @abstract The request to load for this task.
-599-
+1751-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1752-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1753-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1754-92 |             let ip = String(cString: buffer)
+1755-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1756-93 |             if isTailscaleAddress(ip) { return ip }
+1757-94 |         }
+1758-
+1759:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1760-380 | 
+1761-381 |     deinit {
+1762-382 |         if let fullScreenShortcutMonitor {
+1763-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1764-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1765-384 |         }
+1766-[252/326] Compiling Muxy GitCommitLogParser.swift
+1767-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1768-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1769-300 |         DispatchQueue.main.async {
+1770-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1771-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-611-442 |                 let name = String(cString: nameBuf)
-612-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-613-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-614-444 |                 histogram[key, default: 0] += 1
-615-
-616-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-617- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-618- 48 |             if size > Self.maxAssetBytes {
-619: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-620-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-621- 50 |                 return
-622- 51 |             }
-623-
-624-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-625-31 | 
-626-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-627-33 | @protocol WKURLSchemeTask <NSObject>
-628-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-629-34 | 
-630-35 | /*! @abstract The request to load for this task.
-631-
+1775-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1776-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1777-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1778-92 |             let ip = String(cString: buffer)
+1779-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1780-93 |             if isTailscaleAddress(ip) { return ip }
+1781-94 |         }
+1782-
+1783:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1784-380 | 
+1785-381 |     deinit {
+1786-382 |         if let fullScreenShortcutMonitor {
+1787-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1788-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1789-384 |         }
+1790-[253/326] Compiling Muxy GitDiffParser.swift
+1791-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1792-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1793-300 |         DispatchQueue.main.async {
+1794-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1795-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-643-442 |                 let name = String(cString: nameBuf)
-644-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-645-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-646-444 |                 histogram[key, default: 0] += 1
-647-
-648-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-649- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-650- 48 |             if size > Self.maxAssetBytes {
-651: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-652-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-653- 50 |                 return
-654- 51 |             }
-655-
-656-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-657-31 | 
-658-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-659-33 | @protocol WKURLSchemeTask <NSObject>
-660-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-661-34 | 
-662-35 | /*! @abstract The request to load for this task.
-663-
+1799-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1800-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1801-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1802-92 |             let ip = String(cString: buffer)
+1803-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1804-93 |             if isTailscaleAddress(ip) { return ip }
+1805-94 |         }
+1806-
+1807:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1808-380 | 
+1809-381 |     deinit {
+1810-382 |         if let fullScreenShortcutMonitor {
+1811-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1812-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1813-384 |         }
+1814-[254/326] Compiling Muxy GitMetadataCache.swift
+1815-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1816-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1817-300 |         DispatchQueue.main.async {
+1818-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1819-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-675-442 |                 let name = String(cString: nameBuf)
-676-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-677-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-678-444 |                 histogram[key, default: 0] += 1
-679-
-680-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-681- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-682- 48 |             if size > Self.maxAssetBytes {
-683: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-684-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-685- 50 |                 return
-686- 51 |             }
-687-
-688-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-689-31 | 
-690-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-691-33 | @protocol WKURLSchemeTask <NSObject>
-692-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-693-34 | 
-694-35 | /*! @abstract The request to load for this task.
-695-
+1823-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1824-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1825-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1826-92 |             let ip = String(cString: buffer)
+1827-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1828-93 |             if isTailscaleAddress(ip) { return ip }
+1829-94 |         }
+1830-
+1831:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1832-380 | 
+1833-381 |     deinit {
+1834-382 |         if let fullScreenShortcutMonitor {
+1835-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1836-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1837-384 |         }
+1838-[255/326] Compiling Muxy GitModels.swift
+1839-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1840-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1841-300 |         DispatchQueue.main.async {
+1842-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1843-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-707-442 |                 let name = String(cString: nameBuf)
-708-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-709-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-710-444 |                 histogram[key, default: 0] += 1
-711-
-712-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-713- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-714- 48 |             if size > Self.maxAssetBytes {
-715: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-716-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-717- 50 |                 return
-718- 51 |             }
-719-
-720-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-721-31 | 
-722-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-723-33 | @protocol WKURLSchemeTask <NSObject>
-724-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-725-34 | 
-726-35 | /*! @abstract The request to load for this task.
-727-
+1847-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1848-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1849-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1850-92 |             let ip = String(cString: buffer)
+1851-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1852-93 |             if isTailscaleAddress(ip) { return ip }
+1853-94 |         }
+1854-
+1855:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1856-380 | 
+1857-381 |     deinit {
+1858-382 |         if let fullScreenShortcutMonitor {
+1859-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1860-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1861-384 |         }
+1862-[256/326] Compiling Muxy GitPRParser.swift
+1863-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1864-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1865-300 |         DispatchQueue.main.async {
+1866-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1867-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-739-442 |                 let name = String(cString: nameBuf)
-740-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-741-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-742-444 |                 histogram[key, default: 0] += 1
-743-
-744-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-745- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-746- 48 |             if size > Self.maxAssetBytes {
-747: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-748-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-749- 50 |                 return
-750- 51 |             }
-751-
-752-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-753-31 | 
-754-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-755-33 | @protocol WKURLSchemeTask <NSObject>
-756-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-757-34 | 
-758-35 | /*! @abstract The request to load for this task.
-759-
+1871-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1872-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1873-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1874-92 |             let ip = String(cString: buffer)
+1875-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1876-93 |             if isTailscaleAddress(ip) { return ip }
+1877-94 |         }
+1878-
+1879:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1880-380 | 
+1881-381 |     deinit {
+1882-382 |         if let fullScreenShortcutMonitor {
+1883-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1884-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1885-384 |         }
+1886-[257/326] Compiling Muxy GitProcessRunner.swift
+1887-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1888-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1889-300 |         DispatchQueue.main.async {
+1890-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1891-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-771-442 |                 let name = String(cString: nameBuf)
-772-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-773-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-774-444 |                 histogram[key, default: 0] += 1
-775-
-776-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-777- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-778- 48 |             if size > Self.maxAssetBytes {
-779: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-780-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-781- 50 |                 return
-782- 51 |             }
-783-
-784-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-785-31 | 
-786-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-787-33 | @protocol WKURLSchemeTask <NSObject>
-788-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-789-34 | 
-790-35 | /*! @abstract The request to load for this task.
-791-
+1895-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1896-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1897-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1898-92 |             let ip = String(cString: buffer)
+1899-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1900-93 |             if isTailscaleAddress(ip) { return ip }
+1901-94 |         }
+1902-
+1903:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1904-380 | 
+1905-381 |     deinit {
+1906-382 |         if let fullScreenShortcutMonitor {
+1907-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1908-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1909-384 |         }
+1910-[258/326] Compiling Muxy GitRepoStatusCache.swift
+1911-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1912-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1913-300 |         DispatchQueue.main.async {
+1914-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1915-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-803-442 |                 let name = String(cString: nameBuf)
-804-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-805-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-806-444 |                 histogram[key, default: 0] += 1
-807-
-808-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-809- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-810- 48 |             if size > Self.maxAssetBytes {
-811: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-812-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-813- 50 |                 return
-814- 51 |             }
-815-
-816-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-817-31 | 
-818-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-819-33 | @protocol WKURLSchemeTask <NSObject>
-820-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-821-34 | 
-822-35 | /*! @abstract The request to load for this task.
-823-
+1919-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1920-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1921-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1922-92 |             let ip = String(cString: buffer)
+1923-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1924-93 |             if isTailscaleAddress(ip) { return ip }
+1925-94 |         }
+1926-
+1927:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1928-380 | 
+1929-381 |     deinit {
+1930-382 |         if let fullScreenShortcutMonitor {
+1931-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1932-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1933-384 |         }
+1934-[259/326] Compiling Muxy GitRepositoryService.swift
+1935-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1936-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1937-300 |         DispatchQueue.main.async {
+1938-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1939-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-835-442 |                 let name = String(cString: nameBuf)
-836-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-837-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-838-444 |                 histogram[key, default: 0] += 1
-839-
-840-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-841- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-842- 48 |             if size > Self.maxAssetBytes {
-843: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-844-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-845- 50 |                 return
-846- 51 |             }
-847-
-848-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-849-31 | 
-850-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-851-33 | @protocol WKURLSchemeTask <NSObject>
-852-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-853-34 | 
-854-35 | /*! @abstract The request to load for this task.
-855-
+1943-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1944-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1945-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1946-92 |             let ip = String(cString: buffer)
+1947-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1948-93 |             if isTailscaleAddress(ip) { return ip }
+1949-94 |         }
+1950-
+1951:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1952-380 | 
+1953-381 |     deinit {
+1954-382 |         if let fullScreenShortcutMonitor {
+1955-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1956-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1957-384 |         }
+1958-[260/326] Compiling Muxy GitSignpost.swift
+1959-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1960-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1961-300 |         DispatchQueue.main.async {
+1962-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1963-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-867-442 |                 let name = String(cString: nameBuf)
-868-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-869-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-870-444 |                 histogram[key, default: 0] += 1
-871-
-872-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-873- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-874- 48 |             if size > Self.maxAssetBytes {
-875: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-876-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-877- 50 |                 return
-878- 51 |             }
-879-
-880-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-881-31 | 
-882-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-883-33 | @protocol WKURLSchemeTask <NSObject>
-884-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-885-34 | 
-886-35 | /*! @abstract The request to load for this task.
-887-
+1967-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1968-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1969-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1970-92 |             let ip = String(cString: buffer)
+1971-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1972-93 |             if isTailscaleAddress(ip) { return ip }
+1973-94 |         }
+1974-
+1975:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1976-380 | 
+1977-381 |     deinit {
+1978-382 |         if let fullScreenShortcutMonitor {
+1979-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+1980-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+1981-384 |         }
+1982-[261/326] Compiling Muxy GitStatusAggregator.swift
+1983-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+1984-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+1985-300 |         DispatchQueue.main.async {
+1986-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+1987-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-899-442 |                 let name = String(cString: nameBuf)
-900-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-901-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-902-444 |                 histogram[key, default: 0] += 1
-903-
-904-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-905- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-906- 48 |             if size > Self.maxAssetBytes {
-907: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-908-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-909- 50 |                 return
-910- 51 |             }
-911-
-912-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-913-31 | 
-914-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-915-33 | @protocol WKURLSchemeTask <NSObject>
-916-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-917-34 | 
-918-35 | /*! @abstract The request to load for this task.
-919-
+1991-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1992-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+1993-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+1994-92 |             let ip = String(cString: buffer)
+1995-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+1996-93 |             if isTailscaleAddress(ip) { return ip }
+1997-94 |         }
+1998-
+1999:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2000-380 | 
+2001-381 |     deinit {
+2002-382 |         if let fullScreenShortcutMonitor {
+2003-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2004-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2005-384 |         }
+2006-[262/326] Compiling Muxy GitStatusParser.swift
+2007-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2008-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2009-300 |         DispatchQueue.main.async {
+2010-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2011-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-931-442 |                 let name = String(cString: nameBuf)
-932-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-933-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-934-444 |                 histogram[key, default: 0] += 1
-935-
-936-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-937- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-938- 48 |             if size > Self.maxAssetBytes {
-939: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-940-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-941- 50 |                 return
-942- 51 |             }
-943-
-944-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-945-31 | 
-946-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-947-33 | @protocol WKURLSchemeTask <NSObject>
-948-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-949-34 | 
-950-35 | /*! @abstract The request to load for this task.
-951-
+2015-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2016-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2017-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2018-92 |             let ip = String(cString: buffer)
+2019-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2020-93 |             if isTailscaleAddress(ip) { return ip }
+2021-94 |         }
+2022-
+2023:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2024-380 | 
+2025-381 |     deinit {
+2026-382 |         if let fullScreenShortcutMonitor {
+2027-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2028-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2029-384 |         }
+2030-[263/326] Compiling Muxy GitWorktreeService.swift
+2031-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2032-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2033-300 |         DispatchQueue.main.async {
+2034-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2035-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-963-442 |                 let name = String(cString: nameBuf)
-964-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-965-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-966-444 |                 histogram[key, default: 0] += 1
-967-
-968-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-969- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-970- 48 |             if size > Self.maxAssetBytes {
-971: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-972-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-973- 50 |                 return
-974- 51 |             }
-975-
-976-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-977-31 | 
-978-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-979-33 | @protocol WKURLSchemeTask <NSObject>
-980-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-981-34 | 
-982-35 | /*! @abstract The request to load for this task.
-983-
+2039-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2040-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2041-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2042-92 |             let ip = String(cString: buffer)
+2043-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2044-93 |             if isTailscaleAddress(ip) { return ip }
+2045-94 |         }
+2046-
+2047:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2048-380 | 
+2049-381 |     deinit {
+2050-382 |         if let fullScreenShortcutMonitor {
+2051-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2052-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2053-384 |         }
+2054-[264/326] Compiling Muxy CommandShortcutStore.swift
+2055-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2056-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2057-300 |         DispatchQueue.main.async {
+2058-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2059-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-995-442 |                 let name = String(cString: nameBuf)
-996-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-997-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-998-444 |                 histogram[key, default: 0] += 1
-999-
-1000-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1001- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1002- 48 |             if size > Self.maxAssetBytes {
-1003: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1004-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1005- 50 |                 return
-1006- 51 |             }
-1007-
-1008-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1009-31 | 
-1010-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1011-33 | @protocol WKURLSchemeTask <NSObject>
-1012-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1013-34 | 
-1014-35 | /*! @abstract The request to load for this task.
-1015-
+2063-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2064-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2065-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2066-92 |             let ip = String(cString: buffer)
+2067-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2068-93 |             if isTailscaleAddress(ip) { return ip }
+2069-94 |         }
+2070-
+2071:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2072-380 | 
+2073-381 |     deinit {
+2074-382 |         if let fullScreenShortcutMonitor {
+2075-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2076-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2077-384 |         }
+2078-[265/326] Compiling Muxy HotkeyWindowController.swift
+2079-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2080-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2081-300 |         DispatchQueue.main.async {
+2082-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2083-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1027-442 |                 let name = String(cString: nameBuf)
-1028-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1029-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1030-444 |                 histogram[key, default: 0] += 1
-1031-
-1032-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1033- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1034- 48 |             if size > Self.maxAssetBytes {
-1035: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1036-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1037- 50 |                 return
-1038- 51 |             }
-1039-
-1040-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1041-31 | 
-1042-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1043-33 | @protocol WKURLSchemeTask <NSObject>
-1044-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1045-34 | 
-1046-35 | /*! @abstract The request to load for this task.
-1047-
+2087-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2088-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2089-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2090-92 |             let ip = String(cString: buffer)
+2091-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2092-93 |             if isTailscaleAddress(ip) { return ip }
+2093-94 |         }
+2094-
+2095:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2096-380 | 
+2097-381 |     deinit {
+2098-382 |         if let fullScreenShortcutMonitor {
+2099-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2100-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2101-384 |         }
+2102-[266/326] Compiling Muxy KeyBindingPersistence.swift
+2103-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2104-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2105-300 |         DispatchQueue.main.async {
+2106-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2107-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1059-442 |                 let name = String(cString: nameBuf)
-1060-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1061-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1062-444 |                 histogram[key, default: 0] += 1
-1063-
-1064-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1065- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1066- 48 |             if size > Self.maxAssetBytes {
-1067: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1068-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1069- 50 |                 return
-1070- 51 |             }
-1071-
-1072-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1073-31 | 
-1074-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1075-33 | @protocol WKURLSchemeTask <NSObject>
-1076-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1077-34 | 
-1078-35 | /*! @abstract The request to load for this task.
-1079-
+2111-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2112-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2113-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2114-92 |             let ip = String(cString: buffer)
+2115-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2116-93 |             if isTailscaleAddress(ip) { return ip }
+2117-94 |         }
+2118-
+2119:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2120-380 | 
+2121-381 |     deinit {
+2122-382 |         if let fullScreenShortcutMonitor {
+2123-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2124-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2125-384 |         }
+2126-[267/326] Compiling Muxy KeyBindingStore.swift
+2127-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2128-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2129-300 |         DispatchQueue.main.async {
+2130-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2131-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1091-442 |                 let name = String(cString: nameBuf)
-1092-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1093-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1094-444 |                 histogram[key, default: 0] += 1
-1095-
-1096-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1097- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1098- 48 |             if size > Self.maxAssetBytes {
-1099: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1100-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1101- 50 |                 return
-1102- 51 |             }
-1103-
-1104-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1105-31 | 
-1106-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1107-33 | @protocol WKURLSchemeTask <NSObject>
-1108-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1109-34 | 
-1110-35 | /*! @abstract The request to load for this task.
-1111-
+2135-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2136-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2137-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2138-92 |             let ip = String(cString: buffer)
+2139-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2140-93 |             if isTailscaleAddress(ip) { return ip }
+2141-94 |         }
+2142-
+2143:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2144-380 | 
+2145-381 |     deinit {
+2146-382 |         if let fullScreenShortcutMonitor {
+2147-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2148-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2149-384 |         }
+2150-[268/326] Compiling Muxy ModifierKeyMonitor.swift
+2151-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2152-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2153-300 |         DispatchQueue.main.async {
+2154-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2155-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1123-442 |                 let name = String(cString: nameBuf)
-1124-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1125-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1126-444 |                 histogram[key, default: 0] += 1
-1127-
-1128-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1129- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1130- 48 |             if size > Self.maxAssetBytes {
-1131: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1132-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1133- 50 |                 return
-1134- 51 |             }
-1135-
-1136-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1137-31 | 
-1138-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1139-33 | @protocol WKURLSchemeTask <NSObject>
-1140-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1141-34 | 
-1142-35 | /*! @abstract The request to load for this task.
-1143-
+2159-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2160-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2161-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2162-92 |             let ip = String(cString: buffer)
+2163-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2164-93 |             if isTailscaleAddress(ip) { return ip }
+2165-94 |         }
+2166-
+2167:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2168-380 | 
+2169-381 |     deinit {
+2170-382 |         if let fullScreenShortcutMonitor {
+2171-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2172-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2173-384 |         }
+2174-[269/326] Compiling Muxy ShortcutActionDispatcher.swift
+2175-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2176-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2177-300 |         DispatchQueue.main.async {
+2178-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2179-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1155-442 |                 let name = String(cString: nameBuf)
-1156-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1157-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1158-444 |                 histogram[key, default: 0] += 1
-1159-
-1160-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1161- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1162- 48 |             if size > Self.maxAssetBytes {
-1163: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1164-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1165- 50 |                 return
-1166- 51 |             }
-1167-
-1168-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1169-31 | 
-1170-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1171-33 | @protocol WKURLSchemeTask <NSObject>
-1172-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1173-34 | 
-1174-35 | /*! @abstract The request to load for this task.
-1175-
+2183-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2184-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2185-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2186-92 |             let ip = String(cString: buffer)
+2187-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2188-93 |             if isTailscaleAddress(ip) { return ip }
+2189-94 |         }
+2190-
+2191:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2192-380 | 
+2193-381 |     deinit {
+2194-382 |         if let fullScreenShortcutMonitor {
+2195-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2196-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2197-384 |         }
+2198-[270/326] Compiling Muxy ShortcutContext.swift
+2199-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2200-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2201-300 |         DispatchQueue.main.async {
+2202-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2203-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1187-442 |                 let name = String(cString: nameBuf)
-1188-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1189-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1190-444 |                 histogram[key, default: 0] += 1
-1191-
-1192-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1193- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1194- 48 |             if size > Self.maxAssetBytes {
-1195: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1196-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1197- 50 |                 return
-1198- 51 |             }
-1199-
-1200-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1201-31 | 
-1202-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1203-33 | @protocol WKURLSchemeTask <NSObject>
-1204-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1205-34 | 
-1206-35 | /*! @abstract The request to load for this task.
-1207-
+2207-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2208-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2209-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2210-92 |             let ip = String(cString: buffer)
+2211-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2212-93 |             if isTailscaleAddress(ip) { return ip }
+2213-94 |         }
+2214-
+2215:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2216-380 | 
+2217-381 |     deinit {
+2218-382 |         if let fullScreenShortcutMonitor {
+2219-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2220-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2221-384 |         }
+2222-[271/326] Compiling Muxy ApprovedDevicesPersistence.swift
+2223-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2224-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2225-300 |         DispatchQueue.main.async {
+2226-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2227-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1219-442 |                 let name = String(cString: nameBuf)
-1220-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1221-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1222-444 |                 histogram[key, default: 0] += 1
-1223-
-1224-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1225- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1226- 48 |             if size > Self.maxAssetBytes {
-1227: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1228-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1229- 50 |                 return
-1230- 51 |             }
-1231-
-1232-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1233-31 | 
-1234-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1235-33 | @protocol WKURLSchemeTask <NSObject>
-1236-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1237-34 | 
-1238-35 | /*! @abstract The request to load for this task.
-1239-
+2231-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2232-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2233-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2234-92 |             let ip = String(cString: buffer)
+2235-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2236-93 |             if isTailscaleAddress(ip) { return ip }
+2237-94 |         }
+2238-
+2239:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2240-380 | 
+2241-381 |     deinit {
+2242-382 |         if let fullScreenShortcutMonitor {
+2243-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2244-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2245-384 |         }
+2246-[272/326] Compiling Muxy ApprovedDevicesStore.swift
+2247-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2248-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2249-300 |         DispatchQueue.main.async {
+2250-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2251-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1251-442 |                 let name = String(cString: nameBuf)
-1252-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1253-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1254-444 |                 histogram[key, default: 0] += 1
-1255-
-1256-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1257- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1258- 48 |             if size > Self.maxAssetBytes {
-1259: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1260-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1261- 50 |                 return
-1262- 51 |             }
-1263-
-1264-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1265-31 | 
-1266-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1267-33 | @protocol WKURLSchemeTask <NSObject>
-1268-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1269-34 | 
-1270-35 | /*! @abstract The request to load for this task.
-1271-
+2255-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2256-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2257-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2258-92 |             let ip = String(cString: buffer)
+2259-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2260-93 |             if isTailscaleAddress(ip) { return ip }
+2261-94 |         }
+2262-
+2263:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2264-380 | 
+2265-381 |     deinit {
+2266-382 |         if let fullScreenShortcutMonitor {
+2267-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2268-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2269-384 |         }
+2270-[273/326] Compiling Muxy MobilePairingService.swift
+2271-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+2272-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+2273-300 |         DispatchQueue.main.async {
+2274-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+2275-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
 --
-1283-442 |                 let name = String(cString: nameBuf)
-1284-    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1285-443 |                 let key = name.isEmpty ? "(unnamed)" : name
-1286-444 |                 histogram[key, default: 0] += 1
-1287-
-1288-/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1289- 47 |             let size = (attributes?[.size] as? Int) ?? 0
-1290- 48 |             if size > Self.maxAssetBytes {
-1291: 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
-1292-    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
-1293- 50 |                 return
-1294- 51 |             }
-1295-
-1296-/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1297-31 | 
-1298-32 | API_AVAILABLE(macos(10.13), ios(11.0))
-1299-33 | @protocol WKURLSchemeTask <NSObject>
-1300-   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
-1301-34 | 
-1302-35 | /*! @abstract The request to load for this task.
-1303-
---
-1728-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1729-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1730-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1731-92 |             let ip = String(cString: buffer)
-1732-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1733-93 |             if isTailscaleAddress(ip) { return ip }
-1734-94 |         }
-1735-
-1736:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1737-380 | 
-1738-381 |     deinit {
-1739-382 |         if let fullScreenShortcutMonitor {
-1740:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1741-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1742-384 |         }
-1743-[251/326] Compiling Muxy DiffHintPolicy.swift
-1744-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1745-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1746-300 |         DispatchQueue.main.async {
-1747-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1748-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1749-302 |         }
-1750-303 |     }
-1751-
-1752-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1753-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1754-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1755-92 |             let ip = String(cString: buffer)
-1756-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1757-93 |             if isTailscaleAddress(ip) { return ip }
-1758-94 |         }
-1759-
-1760:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1761-380 | 
-1762-381 |     deinit {
-1763-382 |         if let fullScreenShortcutMonitor {
-1764:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1765-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1766-384 |         }
-1767-[252/326] Compiling Muxy GitCommitLogParser.swift
-1768-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1769-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1770-300 |         DispatchQueue.main.async {
-1771-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1772-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1773-302 |         }
-1774-303 |     }
-1775-
-1776-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1777-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1778-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1779-92 |             let ip = String(cString: buffer)
-1780-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1781-93 |             if isTailscaleAddress(ip) { return ip }
-1782-94 |         }
-1783-
-1784:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1785-380 | 
-1786-381 |     deinit {
-1787-382 |         if let fullScreenShortcutMonitor {
-1788:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1789-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1790-384 |         }
-1791-[253/326] Compiling Muxy GitDiffParser.swift
-1792-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1793-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1794-300 |         DispatchQueue.main.async {
-1795-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1796-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1797-302 |         }
-1798-303 |     }
-1799-
-1800-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1801-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1802-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1803-92 |             let ip = String(cString: buffer)
-1804-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1805-93 |             if isTailscaleAddress(ip) { return ip }
-1806-94 |         }
-1807-
-1808:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1809-380 | 
-1810-381 |     deinit {
-1811-382 |         if let fullScreenShortcutMonitor {
-1812:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1813-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1814-384 |         }
-1815-[254/326] Compiling Muxy GitMetadataCache.swift
-1816-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1817-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1818-300 |         DispatchQueue.main.async {
-1819-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1820-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1821-302 |         }
-1822-303 |     }
-1823-
-1824-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1825-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1826-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1827-92 |             let ip = String(cString: buffer)
-1828-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1829-93 |             if isTailscaleAddress(ip) { return ip }
-1830-94 |         }
-1831-
-1832:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1833-380 | 
-1834-381 |     deinit {
-1835-382 |         if let fullScreenShortcutMonitor {
-1836:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1837-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1838-384 |         }
-1839-[255/326] Compiling Muxy GitModels.swift
-1840-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1841-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1842-300 |         DispatchQueue.main.async {
-1843-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1844-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1845-302 |         }
-1846-303 |     }
-1847-
-1848-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1849-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1850-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1851-92 |             let ip = String(cString: buffer)
-1852-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1853-93 |             if isTailscaleAddress(ip) { return ip }
-1854-94 |         }
-1855-
-1856:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1857-380 | 
-1858-381 |     deinit {
-1859-382 |         if let fullScreenShortcutMonitor {
-1860:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1861-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1862-384 |         }
-1863-[256/326] Compiling Muxy GitPRParser.swift
-1864-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1865-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1866-300 |         DispatchQueue.main.async {
-1867-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1868-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1869-302 |         }
-1870-303 |     }
-1871-
-1872-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1873-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1874-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1875-92 |             let ip = String(cString: buffer)
-1876-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1877-93 |             if isTailscaleAddress(ip) { return ip }
-1878-94 |         }
-1879-
-1880:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1881-380 | 
-1882-381 |     deinit {
-1883-382 |         if let fullScreenShortcutMonitor {
-1884:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1885-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1886-384 |         }
-1887-[257/326] Compiling Muxy GitProcessRunner.swift
-1888-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1889-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1890-300 |         DispatchQueue.main.async {
-1891-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1892-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1893-302 |         }
-1894-303 |     }
-1895-
-1896-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1897-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1898-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1899-92 |             let ip = String(cString: buffer)
-1900-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1901-93 |             if isTailscaleAddress(ip) { return ip }
-1902-94 |         }
-1903-
-1904:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1905-380 | 
-1906-381 |     deinit {
-1907-382 |         if let fullScreenShortcutMonitor {
-1908:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1909-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1910-384 |         }
-1911-[258/326] Compiling Muxy GitRepoStatusCache.swift
-1912-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1913-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1914-300 |         DispatchQueue.main.async {
-1915-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1916-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1917-302 |         }
-1918-303 |     }
-1919-
-1920-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1921-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1922-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1923-92 |             let ip = String(cString: buffer)
-1924-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1925-93 |             if isTailscaleAddress(ip) { return ip }
-1926-94 |         }
-1927-
-1928:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1929-380 | 
-1930-381 |     deinit {
-1931-382 |         if let fullScreenShortcutMonitor {
-1932:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1933-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1934-384 |         }
-1935-[259/326] Compiling Muxy GitRepositoryService.swift
-1936-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1937-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1938-300 |         DispatchQueue.main.async {
-1939-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1940-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1941-302 |         }
-1942-303 |     }
-1943-
-1944-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1945-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1946-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1947-92 |             let ip = String(cString: buffer)
-1948-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1949-93 |             if isTailscaleAddress(ip) { return ip }
-1950-94 |         }
-1951-
-1952:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1953-380 | 
-1954-381 |     deinit {
-1955-382 |         if let fullScreenShortcutMonitor {
-1956:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1957-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1958-384 |         }
-1959-[260/326] Compiling Muxy GitSignpost.swift
-1960-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1961-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1962-300 |         DispatchQueue.main.async {
-1963-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1964-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1965-302 |         }
-1966-303 |     }
-1967-
-1968-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1969-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1970-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1971-92 |             let ip = String(cString: buffer)
-1972-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1973-93 |             if isTailscaleAddress(ip) { return ip }
-1974-94 |         }
-1975-
-1976:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1977-380 | 
-1978-381 |     deinit {
-1979-382 |         if let fullScreenShortcutMonitor {
-1980:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-1981-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-1982-384 |         }
-1983-[261/326] Compiling Muxy GitStatusAggregator.swift
-1984-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1985-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-1986-300 |         DispatchQueue.main.async {
-1987-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-1988-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-1989-302 |         }
-1990-303 |     }
-1991-
-1992-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1993-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-1994-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-1995-92 |             let ip = String(cString: buffer)
-1996-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-1997-93 |             if isTailscaleAddress(ip) { return ip }
-1998-94 |         }
-1999-
-2000:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2001-380 | 
-2002-381 |     deinit {
-2003-382 |         if let fullScreenShortcutMonitor {
-2004:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2005-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2006-384 |         }
-2007-[262/326] Compiling Muxy GitStatusParser.swift
-2008-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2009-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2010-300 |         DispatchQueue.main.async {
-2011-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2012-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2013-302 |         }
-2014-303 |     }
-2015-
-2016-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2017-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2018-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2019-92 |             let ip = String(cString: buffer)
-2020-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2021-93 |             if isTailscaleAddress(ip) { return ip }
-2022-94 |         }
-2023-
-2024:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2025-380 | 
-2026-381 |     deinit {
-2027-382 |         if let fullScreenShortcutMonitor {
-2028:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2029-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2030-384 |         }
-2031-[263/326] Compiling Muxy GitWorktreeService.swift
-2032-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2033-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2034-300 |         DispatchQueue.main.async {
-2035-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2036-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2037-302 |         }
-2038-303 |     }
-2039-
-2040-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2041-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2042-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2043-92 |             let ip = String(cString: buffer)
-2044-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2045-93 |             if isTailscaleAddress(ip) { return ip }
-2046-94 |         }
-2047-
-2048:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2049-380 | 
-2050-381 |     deinit {
-2051-382 |         if let fullScreenShortcutMonitor {
-2052:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2053-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2054-384 |         }
-2055-[264/326] Compiling Muxy CommandShortcutStore.swift
-2056-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2057-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2058-300 |         DispatchQueue.main.async {
-2059-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2060-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2061-302 |         }
-2062-303 |     }
-2063-
-2064-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2065-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2066-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2067-92 |             let ip = String(cString: buffer)
-2068-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2069-93 |             if isTailscaleAddress(ip) { return ip }
-2070-94 |         }
-2071-
-2072:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2073-380 | 
-2074-381 |     deinit {
-2075-382 |         if let fullScreenShortcutMonitor {
-2076:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2077-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2078-384 |         }
-2079-[265/326] Compiling Muxy HotkeyWindowController.swift
-2080-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2081-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2082-300 |         DispatchQueue.main.async {
-2083-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2084-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2085-302 |         }
-2086-303 |     }
-2087-
-2088-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2089-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2090-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2091-92 |             let ip = String(cString: buffer)
-2092-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2093-93 |             if isTailscaleAddress(ip) { return ip }
-2094-94 |         }
-2095-
-2096:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2097-380 | 
-2098-381 |     deinit {
-2099-382 |         if let fullScreenShortcutMonitor {
-2100:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2101-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2102-384 |         }
-2103-[266/326] Compiling Muxy KeyBindingPersistence.swift
-2104-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2105-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2106-300 |         DispatchQueue.main.async {
-2107-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2108-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2109-302 |         }
-2110-303 |     }
-2111-
-2112-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2113-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2114-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2115-92 |             let ip = String(cString: buffer)
-2116-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2117-93 |             if isTailscaleAddress(ip) { return ip }
-2118-94 |         }
-2119-
-2120:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2121-380 | 
-2122-381 |     deinit {
-2123-382 |         if let fullScreenShortcutMonitor {
-2124:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2125-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2126-384 |         }
-2127-[267/326] Compiling Muxy KeyBindingStore.swift
-2128-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2129-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2130-300 |         DispatchQueue.main.async {
-2131-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2132-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2133-302 |         }
-2134-303 |     }
-2135-
-2136-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2137-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2138-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2139-92 |             let ip = String(cString: buffer)
-2140-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2141-93 |             if isTailscaleAddress(ip) { return ip }
-2142-94 |         }
-2143-
-2144:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2145-380 | 
-2146-381 |     deinit {
-2147-382 |         if let fullScreenShortcutMonitor {
-2148:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2149-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2150-384 |         }
-2151-[268/326] Compiling Muxy ModifierKeyMonitor.swift
-2152-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2153-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2154-300 |         DispatchQueue.main.async {
-2155-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2156-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2157-302 |         }
-2158-303 |     }
-2159-
-2160-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2161-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2162-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2163-92 |             let ip = String(cString: buffer)
-2164-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2165-93 |             if isTailscaleAddress(ip) { return ip }
-2166-94 |         }
-2167-
-2168:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2169-380 | 
-2170-381 |     deinit {
-2171-382 |         if let fullScreenShortcutMonitor {
-2172:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2173-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2174-384 |         }
-2175-[269/326] Compiling Muxy ShortcutActionDispatcher.swift
-2176-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2177-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2178-300 |         DispatchQueue.main.async {
-2179-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2180-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2181-302 |         }
-2182-303 |     }
-2183-
-2184-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2185-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2186-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2187-92 |             let ip = String(cString: buffer)
-2188-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2189-93 |             if isTailscaleAddress(ip) { return ip }
-2190-94 |         }
-2191-
-2192:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2193-380 | 
-2194-381 |     deinit {
-2195-382 |         if let fullScreenShortcutMonitor {
-2196:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2197-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2198-384 |         }
-2199-[270/326] Compiling Muxy ShortcutContext.swift
-2200-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2201-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2202-300 |         DispatchQueue.main.async {
-2203-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2204-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2205-302 |         }
-2206-303 |     }
-2207-
-2208-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2209-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2210-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2211-92 |             let ip = String(cString: buffer)
-2212-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2213-93 |             if isTailscaleAddress(ip) { return ip }
-2214-94 |         }
-2215-
-2216:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2217-380 | 
-2218-381 |     deinit {
-2219-382 |         if let fullScreenShortcutMonitor {
-2220:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2221-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2222-384 |         }
-2223-[271/326] Compiling Muxy ApprovedDevicesPersistence.swift
-2224-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2225-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2226-300 |         DispatchQueue.main.async {
-2227-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2228-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2229-302 |         }
-2230-303 |     }
-2231-
-2232-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2233-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2234-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2235-92 |             let ip = String(cString: buffer)
-2236-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2237-93 |             if isTailscaleAddress(ip) { return ip }
-2238-94 |         }
-2239-
-2240:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2241-380 | 
-2242-381 |     deinit {
-2243-382 |         if let fullScreenShortcutMonitor {
-2244:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2245-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2246-384 |         }
-2247-[272/326] Compiling Muxy ApprovedDevicesStore.swift
-2248-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2249-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2250-300 |         DispatchQueue.main.async {
-2251-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2252-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2253-302 |         }
-2254-303 |     }
-2255-
-2256-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2257-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2258-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2259-92 |             let ip = String(cString: buffer)
-2260-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2261-93 |             if isTailscaleAddress(ip) { return ip }
-2262-94 |         }
-2263-
-2264:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2265-380 | 
-2266-381 |     deinit {
-2267-382 |         if let fullScreenShortcutMonitor {
-2268:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2269-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2270-384 |         }
-2271-[273/326] Compiling Muxy MobilePairingService.swift
-2272-/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2273-299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
-2274-300 |         DispatchQueue.main.async {
-2275-301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
-2276-    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
-2277-302 |         }
-2278-303 |     }
-2279-
-2280-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2281-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
-2282-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
-2283-92 |             let ip = String(cString: buffer)
-2284-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
-2285-93 |             if isTailscaleAddress(ip) { return ip }
-2286-94 |         }
-2287-
-2288:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2289-380 | 
-2290-381 |     deinit {
-2291-382 |         if let fullScreenShortcutMonitor {
-2292:    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
-2293-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
-2294-384 |         }
-2295-[274/350] Compiling Muxy ProjectLogoStorage.swift
-2296-/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
-2297-202 |             .filter { !$0.isBare && !$0.isPrunable }
-2298-203 |         var list = worktrees[project.id] ?? []
-2299-204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
-2300-    |                          `- warning: no calls to throwing functions occur within 'try' expression
-2301-205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
-2302-206 | 
-2303-[275/350] Compiling Muxy ProjectOpenPresentationRouter.swift
-2304-/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+2279-/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2280-90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+2281-91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+2282-92 |             let ip = String(cString: buffer)
+2283-   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+2284-93 |             if isTailscaleAddress(ip) { return ip }
+2285-94 |         }
+2286-
+2287:/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2288-380 | 
+2289-381 |     deinit {
+2290-382 |         if let fullScreenShortcutMonitor {
+2291-    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+2292-383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+2293-384 |         }
+2294-[274/350] Compiling Muxy ProjectLogoStorage.swift
+2295-/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+2296-202 |             .filter { !$0.isBare && !$0.isPrunable }
+2297-203 |         var list = worktrees[project.id] ?? []
+2298-204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+2299-    |                          `- warning: no calls to throwing functions occur within 'try' expression
