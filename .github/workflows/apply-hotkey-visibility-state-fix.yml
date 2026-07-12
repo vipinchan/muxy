@@ -22,20 +22,13 @@ jobs:
 
           path = Path('Muxy/Services/Keyboard/HotkeyWindowController.swift')
           text = path.read_text()
-          old = '''    func hide() {
-              guard isPresented, let window else { return }
-              if isOverlayFullScreen {
-                  exitOverlayFullScreen(window, animated: false)
-              }
-              if window.styleMask.contains(.fullScreen) || isFullScreenTransitioning {
-          '''
-          new = '''    func hide() {
-              guard isPresented, let window else { return }
-              if window.styleMask.contains(.fullScreen) || isFullScreenTransitioning {
-          '''
+          old = """        if isOverlayFullScreen {
+              exitOverlayFullScreen(window, animated: false)
+          }
+          """
           if old not in text:
-              raise SystemExit('Expected hide() snippet not found')
-          path.write_text(text.replace(old, new, 1))
+              raise SystemExit('Expected overlay fullscreen exit block not found')
+          path.write_text(text.replace(old, '', 1))
           PY
       - name: Commit fix
         run: |
