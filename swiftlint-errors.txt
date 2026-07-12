@@ -1,0 +1,1 @@
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:128:21: error: Void Function in Ternary Violation: Using ternary to call Void functions should be avoided (void_function_in_ternary)
