@@ -163,9 +163,6 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
 
     func hide() {
         guard isPresented, let window else { return }
-        if isOverlayFullScreen {
-            exitOverlayFullScreen(window, animated: false)
-        }
         if window.styleMask.contains(.fullScreen) || isFullScreenTransitioning {
             pendingHideAfterFullScreenExit = true
             if window.styleMask.contains(.fullScreen), !isFullScreenTransitioning {
