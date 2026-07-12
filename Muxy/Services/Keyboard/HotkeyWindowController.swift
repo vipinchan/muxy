@@ -249,14 +249,16 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
     private func installFullScreenShortcutMonitor(for window: NSWindow) {
         guard fullScreenShortcutMonitor == nil else { return }
         fullScreenShortcutMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self, weak window] event in
-            guard let self,
-                  let window,
-                  window.isKeyWindow,
-                  ShortcutContext.isHotkeyWindow(window),
-                  KeyBindingStore.shared.combo(for: .toggleFullScreen).matches(event: event)
-            else { return event }
-            self.toggleNativeFullScreen()
-            return nil
+            MainActor.assumeIsolated {
+                guard let self,
+                      let window,
+                      window.isKeyWindow,
+                      ShortcutContext.isHotkeyWindow(window),
+                      KeyBindingStore.shared.combo(for: .toggleFullScreen).matches(event: event)
+                else { return event }
+                self.toggleNativeFullScreen()
+                return nil
+            }
         }
     }
 
