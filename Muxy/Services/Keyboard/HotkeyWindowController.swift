@@ -125,7 +125,11 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
     }
 
     func toggle() {
-        isPresented ? hide() : show()
+        if isPresented {
+            hide()
+        } else {
+            show()
+        }
     }
 
     func show() {
