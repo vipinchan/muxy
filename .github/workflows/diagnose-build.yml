@@ -20,14 +20,16 @@ jobs:
         run: scripts/setup.sh
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Capture build diagnostics
+      - name: Capture compiler errors
         run: |
-          swift build --build-tests --quiet > build-errors.txt 2>&1 || true
-          if git diff --quiet -- build-errors.txt && git ls-files --error-unmatch build-errors.txt >/dev/null 2>&1; then
+          swift build --build-tests --quiet > /tmp/build.log 2>&1 || true
+          grep -B 8 -A 12 -n "error:" /tmp/build.log > compile-errors.txt || true
+          rm -f build-errors.txt
+          if git diff --quiet -- compile-errors.txt build-errors.txt && git ls-files --error-unmatch compile-errors.txt >/dev/null 2>&1; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add build-errors.txt
-          git commit -m "ci: capture Swift build diagnostics"
+          git add -A compile-errors.txt build-errors.txt
+          git commit -m "ci: capture Swift compiler errors"
           git push origin HEAD:feature/dedicated-hotkey-window
