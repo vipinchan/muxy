@@ -14,7 +14,7 @@ struct KeyboardShortcutsSettingsView: View {
         VStack(spacing: 0) {
             header
             SettingsDivider()
-            appShortcutsList
+            shortcutSettingsList
         }
     }
 
@@ -45,11 +45,12 @@ struct KeyboardShortcutsSettingsView: View {
         .padding(SettingsMetrics.horizontalPadding)
     }
 
-    private var appShortcutsList: some View {
+    private var shortcutSettingsList: some View {
         let visibleCategories = ShortcutAction.categories.filter { !filteredActions(for: $0).isEmpty }
         let extensionGroups = filteredExtensionGroups
         return ScrollView(.vertical, showsIndicators: true) {
             VStack(spacing: 0) {
+                GlobalHotkeySettingsSection()
                 ForEach(visibleCategories, id: \.self) { category in
                     categorySection(
                         title: category,
