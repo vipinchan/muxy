@@ -1,4 +1,4 @@
-name: Diagnose Build
+name: Apply Hotkey Build Fix
 
 on:
   pull_request:
@@ -8,28 +8,35 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  fix:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
         with:
           ref: feature/dedicated-hotkey-window
-      - name: Select Xcode
-        run: sudo xcode-select -s "/Applications/Xcode_$(grep '^xcode ' .tool-versions | awk '{print $2}').app"
-      - name: Setup GhosttyKit
-        run: scripts/setup.sh
-        env:
-          GH_TOKEN: ${{ github.token }}
-      - name: Capture compiler errors
+      - name: Apply targeted Swift 6 fix
         run: |
-          swift build --build-tests --quiet > /tmp/build.log 2>&1 || true
-          grep -E -B 8 -A 12 -n '(^error:|:[0-9]+:[0-9]+: error:)' /tmp/build.log > compile-errors.txt || true
-          rm -f build-errors.txt
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("Muxy/Services/Keyboard/HotkeyWindowController.swift")
+          text = path.read_text()
+          old = '''
+    deinit {
+        if let fullScreenShortcutMonitor {
+            NSEvent.removeMonitor(fullScreenShortcutMonitor)
+        }
+    }
+'''
+          if old in text:
+              path.write_text(text.replace(old, "", 1))
+          PY
+          rm -f compile-errors.txt build-errors.txt
           if git diff --quiet; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "ci: isolate Swift compiler errors"
+          git commit -m "fix: avoid nonisolated deinit monitor access"
           git push origin HEAD:feature/dedicated-hotkey-window
