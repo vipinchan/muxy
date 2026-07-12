@@ -47,6 +47,7 @@ struct GlobalHotkeySettingsSection: View {
                     }
                 }
                 .labelsHidden()
+                .pickerStyle(.menu)
                 .frame(width: SettingsMetrics.controlWidth, alignment: .trailing)
                 .disabled(!isEnabled)
             }
