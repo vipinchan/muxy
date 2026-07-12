@@ -114,6 +114,10 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) - 2
     )
 
+    private static let overlayFullScreenWindowLevel = NSWindow.Level(
+        rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) + 1
+    )
+
     override private init() {
         super.init()
     }
@@ -308,7 +312,7 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         window.isMovable = false
         window.isMovableByWindowBackground = false
         window.hasShadow = false
-        applyHotkeyPresentation(to: window)
+        applyOverlayFullScreenPresentation(to: window)
         postFullScreenChange(true, for: window)
         window.setFrame(screen.frame, display: true, animate: animated)
         window.orderFrontRegardless()
@@ -353,6 +357,11 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
     private func applyHotkeyPresentation(to window: NSWindow) {
         window.collectionBehavior = Self.hotkeyCollectionBehavior
         window.level = Self.hotkeyWindowLevel
+    }
+
+    private func applyOverlayFullScreenPresentation(to window: NSWindow) {
+        window.collectionBehavior = Self.hotkeyCollectionBehavior
+        window.level = Self.overlayFullScreenWindowLevel
     }
 
     private func prepareForNativeFullScreen(_ window: NSWindow) {
