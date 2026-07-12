@@ -1,0 +1,263 @@
+double_command_exit_code=0
+shortcut_context_exit_code=0
+---- DoubleCommandTapDetector failures ----
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+--
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+--
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+--
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+--
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+--
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+--
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+--
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+---- DoubleCommandTapDetector tail ----
+[660/724] Compiling MuxyTests MuxyAPIFilesTests.swift
+[661/724] Compiling MuxyTests MuxyAPIGitTests.swift
+[662/724] Compiling MuxyTests MuxyAPIGitWorktreeTests.swift
+[663/724] Compiling MuxyTests MuxyAPIPanesMaterializeTests.swift
+[664/724] Compiling MuxyTests MuxyAPIProjectDeleteTests.swift
+[665/724] Compiling MuxyTests MuxyAPIProjectManagementTests.swift
+[666/724] Compiling MuxyTests MuxyAPITabsControlTests.swift
+[667/724] Compiling MuxyTests MuxyAPITabsCustomizeTests.swift
+[668/724] Compiling MuxyTests MuxyAPITabsOpenTests.swift
+[669/724] Compiling MuxyTests MuxyAPITabsResolveDirectoryTests.swift
+[670/724] Compiling MuxyTests MuxyURLOpenTests.swift
+[671/724] Compiling MuxyTests DesktopNotificationServiceTests.swift
+[672/724] Compiling MuxyTests MuxyNotificationHooksTests.swift
+[673/724] Compiling MuxyTests CodableFileStoreTests.swift
+[674/724] Compiling MuxyTests SettingsJSONStoreTests.swift
+[675/724] Compiling MuxyTests GitWorktreesWatcherTests.swift
+[676/724] Compiling MuxyTests HomeProjectServiceTests.swift
+[677/724] Compiling MuxyTests ProjectGroupStoreTests.swift
+[678/724] Compiling MuxyTests CLIWrapperScriptTests.swift
+[679/724] Compiling MuxyTests DroppedPathsParserTests.swift
+[680/724] Compiling MuxyTests LoginShellPathTests.swift
+[681/724] Compiling MuxyTests ReleaseNotesMarkdownTests.swift
+[682/724] Compiling MuxyTests SemanticVersionTests.swift
+[683/724] Compiling MuxyTests ShellEscaperTests.swift
+[684/724] Compiling MuxyTests BrowserAddressFieldTests.swift
+[685/724] Compiling MuxyTests BrowserInspectableWebViewTests.swift
+[686/724] Compiling MuxyTests ExtensionRemoteIconCacheTests.swift
+[687/724] Compiling MuxyTests PaletteSearchFieldTests.swift
+[688/724] Compiling MuxyTests ProjectPickerFooterShortcutTests.swift
+[689/724] Compiling MuxyTests ClosureMenuItemTests.swift
+[690/724] Compiling MuxyTests ExtensionConsentDialogTests.swift
+[691/724] Compiling MuxyTests ExtensionWebViewTests.swift
+[692/724] Compiling MuxyTests SidebarLayoutTests.swift
+[693/724] Compiling MuxyTests WorktreeRemovalConfirmationTests.swift
+[694/724] Compiling MuxyTests SettingsCatalogTests.swift
+[695/724] Compiling MuxyTests ProjectStatusBarTests.swift
+[696/724] Compiling MuxyTests SleepingTabPlaceholderPolicyTests.swift
+[697/724] Compiling MuxyTests TerminalBridgeResolveFilePathTests.swift
+[698/724] Compiling MuxyTests TerminalTextInputClientTests.swift
+[699/724] Compiling MuxyTests WindowConfiguratorTests.swift
+[700/724] Compiling MuxyTests ProjectOpenServiceTests.swift
+[701/724] Compiling MuxyTests ProjectSidebarDropHandlerTests.swift
+[702/724] Compiling MuxyTests ProjectStoreTests.swift
+[703/724] Compiling MuxyTests SidebarGroupTests.swift
+[704/724] Compiling MuxyTests VCSWorktreeAutoRefresherTests.swift
+[705/724] Compiling MuxyTests WorkspaceSelectionServiceTests.swift
+[706/724] Compiling MuxyTests WorktreeLocationResolverTests.swift
+[707/724] Compiling MuxyTests WorktreeStoreTests.swift
+[708/724] Compiling MuxyTests WorktreeTeardownRunnerTests.swift
+[709/724] Compiling MuxyTests ProjectPickerDefaultLocationSettingsModelTests.swift
+[710/724] Compiling MuxyTests ProjectPickerNavigatorTests.swift
+[711/724] Compiling MuxyTests ProjectPickerPathServiceTests.swift
+[712/724] Compiling MuxyTests ProjectPickerPreferencesTests.swift
+[713/724] Compiling MuxyTests ProjectPickerSessionTests.swift
+[714/724] Compiling MuxyTests ProjectPickerWorkflowTests.swift
+[715/724] Compiling MuxyTests ClaudeCodeProviderTests.swift
+[716/724] Compiling MuxyTests CodexProviderTests.swift
+[717/724] Compiling MuxyTests DroidProviderTests.swift
+[718/724] Compiling MuxyTests GrokProviderTests.swift
+[719/724] Compiling MuxyTests PiProviderTests.swift
+[720/724] Compiling MuxyTests ProviderExecutableLocatorTests.swift
+[721/724] Compiling MuxyTests CommandTransformTests.swift
+[722/724] Compiling MuxyTests RemoteProjectPickerTests.swift
+[723/726] Emitting module MuxyPackageTests
+[724/726] Compiling MuxyPackageTests runner.swift
+[724/726] Write Objects.LinkFileList
+warning: (arm64)  could not find symbol '_ImFontConfig_ImFontConfig' in object file '/Users/runner/work/muxy/muxy/GhosttyKit.xcframework/macos-arm64_x86_64/ghostty-internal.a(ext.o)'
+warning: (arm64)  could not find symbol '_ImGuiStyle_ImGuiStyle' in object file '/Users/runner/work/muxy/muxy/GhosttyKit.xcframework/macos-arm64_x86_64/ghostty-internal.a(ext.o)'
+[725/726] Linking MuxyPackageTests
+Build complete! (157.89s)
+Test Suite 'Selected tests' started at 2026-07-12 11:04:47.357.
+Test Suite 'MuxyPackageTests.xctest' started at 2026-07-12 11:04:47.362.
+Test Suite 'MuxyPackageTests.xctest' passed at 2026-07-12 11:04:47.362.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-07-12 11:04:47.362.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+◇ Test run started.
+↳ Testing Library Version: 124.4
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 7 tests passed after 0.001 seconds.
+---- ShortcutContext failures ----
+---- ShortcutContext tail ----
+[0/1] Planning build
+Building for debugging...
+[0/7] Write swift-version--79AA4F9932D1E87A.txt
+warning: (arm64)  could not find symbol '_ImFontConfig_ImFontConfig' in object file '/Users/runner/work/muxy/muxy/GhosttyKit.xcframework/macos-arm64_x86_64/ghostty-internal.a(ext.o)'
+warning: (arm64)  could not find symbol '_ImGuiStyle_ImGuiStyle' in object file '/Users/runner/work/muxy/muxy/GhosttyKit.xcframework/macos-arm64_x86_64/ghostty-internal.a(ext.o)'
+[1/2] Linking MuxyPackageTests
+Build complete! (5.32s)
+Test Suite 'Selected tests' started at 2026-07-12 11:04:53.668.
+Test Suite 'MuxyPackageTests.xctest' started at 2026-07-12 11:04:53.669.
+Test Suite 'MuxyPackageTests.xctest' passed at 2026-07-12 11:04:53.669.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-07-12 11:04:53.669.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 124.4
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 7 tests passed after 0.129 seconds.
