@@ -1,0 +1,49 @@
+name: Diagnose Hotkey Tests
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  tests:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ci/hotkey-test-diagnostics
+      - name: Select Xcode
+        run: sudo xcode-select -s "/Applications/Xcode_$(grep '^xcode ' .tool-versions | awk '{print $2}').app"
+      - name: Setup GhosttyKit
+        run: scripts/setup.sh
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Run new hotkey tests and capture failures
+        run: |
+          set +e
+          swift test --quiet --filter DoubleCommandTapDetectorTests > /tmp/double-command-tests.log 2>&1
+          double_status=$?
+          swift test --quiet --filter ShortcutContextTests > /tmp/shortcut-context-tests.log 2>&1
+          shortcut_status=$?
+          set -e
+
+          {
+            echo "double_command_exit_code=$double_status"
+            echo "shortcut_context_exit_code=$shortcut_status"
+            echo "---- DoubleCommandTapDetector failures ----"
+            grep -Ei -B 5 -A 15 'failed|expectation|issue recorded|error:|✘|×' /tmp/double-command-tests.log | tail -n 160 || true
+            echo "---- DoubleCommandTapDetector tail ----"
+            tail -n 80 /tmp/double-command-tests.log
+            echo "---- ShortcutContext failures ----"
+            grep -Ei -B 5 -A 15 'failed|expectation|issue recorded|error:|✘|×' /tmp/shortcut-context-tests.log | tail -n 160 || true
+            echo "---- ShortcutContext tail ----"
+            tail -n 80 /tmp/shortcut-context-tests.log
+          } > hotkey-test-diagnostics.txt
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hotkey-test-diagnostics.txt
+          git commit -m "ci: capture hotkey test diagnostics"
+          git push origin HEAD:ci/hotkey-test-diagnostics
