@@ -1,0 +1,46 @@
+name: Apply Hotkey Visibility State Fix
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.head_ref == 'feature/dedicated-hotkey-window'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/dedicated-hotkey-window
+      - name: Preserve overlay fullscreen across visibility toggles
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('Muxy/Services/Keyboard/HotkeyWindowController.swift')
+          text = path.read_text()
+          old = '''    func hide() {
+              guard isPresented, let window else { return }
+              if isOverlayFullScreen {
+                  exitOverlayFullScreen(window, animated: false)
+              }
+              if window.styleMask.contains(.fullScreen) || isFullScreenTransitioning {
+          '''
+          new = '''    func hide() {
+              guard isPresented, let window else { return }
+              if window.styleMask.contains(.fullScreen) || isFullScreenTransitioning {
+          '''
+          if old not in text:
+              raise SystemExit('Expected hide() snippet not found')
+          path.write_text(text.replace(old, new, 1))
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Muxy/Services/Keyboard/HotkeyWindowController.swift
+          git commit -m "fix: preserve hotkey fullscreen state when hidden"
+          git push origin HEAD:feature/dedicated-hotkey-window
