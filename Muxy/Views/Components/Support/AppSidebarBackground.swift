@@ -1,6 +1,17 @@
 import AppKit
 import SwiftUI
 
+private struct HotkeyWorkspaceEnvironmentKey: EnvironmentKey {
+    static let defaultValue = false
+}
+
+extension EnvironmentValues {
+    var isHotkeyWorkspace: Bool {
+        get { self[HotkeyWorkspaceEnvironmentKey.self] }
+        set { self[HotkeyWorkspaceEnvironmentKey.self] = newValue }
+    }
+}
+
 enum AppSidebarVibrancy {
     static let material = NSVisualEffectView.Material.sidebar
     static let blendingMode = NSVisualEffectView.BlendingMode.behindWindow
@@ -14,9 +25,11 @@ struct AppSidebarBackground: View {
 
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     @Environment(\.colorSchemeContrast) private var colorSchemeContrast
+    @Environment(\.isHotkeyWorkspace) private var isHotkeyWorkspace
 
     private var usesVibrancy: Bool {
-        AppSidebarVibrancyPolicy.isActive(
+        guard !isHotkeyWorkspace else { return false }
+        return AppSidebarVibrancyPolicy.isActive(
             style: style,
             reduceTransparency: reduceTransparency,
             increaseContrast: colorSchemeContrast == .increased,
