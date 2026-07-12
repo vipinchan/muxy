@@ -96,6 +96,10 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
     private var fullScreenShortcutMonitor: Any?
     private var isFullScreenTransitioning = false
     private var pendingHideAfterFullScreenExit = false
+    private var isOverlayFullScreen = false
+    private var overlayRestoreFrame: NSRect?
+    private var overlayRestoreStyleMask: NSWindow.StyleMask?
+    private var overlayRestoreHasShadow = true
 
     private(set) var isPresented = false
 
@@ -144,7 +148,10 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         capturePreviousApplication()
         pendingHideAfterFullScreenExit = false
 
-        if !window.styleMask.contains(.fullScreen), !isFullScreenTransitioning {
+        if !isOverlayFullScreen,
+           !window.styleMask.contains(.fullScreen),
+           !isFullScreenTransitioning
+        {
             applyHotkeyPresentation(to: window)
             window.setFrame(hotkeyFrame(), display: true)
         }
@@ -156,6 +163,9 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
 
     func hide() {
         guard isPresented, let window else { return }
+        if isOverlayFullScreen {
+            exitOverlayFullScreen(window, animated: false)
+        }
         if window.styleMask.contains(.fullScreen) || isFullScreenTransitioning {
             pendingHideAfterFullScreenExit = true
             if window.styleMask.contains(.fullScreen), !isFullScreenTransitioning {
@@ -166,9 +176,13 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         finishHide()
     }
 
-    func toggleNativeFullScreen() {
+    func toggleOverlayFullScreen() {
         guard let window else { return }
-        window.toggleFullScreen(nil)
+        if isOverlayFullScreen {
+            exitOverlayFullScreen(window, animated: true)
+        } else {
+            enterOverlayFullScreen(window, animated: true)
+        }
     }
 
     private func createWindow() {
@@ -240,6 +254,12 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         window.identifier = ShortcutContext.hotkeyWindowIdentifier
         window.suppressConfiguratorClose = false
         window.delegate = self
+        configureWindowChrome(window)
+        applyHotkeyPresentation(to: window)
+        window.orderOut(nil)
+    }
+
+    private func configureWindowChrome(_ window: HotkeyWorkspaceWindow) {
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .hidden
         window.styleMask.insert(.fullSizeContentView)
@@ -258,8 +278,10 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
             closeButton.target = self
             closeButton.action = #selector(handleCloseButton(_:))
         }
-        applyHotkeyPresentation(to: window)
-        window.orderOut(nil)
+        if let zoomButton = window.standardWindowButton(.zoomButton) {
+            zoomButton.target = self
+            zoomButton.action = #selector(handleFullScreenButton(_:))
+        }
     }
 
     private func installFullScreenShortcutMonitor(for window: NSWindow) {
@@ -271,9 +293,64 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
                   ShortcutContext.isHotkeyWindow(window),
                   KeyBindingStore.shared.combo(for: .toggleFullScreen).matches(event: event)
             else { return event }
-            self.toggleNativeFullScreen()
+            self.toggleOverlayFullScreen()
             return nil
         }
+    }
+
+    private func enterOverlayFullScreen(_ window: HotkeyWorkspaceWindow, animated: Bool) {
+        guard !isOverlayFullScreen else { return }
+        guard let screen = window.screen ?? screenUnderMouse() ?? NSScreen.main else { return }
+
+        overlayRestoreFrame = window.frame
+        overlayRestoreStyleMask = window.styleMask
+        overlayRestoreHasShadow = window.hasShadow
+        isOverlayFullScreen = true
+
+        window.styleMask = [.borderless, .resizable, .nonactivatingPanel]
+        window.isMovable = false
+        window.isMovableByWindowBackground = false
+        window.hasShadow = false
+        applyHotkeyPresentation(to: window)
+        postFullScreenChange(true, for: window)
+        window.setFrame(screen.frame, display: true, animate: animated)
+        window.orderFrontRegardless()
+        window.makeKeyAndOrderFront(nil)
+    }
+
+    private func exitOverlayFullScreen(_ window: HotkeyWorkspaceWindow, animated: Bool) {
+        guard isOverlayFullScreen else { return }
+
+        let restoreFrame = overlayRestoreFrame ?? hotkeyFrame()
+        let restoreStyleMask = overlayRestoreStyleMask ?? [
+            .titled,
+            .closable,
+            .miniaturizable,
+            .resizable,
+            .fullSizeContentView,
+            .nonactivatingPanel,
+        ]
+
+        isOverlayFullScreen = false
+        overlayRestoreFrame = nil
+        overlayRestoreStyleMask = nil
+
+        window.styleMask = restoreStyleMask
+        window.hasShadow = overlayRestoreHasShadow
+        configureWindowChrome(window)
+        applyHotkeyPresentation(to: window)
+        postFullScreenChange(false, for: window)
+        window.setFrame(restoreFrame, display: true, animate: animated)
+        window.orderFrontRegardless()
+        window.makeKeyAndOrderFront(nil)
+    }
+
+    private func postFullScreenChange(_ isFullScreen: Bool, for window: NSWindow) {
+        NotificationCenter.default.post(
+            name: .windowFullScreenDidChange,
+            object: window,
+            userInfo: ["isFullScreen": isFullScreen]
+        )
     }
 
     private func applyHotkeyPresentation(to window: NSWindow) {
@@ -339,6 +416,11 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         hide()
     }
 
+    @objc
+    private func handleFullScreenButton(_: Any?) {
+        toggleOverlayFullScreen()
+    }
+
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         hide()
         return false
@@ -357,11 +439,7 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
               ShortcutContext.isHotkeyWindow(window)
         else { return }
         isFullScreenTransitioning = false
-        NotificationCenter.default.post(
-            name: .windowFullScreenDidChange,
-            object: window,
-            userInfo: ["isFullScreen": true]
-        )
+        postFullScreenChange(true, for: window)
     }
 
     func windowWillExitFullScreen(_ notification: Notification) {
@@ -372,16 +450,13 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
     }
 
     func windowDidExitFullScreen(_ notification: Notification) {
-        guard let window = notification.object as? NSWindow,
+        guard let window = notification.object as? HotkeyWorkspaceWindow,
               ShortcutContext.isHotkeyWindow(window)
         else { return }
         isFullScreenTransitioning = false
+        configureWindowChrome(window)
         applyHotkeyPresentation(to: window)
-        NotificationCenter.default.post(
-            name: .windowFullScreenDidChange,
-            object: window,
-            userInfo: ["isFullScreen": false]
-        )
+        postFullScreenChange(false, for: window)
         if pendingHideAfterFullScreenExit {
             finishHide()
         } else if isPresented {
