@@ -215,7 +215,7 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
             .environment(ThemeService.shared)
             .environment(ExtensionStore.shared)
             .environment(ExtensionSettingsStore.shared)
-            .environment(\.accessibilityReduceTransparency, true)
+            .environment(\.isHotkeyWorkspace, true)
             .preferredColorScheme(MuxyTheme.colorScheme)
 
         window.contentViewController = NSHostingController(rootView: rootView)
