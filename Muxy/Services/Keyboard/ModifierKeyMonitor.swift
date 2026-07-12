@@ -68,6 +68,101 @@ struct DoubleCommandTapDetector {
 }
 
 @MainActor
+private final class HotkeyPanel: NSPanel {
+    override var canBecomeKey: Bool { true }
+    override var canBecomeMain: Bool { false }
+}
+
+@MainActor
+final class HotkeyWindowController {
+    static let shared = HotkeyWindowController()
+
+    private var panel: HotkeyPanel?
+    private weak var sourceWindow: NSWindow?
+    private var hostedContentView: NSView?
+    private var placeholderView: NSView?
+
+    private(set) var isPresented = false
+
+    private init() {}
+
+    func toggle() {
+        isPresented ? hide() : show()
+    }
+
+    func show() {
+        guard !isPresented,
+              let sourceWindow = AppDelegate.mainAppWindow(),
+              let contentView = sourceWindow.contentView
+        else { return }
+
+        let placeholder = NSView(frame: contentView.frame)
+        placeholder.autoresizingMask = [.width, .height]
+        sourceWindow.contentView = placeholder
+
+        let panel = HotkeyPanel(
+            contentRect: hotkeyFrame(),
+            styleMask: [.borderless, .nonactivatingPanel, .resizable],
+            backing: .buffered,
+            defer: false
+        )
+        panel.level = .floating
+        panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .transient]
+        panel.isFloatingPanel = true
+        panel.hidesOnDeactivate = false
+        panel.becomesKeyOnlyIfNeeded = false
+        panel.animationBehavior = .utilityWindow
+        panel.contentView = contentView
+        panel.setFrame(hotkeyFrame(), display: false)
+
+        self.sourceWindow = sourceWindow
+        hostedContentView = contentView
+        placeholderView = placeholder
+        self.panel = panel
+        isPresented = true
+
+        panel.makeKeyAndOrderFront(nil)
+        panel.orderFrontRegardless()
+    }
+
+    func hide() {
+        guard isPresented else { return }
+
+        panel?.orderOut(nil)
+
+        if let sourceWindow, let hostedContentView {
+            panel?.contentView = nil
+            sourceWindow.contentView = hostedContentView
+        }
+
+        panel?.close()
+        panel = nil
+        sourceWindow = nil
+        hostedContentView = nil
+        placeholderView = nil
+        isPresented = false
+    }
+
+    private func hotkeyFrame() -> NSRect {
+        let screen = screenUnderMouse() ?? NSScreen.main ?? NSScreen.screens.first
+        guard let visibleFrame = screen?.visibleFrame else {
+            return NSRect(x: 120, y: 100, width: 1200, height: 800)
+        }
+
+        let width = max(900, visibleFrame.width * 0.86)
+        let height = max(600, visibleFrame.height * 0.82)
+        let x = visibleFrame.midX - width / 2
+        let y = visibleFrame.midY - height / 2
+        return NSRect(x: x, y: y, width: width, height: height)
+    }
+
+    private func screenUnderMouse() -> NSScreen? {
+        let mouseLocation = NSEvent.mouseLocation
+        return NSScreen.screens.first { NSMouseInRect(mouseLocation, $0.frame, false) }
+    }
+}
+
+@MainActor
 @Observable
 final class ModifierKeyMonitor {
     static let shared = ModifierKeyMonitor()
@@ -159,6 +254,7 @@ final class ModifierKeyMonitor {
         activationObserver = nil
         cancelHint()
         doubleCommandDetector.reset()
+        HotkeyWindowController.shared.hide()
         commandHeld = false
         controlHeld = false
         shiftHeld = false
@@ -186,15 +282,7 @@ final class ModifierKeyMonitor {
         updateFlags(flags)
         let commandPressed = flags.contains(.command)
         guard doubleCommandDetector.handleFlagsChanged(commandPressed: commandPressed, at: time) else { return }
-        toggleMuxyWindow()
-    }
-
-    private func toggleMuxyWindow() {
-        if let window = AppDelegate.mainAppWindow(), NSApp.isActive, window.isKeyWindow {
-            NSApp.hide(nil)
-        } else {
-            _ = AppDelegate.activateMainWindowOnCurrentSpace()
-        }
+        HotkeyWindowController.shared.toggle()
     }
 
     private func updateFlags(_ flags: NSEvent.ModifierFlags) {
