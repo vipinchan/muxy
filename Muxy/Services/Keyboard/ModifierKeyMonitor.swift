@@ -67,7 +67,6 @@ struct DoubleCommandTapDetector {
     }
 }
 
-@MainActor
 private final class HotkeyPanel: NSPanel {
     override var canBecomeKey: Bool { true }
     override var canBecomeMain: Bool { false }
@@ -80,7 +79,6 @@ final class HotkeyWindowController {
     private var panel: HotkeyPanel?
     private weak var sourceWindow: NSWindow?
     private var hostedContentView: NSView?
-    private var placeholderView: NSView?
 
     private(set) var isPresented = false
 
@@ -100,8 +98,9 @@ final class HotkeyWindowController {
         placeholder.autoresizingMask = [.width, .height]
         sourceWindow.contentView = placeholder
 
+        let frame = hotkeyFrame()
         let panel = HotkeyPanel(
-            contentRect: hotkeyFrame(),
+            contentRect: frame,
             styleMask: [.borderless, .nonactivatingPanel, .resizable],
             backing: .buffered,
             defer: false
@@ -113,11 +112,9 @@ final class HotkeyWindowController {
         panel.becomesKeyOnlyIfNeeded = false
         panel.animationBehavior = .utilityWindow
         panel.contentView = contentView
-        panel.setFrame(hotkeyFrame(), display: false)
 
         self.sourceWindow = sourceWindow
         hostedContentView = contentView
-        placeholderView = placeholder
         self.panel = panel
         isPresented = true
 
@@ -139,7 +136,6 @@ final class HotkeyWindowController {
         panel = nil
         sourceWindow = nil
         hostedContentView = nil
-        placeholderView = nil
         isPresented = false
     }
 
@@ -149,8 +145,8 @@ final class HotkeyWindowController {
             return NSRect(x: 120, y: 100, width: 1200, height: 800)
         }
 
-        let width = max(900, visibleFrame.width * 0.86)
-        let height = max(600, visibleFrame.height * 0.82)
+        let width = min(visibleFrame.width, max(900, visibleFrame.width * 0.86))
+        let height = min(visibleFrame.height, max(600, visibleFrame.height * 0.82))
         let x = visibleFrame.midX - width / 2
         let y = visibleFrame.midY - height / 2
         return NSRect(x: x, y: y, width: width, height: height)
