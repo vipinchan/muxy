@@ -98,6 +98,7 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
     private var pendingHideAfterFullScreenExit = false
     private var isOverlayFullScreen = false
     private var overlayRestoreFrame: NSRect?
+    private var overlayRestoreStyleMask: NSWindow.StyleMask?
     private var overlayRestoreHasShadow = true
 
     private(set) var isPresented = false
@@ -157,6 +158,8 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         {
             applyHotkeyPresentation(to: window)
             window.setFrame(hotkeyFrame(), display: true)
+        } else if isOverlayFullScreen {
+            postFullScreenChange(true, for: window)
         }
 
         isPresented = true
@@ -172,6 +175,9 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
                 window.toggleFullScreen(nil)
             }
             return
+        }
+        if isOverlayFullScreen {
+            postFullScreenChange(false, for: window)
         }
         finishHide()
     }
@@ -303,12 +309,18 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         guard let screen = window.screen ?? screenUnderMouse() ?? NSScreen.main else { return }
 
         overlayRestoreFrame = window.frame
+        overlayRestoreStyleMask = window.styleMask
         overlayRestoreHasShadow = window.hasShadow
         isOverlayFullScreen = true
 
+        window.styleMask = [.borderless, .resizable, .nonactivatingPanel]
+        window.isMovable = false
+        window.isMovableByWindowBackground = false
         window.hasShadow = false
         applyOverlayFullScreenPresentation(to: window)
         window.setFrame(screen.frame, display: true, animate: animated)
+        WindowConfigurator.neutralizeSafeAreaInsets(in: window)
+        postFullScreenChange(true, for: window)
         window.orderFrontRegardless()
         window.makeKeyAndOrderFront(nil)
     }
@@ -317,11 +329,25 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         guard isOverlayFullScreen else { return }
 
         let restoreFrame = overlayRestoreFrame ?? hotkeyFrame()
+        let restoreStyleMask = overlayRestoreStyleMask ?? [
+            .titled,
+            .closable,
+            .miniaturizable,
+            .resizable,
+            .fullSizeContentView,
+            .nonactivatingPanel,
+        ]
+
         isOverlayFullScreen = false
         overlayRestoreFrame = nil
+        overlayRestoreStyleMask = nil
 
+        postFullScreenChange(false, for: window)
+        window.styleMask = restoreStyleMask
         window.hasShadow = overlayRestoreHasShadow
+        configureWindowChrome(window)
         applyHotkeyPresentation(to: window)
+        WindowConfigurator.neutralizeSafeAreaInsets(in: window)
         window.setFrame(restoreFrame, display: true, animate: animated)
         window.orderFrontRegardless()
         window.makeKeyAndOrderFront(nil)
