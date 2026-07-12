@@ -1,4 +1,4 @@
-name: Diagnose Hotkey Tests
+name: Diagnose Full Test Suite
 
 on:
   pull_request:
@@ -20,30 +20,23 @@ jobs:
         run: scripts/setup.sh
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Run new hotkey tests and capture failures
+      - name: Run full tests and capture failures
         run: |
           set +e
-          swift test --quiet --filter DoubleCommandTapDetectorTests > /tmp/double-command-tests.log 2>&1
-          double_status=$?
-          swift test --quiet --filter ShortcutContextTests > /tmp/shortcut-context-tests.log 2>&1
-          shortcut_status=$?
+          swift test --quiet > /tmp/full-tests.log 2>&1
+          status=$?
           set -e
 
           {
-            echo "double_command_exit_code=$double_status"
-            echo "shortcut_context_exit_code=$shortcut_status"
-            echo "---- DoubleCommandTapDetector failures ----"
-            grep -Ei -B 5 -A 15 'failed|expectation|issue recorded|error:|✘|×' /tmp/double-command-tests.log | tail -n 160 || true
-            echo "---- DoubleCommandTapDetector tail ----"
-            tail -n 80 /tmp/double-command-tests.log
-            echo "---- ShortcutContext failures ----"
-            grep -Ei -B 5 -A 15 'failed|expectation|issue recorded|error:|✘|×' /tmp/shortcut-context-tests.log | tail -n 160 || true
-            echo "---- ShortcutContext tail ----"
-            tail -n 80 /tmp/shortcut-context-tests.log
-          } > hotkey-test-diagnostics.txt
+            echo "full_test_exit_code=$status"
+            echo "---- explicit test failure lines ----"
+            grep -Ei -B 8 -A 20 '(✘|issue recorded|test .* failed|failed after|expectation failed|error:)' /tmp/full-tests.log | tail -n 320 || true
+            echo "---- full test tail ----"
+            tail -n 180 /tmp/full-tests.log
+          } > full-test-diagnostics.txt
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add hotkey-test-diagnostics.txt
-          git commit -m "ci: capture hotkey test diagnostics"
+          git add full-test-diagnostics.txt
+          git commit -m "ci: capture full Swift test failure"
           git push origin HEAD:ci/hotkey-test-diagnostics
