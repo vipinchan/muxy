@@ -19,16 +19,15 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import re
 
           path = Path('Muxy/Services/Keyboard/HotkeyWindowController.swift')
           text = path.read_text()
-          old = """        if isOverlayFullScreen {
-              exitOverlayFullScreen(window, animated: false)
-          }
-          """
-          if old not in text:
-              raise SystemExit('Expected overlay fullscreen exit block not found')
-          path.write_text(text.replace(old, '', 1))
+          pattern = r'(?m)^\s*if isOverlayFullScreen \{\n\s*exitOverlayFullScreen\(window, animated: false\)\n\s*\}\n'
+          updated, count = re.subn(pattern, '', text, count=1)
+          if count != 1:
+              raise SystemExit(f'Expected one overlay fullscreen exit block, found {count}')
+          path.write_text(updated)
           PY
       - name: Commit fix
         run: |
