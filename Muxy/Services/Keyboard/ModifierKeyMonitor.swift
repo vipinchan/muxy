@@ -67,6 +67,22 @@ struct DoubleCommandTapDetector {
     }
 }
 
+private struct GlobalHotkeyConfiguration: Equatable {
+    let isEnabled: Bool
+    let trigger: GlobalHotkeyTrigger
+    let doubleTapInterval: TimeInterval
+    let toggleToHide: Bool
+
+    static var current: GlobalHotkeyConfiguration {
+        GlobalHotkeyConfiguration(
+            isEnabled: GlobalHotkeyPreferences.isEnabled(),
+            trigger: GlobalHotkeyPreferences.trigger(),
+            doubleTapInterval: GlobalHotkeyPreferences.doubleTapInterval(),
+            toggleToHide: GlobalHotkeyPreferences.toggleToHide()
+        )
+    }
+}
+
 @MainActor
 @Observable
 final class ModifierKeyMonitor {
@@ -81,15 +97,19 @@ final class ModifierKeyMonitor {
     private var localKeyMonitor: Any?
     private var globalMonitor: Any?
     private var activationObserver: NSObjectProtocol?
+    private var settingsObserver: NSObjectProtocol?
     private var hintTimer: Timer?
-    private var doubleCommandDetector = DoubleCommandTapDetector()
+    private var globalHotkeyConfiguration = GlobalHotkeyConfiguration.current
+    private var doubleCommandDetector = DoubleCommandTapDetector(
+        doubleTapInterval: GlobalHotkeyPreferences.doubleTapInterval()
+    )
 
     private static let hintDelay: TimeInterval = 0.5
 
     private init() {}
 
     func start() {
-        guard localFlagsMonitor == nil, localKeyMonitor == nil, globalMonitor == nil else { return }
+        guard localFlagsMonitor == nil, localKeyMonitor == nil else { return }
 
         localFlagsMonitor = NSEvent.addLocalMonitorForEvents(matching: .flagsChanged) { [weak self] event in
             guard let self else { return event }
@@ -104,26 +124,9 @@ final class ModifierKeyMonitor {
         localKeyMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
             guard let self else { return event }
             MainActor.assumeIsolated {
-                self.doubleCommandDetector.handleKeyDown()
+                self.handleKeyDown()
             }
             return event
-        }
-
-        globalMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.flagsChanged, .keyDown]) { [weak self] event in
-            let eventType = event.type
-            let flags = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
-            let now = ProcessInfo.processInfo.systemUptime
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                switch eventType {
-                case .flagsChanged:
-                    self.handleFlagsChanged(flags, at: now)
-                case .keyDown:
-                    self.doubleCommandDetector.handleKeyDown()
-                default:
-                    break
-                }
-            }
         }
 
         activationObserver = NotificationCenter.default.addObserver(
@@ -139,7 +142,17 @@ final class ModifierKeyMonitor {
             }
         }
 
-        HotkeyWindowController.shared.prepareWhenMainWindowAvailable()
+        settingsObserver = NotificationCenter.default.addObserver(
+            forName: UserDefaults.didChangeNotification,
+            object: UserDefaults.standard,
+            queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated {
+                self?.refreshGlobalHotkeyConfiguration()
+            }
+        }
+
+        refreshGlobalHotkeyConfiguration()
     }
 
     func stop() {
@@ -149,16 +162,17 @@ final class ModifierKeyMonitor {
         if let localKeyMonitor {
             NSEvent.removeMonitor(localKeyMonitor)
         }
-        if let globalMonitor {
-            NSEvent.removeMonitor(globalMonitor)
-        }
+        removeGlobalMonitor()
         if let activationObserver {
             NotificationCenter.default.removeObserver(activationObserver)
         }
+        if let settingsObserver {
+            NotificationCenter.default.removeObserver(settingsObserver)
+        }
         localFlagsMonitor = nil
         localKeyMonitor = nil
-        globalMonitor = nil
         activationObserver = nil
+        settingsObserver = nil
         cancelHint()
         doubleCommandDetector.reset()
         HotkeyWindowController.shared.hide()
@@ -187,9 +201,76 @@ final class ModifierKeyMonitor {
 
     private func handleFlagsChanged(_ flags: NSEvent.ModifierFlags, at time: TimeInterval) {
         updateFlags(flags)
+        guard globalHotkeyConfiguration.isEnabled,
+              globalHotkeyConfiguration.trigger == .doubleCommand
+        else {
+            doubleCommandDetector.reset()
+            return
+        }
         let commandPressed = flags.contains(.command)
         guard doubleCommandDetector.handleFlagsChanged(commandPressed: commandPressed, at: time) else { return }
-        HotkeyWindowController.shared.toggle()
+        HotkeyWindowController.shared.handleGlobalHotkeyTrigger(
+            toggleToHide: globalHotkeyConfiguration.toggleToHide
+        )
+    }
+
+    private func handleKeyDown() {
+        guard globalHotkeyConfiguration.isEnabled,
+              globalHotkeyConfiguration.trigger == .doubleCommand
+        else { return }
+        doubleCommandDetector.handleKeyDown()
+    }
+
+    private func refreshGlobalHotkeyConfiguration() {
+        let newConfiguration = GlobalHotkeyConfiguration.current
+        let monitorMatchesConfiguration = newConfiguration.isEnabled == (globalMonitor != nil)
+        guard newConfiguration != globalHotkeyConfiguration || !monitorMatchesConfiguration else { return }
+
+        let detectorConfigurationChanged = newConfiguration.isEnabled != globalHotkeyConfiguration.isEnabled
+            || newConfiguration.trigger != globalHotkeyConfiguration.trigger
+            || newConfiguration.doubleTapInterval != globalHotkeyConfiguration.doubleTapInterval
+
+        globalHotkeyConfiguration = newConfiguration
+        if detectorConfigurationChanged {
+            doubleCommandDetector = DoubleCommandTapDetector(
+                doubleTapInterval: newConfiguration.doubleTapInterval
+            )
+        }
+
+        if newConfiguration.isEnabled {
+            installGlobalMonitorIfNeeded()
+            HotkeyWindowController.shared.prepareWhenMainWindowAvailable()
+        } else {
+            removeGlobalMonitor()
+            doubleCommandDetector.reset()
+            HotkeyWindowController.shared.hide()
+        }
+    }
+
+    private func installGlobalMonitorIfNeeded() {
+        guard globalMonitor == nil else { return }
+        globalMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.flagsChanged, .keyDown]) { [weak self] event in
+            let eventType = event.type
+            let flags = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+            let now = ProcessInfo.processInfo.systemUptime
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                switch eventType {
+                case .flagsChanged:
+                    self.handleFlagsChanged(flags, at: now)
+                case .keyDown:
+                    self.handleKeyDown()
+                default:
+                    break
+                }
+            }
+        }
+    }
+
+    private func removeGlobalMonitor() {
+        guard let globalMonitor else { return }
+        NSEvent.removeMonitor(globalMonitor)
+        self.globalMonitor = nil
     }
 
     private func updateFlags(_ flags: NSEvent.ModifierFlags) {
