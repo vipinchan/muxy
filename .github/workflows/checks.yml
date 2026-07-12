@@ -38,7 +38,7 @@ jobs:
           }
 
           func show() {
-          '''
+          '''.replace('              ', '        ').replace('          func show()', '    func show()')
           new = '''    func toggle() {
               if isPresented {
                   hide()
@@ -61,7 +61,7 @@ jobs:
           }
 
           func show() {
-          '''
+          '''.replace('              ', '        ').replace('          func handleGlobalHotkeyTrigger', '    func handleGlobalHotkeyTrigger').replace('          func show()', '    func show()')
           if old not in text:
               raise SystemExit('Hotkey controller toggle anchor not found')
           text = text.replace(old, new, 1)
@@ -71,7 +71,7 @@ jobs:
           text = path.read_text()
           anchor = '''        SettingsCatalogItem(
               key: "shortcuts.app",
-          '''
+          '''.replace('              key:', '            key:')
           insertion = '''        SettingsCatalogItem(
               key: GlobalHotkeyPreferences.enabledKey,
               title: "Enable Global Hotkey",
@@ -110,7 +110,7 @@ jobs:
           ),
           SettingsCatalogItem(
               key: "shortcuts.app",
-          '''
+          '''.replace('              ', '            ').replace('          ),', '        ),').replace('          SettingsCatalogItem', '        SettingsCatalogItem')
           if anchor not in text:
               raise SystemExit('Settings catalog shortcuts anchor not found')
           text = text.replace(anchor, insertion, 1)
@@ -118,24 +118,22 @@ jobs:
 
           path = Path('Muxy/Services/Persistence/SettingsJSONStore.swift')
           text = path.read_text()
-          old = '''            ProjectPickerPreferences.storageKey: Set(ProjectPickerMode.allCases.map(\.rawValue)),
-          '''
-          new = old + '''            GlobalHotkeyPreferences.triggerKey: Set(GlobalHotkeyTrigger.allCases.map(\.rawValue)),
-          '''
+          old = '            ProjectPickerPreferences.storageKey: Set(ProjectPickerMode.allCases.map(\\.rawValue)),\n'
+          new = old + '            GlobalHotkeyPreferences.triggerKey: Set(GlobalHotkeyTrigger.allCases.map(\\.rawValue)),\n'
           if old not in text:
               raise SystemExit('Settings JSON string validation anchor not found')
           text = text.replace(old, new, 1)
 
           old = '''        switch key {
-              case TabWidthPreferences.maxWidthKey:
-          '''
+          case TabWidthPreferences.maxWidthKey:
+          '''.replace('          case', '        case')
           new = '''        switch key {
-              case GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey:
-                  guard GlobalHotkeyPreferences.isAllowedDoubleTapIntervalMilliseconds(value) else {
-                      throw SettingsJSONError.invalidValue(key)
-                  }
-              case TabWidthPreferences.maxWidthKey:
-          '''
+          case GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey:
+              guard GlobalHotkeyPreferences.isAllowedDoubleTapIntervalMilliseconds(value) else {
+                  throw SettingsJSONError.invalidValue(key)
+              }
+          case TabWidthPreferences.maxWidthKey:
+          '''.replace('          case', '        case').replace('              guard', '            guard').replace('                  throw', '                throw').replace('              }', '            }')
           if old not in text:
               raise SystemExit('Settings JSON double validation anchor not found')
           text = text.replace(old, new, 1)
@@ -144,67 +142,68 @@ jobs:
           path = Path('Tests/MuxyTests/Services/Persistence/SettingsJSONStoreTests.swift')
           text = path.read_text()
           anchor = '''    @Test
-              func prettifiedSettingsTextSortsAndFormatsJSONObject() throws {
-          '''
+          func prettifiedSettingsTextSortsAndFormatsJSONObject() throws {
+          '''.replace('          func', '    func')
           insertion = '''    @Test
-              func globalHotkeySettingsPersistThroughJSON() throws {
-                  let keys = [
-                      GlobalHotkeyPreferences.enabledKey,
-                      GlobalHotkeyPreferences.triggerKey,
-                      GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey,
-                      GlobalHotkeyPreferences.toggleToHideKey,
-                  ]
-                  let snapshot = SettingsJSONStoreSnapshot.capture(keys: keys)
-                  defer { snapshot.restore() }
+          func globalHotkeySettingsPersistThroughJSON() throws {
+              let keys = [
+                  GlobalHotkeyPreferences.enabledKey,
+                  GlobalHotkeyPreferences.triggerKey,
+                  GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey,
+                  GlobalHotkeyPreferences.toggleToHideKey,
+              ]
+              let snapshot = SettingsJSONStoreSnapshot.capture(keys: keys)
+              defer { snapshot.restore() }
 
+              try SettingsJSONStore.saveUserSettingsText("""
+              {
+                "\(GlobalHotkeyPreferences.enabledKey)": false,
+                "\(GlobalHotkeyPreferences.triggerKey)": "doubleCommand",
+                "\(GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey)": 450,
+                "\(GlobalHotkeyPreferences.toggleToHideKey)": false
+              }
+              """)
+
+              #expect(!GlobalHotkeyPreferences.isEnabled())
+              #expect(GlobalHotkeyPreferences.trigger() == .doubleCommand)
+              #expect(GlobalHotkeyPreferences.doubleTapIntervalMilliseconds() == 450)
+              #expect(!GlobalHotkeyPreferences.toggleToHide())
+          }
+
+          @Test
+          func globalHotkeySettingsRejectUnsupportedTrigger() throws {
+              let snapshot = SettingsJSONStoreSnapshot.capture(keys: [GlobalHotkeyPreferences.triggerKey])
+              defer { snapshot.restore() }
+
+              #expect(throws: SettingsJSONError.self) {
                   try SettingsJSONStore.saveUserSettingsText("""
                   {
-                    "\(GlobalHotkeyPreferences.enabledKey)": false,
-                    "\(GlobalHotkeyPreferences.triggerKey)": "doubleCommand",
-                    "\(GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey)": 450,
-                    "\(GlobalHotkeyPreferences.toggleToHideKey)": false
+                    "\(GlobalHotkeyPreferences.triggerKey)": "unsupported"
                   }
                   """)
-
-                  #expect(!GlobalHotkeyPreferences.isEnabled())
-                  #expect(GlobalHotkeyPreferences.trigger() == .doubleCommand)
-                  #expect(GlobalHotkeyPreferences.doubleTapIntervalMilliseconds() == 450)
-                  #expect(!GlobalHotkeyPreferences.toggleToHide())
               }
+          }
 
-              @Test
-              func globalHotkeySettingsRejectUnsupportedTrigger() throws {
-                  let snapshot = SettingsJSONStoreSnapshot.capture(keys: [GlobalHotkeyPreferences.triggerKey])
-                  defer { snapshot.restore() }
+          @Test
+          func globalHotkeySettingsRejectOutOfRangeInterval() throws {
+              let snapshot = SettingsJSONStoreSnapshot.capture(
+                  keys: [GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey]
+              )
+              defer { snapshot.restore() }
 
-                  #expect(throws: SettingsJSONError.self) {
-                      try SettingsJSONStore.saveUserSettingsText("""
-                      {
-                        "\(GlobalHotkeyPreferences.triggerKey)": "unsupported"
-                      }
-                      """)
+              #expect(throws: SettingsJSONError.self) {
+                  try SettingsJSONStore.saveUserSettingsText("""
+                  {
+                    "\(GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey)": 5000
                   }
+                  """)
               }
+          }
 
-              @Test
-              func globalHotkeySettingsRejectOutOfRangeInterval() throws {
-                  let snapshot = SettingsJSONStoreSnapshot.capture(
-                      keys: [GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey]
-                  )
-                  defer { snapshot.restore() }
-
-                  #expect(throws: SettingsJSONError.self) {
-                      try SettingsJSONStore.saveUserSettingsText("""
-                      {
-                        "\(GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey)": 5000
-                      }
-                      """)
-                  }
-              }
-
-              @Test
-              func prettifiedSettingsTextSortsAndFormatsJSONObject() throws {
+          @Test
+          func prettifiedSettingsTextSortsAndFormatsJSONObject() throws {
           '''
+          insertion = insertion.replace('          func', '    func').replace('              ', '        ').replace('          @Test', '    @Test')
           if anchor not in text:
               raise SystemExit('Settings JSON test anchor not found')
           text = text.replace(anchor, insertion, 1)
