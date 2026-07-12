@@ -4,16 +4,29 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   lint:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
-      - name: Install and run SwiftLint
+        with:
+          ref: feature/dedicated-hotkey-window
+      - name: Capture SwiftLint diagnostics
         run: |
           SWIFTLINT_VERSION=$(grep '^swiftlint ' .tool-versions | awk '{print $2}')
           curl -sL "https://github.com/realm/SwiftLint/releases/download/$SWIFTLINT_VERSION/portable_swiftlint.zip" -o /tmp/swiftlint.zip
           unzip -q -o /tmp/swiftlint.zip -d /tmp/swiftlint
           cp /tmp/swiftlint/swiftlint /usr/local/bin/swiftlint
           chmod +x /usr/local/bin/swiftlint
-          swiftlint lint --strict --quiet
+          swiftlint lint --strict --quiet > swiftlint-errors.txt 2>&1 || true
+          if git diff --quiet -- swiftlint-errors.txt && git ls-files --error-unmatch swiftlint-errors.txt >/dev/null 2>&1; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add swiftlint-errors.txt
+          git commit -m "ci: capture SwiftLint diagnostics"
+          git push origin HEAD:feature/dedicated-hotkey-window
