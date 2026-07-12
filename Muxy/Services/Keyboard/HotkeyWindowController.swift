@@ -377,10 +377,4 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
             window.makeKeyAndOrderFront(nil)
         }
     }
-
-    deinit {
-        if let fullScreenShortcutMonitor {
-            NSEvent.removeMonitor(fullScreenShortcutMonitor)
-        }
-    }
 }
