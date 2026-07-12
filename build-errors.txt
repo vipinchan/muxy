@@ -1,0 +1,2870 @@
+Fetching https://github.com/jpsim/Yams
+Fetching https://github.com/getsentry/sentry-cocoa
+[1/11847] Fetching yams
+Fetched https://github.com/jpsim/Yams from cache (1.90s)
+Fetching https://github.com/sparkle-project/Sparkle
+[1/240176] Fetching sentry-cocoa
+[55242/283758] Fetching sentry-cocoa, sparkle
+Fetched https://github.com/sparkle-project/Sparkle from cache (3.92s)
+Fetched https://github.com/getsentry/sentry-cocoa from cache (10.72s)
+Computing version for https://github.com/getsentry/sentry-cocoa
+Computed https://github.com/getsentry/sentry-cocoa at 8.58.2 (12.52s)
+Computing version for https://github.com/jpsim/Yams
+Computed https://github.com/jpsim/Yams at 5.4.0 (3.12s)
+Computing version for https://github.com/sparkle-project/Sparkle
+Computed https://github.com/sparkle-project/Sparkle at 2.9.1 (0.45s)
+Creating working copy for https://github.com/jpsim/Yams
+Working copy of https://github.com/jpsim/Yams resolved at 5.4.0
+Creating working copy for https://github.com/getsentry/sentry-cocoa
+Working copy of https://github.com/getsentry/sentry-cocoa resolved at 8.58.2
+Creating working copy for https://github.com/sparkle-project/Sparkle
+Working copy of https://github.com/sparkle-project/Sparkle resolved at 2.9.1
+Downloading binary artifact https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic-WithARM64e.xcframework.zip
+Downloading binary artifact https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry.xcframework.zip
+Downloading binary artifact https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic.xcframework.zip
+Downloading binary artifact https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit.xcframework.zip
+Downloading binary artifact https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit-WithARM64e.xcframework.zip
+Downloading binary artifact https://github.com/sparkle-project/Sparkle/releases/download/2.9.1/Sparkle-for-Swift-Package-Manager.zip
+[16384/53213449] Downloading https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry.xcframework.zip
+[21266152/174051283] Downloading https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic-WithARM64e.xcframework.zip
+[30357326/283569751] Downloading https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic-WithARM64e.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic.xcframework.zip
+[142629035/373793494] Downloading https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic-WithARM64e.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit.xcframework.zip
+[374170299/473224958] Downloading https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic-WithARM64e.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit-WithARM64e.xcframework.zip
+[391829056/484788596] Downloading https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic-WithARM64e.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit.xcframework.zip, https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit-WithARM64e.xcframework.zip, https://github.com/sparkle-project/Sparkle/releases/download/2.9.1/Sparkle-for-Swift-Package-Manager.zip
+Downloaded https://github.com/sparkle-project/Sparkle/releases/download/2.9.1/Sparkle-for-Swift-Package-Manager.zip (3.87s)
+Downloaded https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry.xcframework.zip (8.98s)
+Downloaded https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit.xcframework.zip (12.40s)
+Downloaded https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-WithoutUIKitOrAppKit-WithARM64e.xcframework.zip (13.49s)
+Downloaded https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic.xcframework.zip (13.80s)
+Downloaded https://github.com/getsentry/sentry-cocoa/releases/download/8.58.2/Sentry-Dynamic-WithARM64e.xcframework.zip (14.45s)
+Building for debugging...
+[0/36] /Users/runner/work/muxy/muxy/.build/arm64-apple-macosx/debug/MuxyPackageTests.derived/runner.swift
+[1/36] Write sources
+[1/36] Write MuxyExtensionHost-entitlement.plist
+[1/36] Write Muxy-entitlement.plist
+[1/36] Write sources
+[10/36] Compiling GhosttyKit GhosttyKit.c
+[11/36] Copying Sparkle.framework
+[12/36] Copying Sentry.framework
+[12/36] Copying terminfo
+[12/36] Copying starter-kits
+[13/36] Copying skills
+[13/36] Copying scripts
+[17/36] Copying ghostty
+[17/36] Copying ProviderIcons
+[19/36] Copying Assets.xcassets
+[19/36] Write sources
+[21/36] Write swift-version--79AA4F9932D1E87A.txt
+[22/36] Compiling writer.c
+[23/36] Compiling reader.c
+[24/36] Compiling scanner.c
+[25/49] Compiling parser.c
+[26/49] Compiling emitter.c
+[27/49] Compiling api.c
+[29/64] Emitting module SentryCppHelper
+[30/64] Compiling SentryCppHelper SentryCppHelper.swift
+[31/64] Emitting module MuxyShared
+[32/64] Compiling Yams Node.Alias.swift
+[33/64] Compiling Yams Node.Mapping.swift
+[34/64] Compiling Yams Node.Scalar.swift
+[35/64] Compiling Yams Node.Sequence.swift
+[36/64] Compiling Yams Node.swift
+[37/64] Compiling Yams Parser.swift
+[38/64] Compiling Yams RedundancyAliasingStrategy.swift
+[39/64] Compiling Yams AliasDereferencingStrategy.swift
+[40/64] Compiling Yams Anchor.swift
+[41/64] Compiling Yams Constructor.swift
+[49/76] Emitting module Yams
+[53/76] Compiling MuxyShared ProtocolParams.swift
+[54/76] Compiling MuxyShared VCSDiffDTO.swift
+[55/76] Compiling MuxyShared VCSStatusDTO.swift
+[56/76] Compiling MuxyShared WorkspaceDTO.swift
+[57/76] Compiling Yams Representer.swift
+[58/76] Compiling Yams Resolver.swift
+[59/76] Compiling Yams String+Yams.swift
+[60/76] Compiling Yams Tag.swift
+[61/76] Compiling Yams YamlAnchorProviding.swift
+[62/76] Compiling Yams YamlError.swift
+[63/76] Compiling Yams YamlTagProviding.swift
+[69/83] Compiling MuxyExtensionHost ParentDeathMonitor.swift
+[70/84] Compiling MuxyExtensionHost main.swift
+/Users/runner/work/muxy/muxy/MuxyExtensionHost/main.swift:78:17: warning: will never be executed
+76 |             lastReply = reply
+77 |             guard HostSocketClient.isTransientIdentifyRejection(reply), attempt < maxAttempts else {
+78 |                 return fail("identify rejected: \(reply)")
+   |                 |      `- note: a call to a never-returning function
+   |                 `- warning: will never be executed
+79 |             }
+80 |             Thread.sleep(forTimeInterval: HostSocketClient.identifyRetryDelay)
+
+/Users/runner/work/muxy/muxy/MuxyExtensionHost/main.swift:85:5: warning: will never be executed
+83 |         }
+84 |     }
+85 |     return fail("identify rejected: \(lastReply)")
+   |     |      `- note: a call to a never-returning function
+   |     `- warning: will never be executed
+86 | }
+87 | 
+
+/Users/runner/work/muxy/muxy/MuxyExtensionHost/main.swift:82:13: warning: will never be executed
+80 |             Thread.sleep(forTimeInterval: HostSocketClient.identifyRetryDelay)
+81 |         } catch {
+82 |             return fail("identify failed: \(error)")
+   |             |      `- note: a call to a never-returning function
+   |             `- warning: will never be executed
+83 |         }
+84 |     }
+[71/84] Emitting module MuxyExtensionHost
+[72/84] Compiling MuxyExtensionHost HostBridge.swift
+[73/84] Compiling MuxyExtensionHost HostSocketClient.swift
+[73/84] Write Objects.LinkFileList
+[74/84] Linking MuxyExtensionHost
+[75/84] Applying MuxyExtensionHost
+[77/84] Compiling MuxyServer ClientConnection.swift
+[78/84] Emitting module MuxyServer
+[79/84] Compiling MuxyServer MuxyRemoteServer.swift
+/Users/runner/work/muxy/muxy/MuxyServer/MuxyRemoteServer.swift:255:15: warning: result of call to 'sync(execute:)' is unused
+253 | 
+254 |     func _testingMarkAuthenticated(_ id: UUID) {
+255 |         queue.sync {
+    |               `- warning: result of call to 'sync(execute:)' is unused
+256 |             authenticatedClients.insert(id)
+257 |         }
+[80/134] Compiling Muxy ExtensionTabState.swift
+[81/134] Compiling Muxy CommandShortcut.swift
+[82/134] Compiling Muxy RichInputDraft.swift
+[83/134] Compiling Muxy RichInputImageStrategy.swift
+[84/134] Compiling Muxy RichInputState.swift
+[85/134] Compiling Muxy KeyBinding.swift
+[86/134] Compiling Muxy KeyCombo.swift
+[87/134] Compiling Muxy AppLayout.swift
+[88/134] Compiling Muxy AppLayoutProviding.swift
+[89/134] Compiling Muxy AppLayoutStore.swift
+[90/134] Compiling Muxy ProjectFocusedLayout.swift
+[91/134] Compiling Muxy TabFocusedLayout.swift
+[92/134] Compiling Muxy TabFocusedSidebarMetrics.swift
+[93/134] Compiling Muxy TabFocusedSidebarState.swift
+[94/134] Compiling Muxy TabFocusedTabOrder.swift
+[95/134] Compiling Muxy BrowserPreferences.swift
+[96/134] Compiling Muxy GeneralSettingsKeys.swift
+[97/134] Compiling Muxy HomeProjectPreferences.swift
+[98/134] Compiling Muxy NotificationSettings.swift
+[99/134] Compiling Muxy ProjectLifecyclePreferences.swift
+[100/134] Compiling Muxy ProjectPickerPreferences.swift
+[101/134] Compiling Muxy QuitConfirmationPreferences.swift
+[102/134] Compiling Muxy RecordingPreferences.swift
+[103/134] Compiling Muxy ResourceUsagePreferences.swift
+[104/134] Compiling Muxy DiagnosticsMenuController.swift
+[105/134] Compiling Muxy MuxyCommands.swift
+[106/134] Compiling Muxy BundleExtension.swift
+[107/134] Compiling Muxy DTOConversions.swift
+[108/134] Compiling Muxy Notification+Names.swift
+[109/134] Compiling Muxy OverlayActiveEnvironment.swift
+[110/134] Compiling Muxy View+FocusOnChange.swift
+[111/134] Compiling Muxy View+KeyboardShortcut.swift
+[112/134] Compiling Muxy WorktreeKeyEnvironment.swift
+[113/134] Compiling Muxy BrowserHistoryEntry.swift
+[114/134] Compiling Muxy BrowserHomePage.swift
+[115/134] Compiling Muxy BrowserLoadError.swift
+[116/134] Compiling Muxy BrowserProfile.swift
+[117/134] Compiling Muxy BrowserSearchEngine.swift
+[118/134] Compiling Muxy BrowserSuggestionModel.swift
+[119/134] Compiling Muxy BrowserTabState.swift
+[120/134] Compiling Muxy BrowserURL.swift
+[121/134] Compiling Muxy BrowserZoom.swift
+[122/134] Compiling Muxy Extension.swift
+[123/134] Compiling Muxy ExtensionEvent.swift
+[124/134] Compiling Muxy ExtensionLifecycle.swift
+[125/134] Compiling Muxy ExtensionPanelState.swift
+[126/134] Compiling Muxy ExtensionPopoverState.swift
+[127/134] Compiling Muxy ExtensionShortcut.swift
+[128/134] Compiling Muxy ExtensionShortcutGroup.swift
+[129/134] Emitting module Muxy
+[130/206] Compiling Muxy AgentStatusStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[131/206] Compiling Muxy AIAgentDetector.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[132/206] Compiling Muxy DetectedAgentStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[133/206] Compiling Muxy ForegroundProcessInspector.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[134/206] Compiling Muxy AppEnvironment.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[135/206] Compiling Muxy AppRelaunch.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[136/206] Compiling Muxy AppStateDependencies.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[137/206] Compiling Muxy IDEIntegrationService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[138/206] Compiling Muxy MuxyConfig.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[139/206] Compiling Muxy UpdateService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[140/206] Compiling Muxy WhatsNewService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[141/206] Compiling Muxy BackupArchive.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[142/206] Compiling Muxy BackupSanitizer.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[143/206] Compiling Muxy BackupService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[144/206] Compiling Muxy BrowserAutomation.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[145/206] Compiling Muxy BrowserDataStoreCache.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[146/206] Compiling Muxy BrowserHistoryPersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[147/206] Compiling Muxy BrowserHistoryStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[148/206] Compiling Muxy BrowserProfilePersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[149/206] Compiling Muxy BrowserProfileStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[150/206] Compiling Muxy BrowserWebViewRegistry.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[151/206] Compiling Muxy FaviconStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[152/206] Compiling Muxy InstalledBrowsers.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[153/206] Compiling Muxy BrowserImporter.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Browser/BrowserAutomation.swift:532:15: warning: consider using asynchronous alternative function
+530 |     private static func allCookiesAttempt(in store: WKHTTPCookieStore) async -> [HTTPCookie]? {
+531 |         let box = CookieResultBox()
+532 |         store.getAllCookies { cookies in
+    |               `- warning: consider using asynchronous alternative function
+533 |             Task { @MainActor in box.deliver(cookies) }
+534 |         }
+
+WebKit.WKHTTPCookieStore.allCookies:2:11: note: 'allCookies()' declared here
+1 | class WKHTTPCookieStore {
+2 | open func allCookies() async -> [HTTPCookie]}
+  |           `- note: 'allCookies()' declared here
+3 | 
+[154/230] Compiling Muxy RichInputPreferences.swift
+[155/230] Compiling Muxy SentryConsent.swift
+[156/230] Compiling Muxy TabCloseConfirmationPreferences.swift
+[157/230] Compiling Muxy TabWidthPreferences.swift
+[158/230] Compiling Muxy TerminalOfflinePreferences.swift
+[159/230] Compiling Muxy WhatsNewPreferences.swift
+[160/230] Compiling Muxy WorktreeListPreferences.swift
+[161/230] Compiling Muxy CommandTabRequest.swift
+[162/230] Compiling Muxy Project.swift
+[163/230] Compiling Muxy ProjectGroup.swift
+[164/230] Compiling Muxy ProjectPickerDefaultLocation.swift
+[165/230] Compiling Muxy ProjectSortMode.swift
+[166/230] Compiling Muxy RemoteDevice.swift
+[167/230] Compiling Muxy Worktree.swift
+[168/230] Compiling Muxy WorktreeConfig.swift
+[169/230] Compiling Muxy WorktreeKey.swift
+[170/230] Compiling Muxy BackupManifest.swift
+[171/230] Compiling Muxy ProcessUsage.swift
+[172/230] Compiling Muxy TerminalControlBytes.swift
+[173/230] Compiling Muxy TerminalOfflineTimeout.swift
+[174/230] Compiling Muxy TerminalOmniboxItem.swift
+[175/230] Compiling Muxy TerminalPaneState.swift
+[176/230] Compiling Muxy TerminalProgress.swift
+[177/230] Compiling Muxy TerminalSearchState.swift
+[178/230] Compiling Muxy TerminalTab.swift
+[179/230] Compiling Muxy AppBackgroundStyle.swift
+[180/230] Compiling Muxy FileOpenerSelection.swift
+[181/230] Compiling Muxy MuxyNotification.swift
+[182/230] Compiling Muxy NavigationHistory.swift
+[183/230] Compiling Muxy Panel.swift
+[184/230] Compiling Muxy SidebarMode.swift
+[185/230] Compiling Muxy SidebarSelection.swift
+[186/230] Compiling Muxy ToastState.swift
+[187/230] Compiling Muxy AppState.swift
+[188/230] Compiling Muxy LayoutConfig.swift
+[189/230] Compiling Muxy LayoutWorkspaceBuilder.swift
+[190/230] Compiling Muxy FocusReducer.swift
+[191/230] Compiling Muxy ProjectLifecycleReducer.swift
+[192/230] Compiling Muxy SplitReducer.swift
+[193/230] Compiling Muxy TabReducer.swift
+[194/230] Compiling Muxy WorkspaceReducerShared.swift
+[195/230] Compiling Muxy SplitNode.swift
+[196/230] Compiling Muxy TabArea.swift
+[197/230] Compiling Muxy TabDragCoordinator.swift
+[198/230] Compiling Muxy WorkspaceReducer.swift
+[199/230] Compiling Muxy WorkspaceSnapshot.swift
+[200/230] Compiling Muxy MuxyApp.swift
+[201/230] Compiling Muxy AIProviderIntegration.swift
+[202/278] Compiling Muxy ChromeCookieDatabase.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[203/278] Compiling Muxy ChromeCookieDecryptor.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[204/278] Compiling Muxy ChromeImporter.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[205/278] Compiling Muxy ChromeSafeStorageKeychain.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[206/278] Compiling Muxy CookieImportService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[207/278] Compiling Muxy MemoryDiagnostics.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[208/278] Compiling Muxy ProcSampling.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[209/278] Compiling Muxy ProcessResourceMonitor.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[210/278] Compiling Muxy ProcessTree.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[211/278] Compiling Muxy SentryService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[212/278] Compiling Muxy EditorSettings.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[213/278] Compiling Muxy ExtensionAssetSchemeHandler.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[214/278] Compiling Muxy ExtensionAuditLog.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[215/278] Compiling Muxy ExtensionBridgeHandler.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[216/278] Compiling Muxy ExtensionBridgeShared.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[217/278] Compiling Muxy ExtensionCommandExecutor.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[218/278] Compiling Muxy ExtensionConsentService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[219/278] Compiling Muxy ExtensionConsoleHandler.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[220/278] Compiling Muxy ExtensionDevPathStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[221/278] Compiling Muxy ExtensionDialogService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[222/278] Compiling Muxy ExtensionEnabledStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[223/278] Compiling Muxy ExtensionEventEmitter.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[224/278] Compiling Muxy ExtensionFileEventEmitter.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[225/278] Compiling Muxy ExtensionGrantStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Diagnostics/MemoryDiagnostics.swift:442:28: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+440 |                pthread_getname_np(pthread, &nameBuf, nameBuf.count) == 0
+441 |             {
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[226/302] Compiling Muxy BranchCache.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[227/302] Compiling Muxy DiffHintPolicy.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[228/302] Compiling Muxy GitCommitLogParser.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[229/302] Compiling Muxy GitDiffParser.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[230/302] Compiling Muxy GitMetadataCache.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[231/302] Compiling Muxy GitModels.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[232/302] Compiling Muxy GitPRParser.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[233/302] Compiling Muxy GitProcessRunner.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[234/302] Compiling Muxy GitRepoStatusCache.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[235/302] Compiling Muxy GitRepositoryService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[236/302] Compiling Muxy GitSignpost.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[237/302] Compiling Muxy GitStatusAggregator.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[238/302] Compiling Muxy GitStatusParser.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[239/302] Compiling Muxy GitWorktreeService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[240/302] Compiling Muxy CommandShortcutStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[241/302] Compiling Muxy HotkeyWindowController.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[242/302] Compiling Muxy KeyBindingPersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[243/302] Compiling Muxy KeyBindingStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[244/302] Compiling Muxy ModifierKeyMonitor.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[245/302] Compiling Muxy ShortcutActionDispatcher.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[246/302] Compiling Muxy ShortcutContext.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[247/302] Compiling Muxy ApprovedDevicesPersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[248/302] Compiling Muxy ApprovedDevicesStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[249/302] Compiling Muxy MobilePairingService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:301:54: warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+299 |         guard let applicationToRestore, !applicationToRestore.isTerminated else { return }
+300 |         DispatchQueue.main.async {
+301 |             applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+    |                                                      `- warning: 'activateIgnoringOtherApps' was deprecated in macOS 14.0: ignoringOtherApps is deprecated in macOS 14 and will have no effect.
+302 |         }
+303 |     }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Mobile/MobilePairingService.swift:92:22: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+90 |             var buffer = [CChar](repeating: 0, count: Int(INET_ADDRSTRLEN))
+91 |             guard inet_ntop(AF_INET, &raw, &buffer, socklen_t(INET_ADDRSTRLEN)) != nil else { continue }
+92 |             let ip = String(cString: buffer)
+   |                      `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+93 |             if isTailscaleAddress(ip) { return ip }
+94 |         }
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Keyboard/HotkeyWindowController.swift:382:9: error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+380 | 
+381 |     deinit {
+382 |         if let fullScreenShortcutMonitor {
+    |         `- error: cannot access property 'fullScreenShortcutMonitor' with a non-sendable type 'Any?' from nonisolated deinit
+383 |             NSEvent.removeMonitor(fullScreenShortcutMonitor)
+384 |         }
+[250/326] Compiling Muxy ExtensionHTTPClient.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[251/326] Compiling Muxy ExtensionHostLocator.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[252/326] Compiling Muxy ExtensionIconAssetCache.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[253/326] Compiling Muxy ExtensionLifecycleEvents.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[254/326] Compiling Muxy ExtensionLogCoalescer.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[255/326] Compiling Muxy ExtensionLogStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[256/326] Compiling Muxy ExtensionLogTail.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[257/326] Compiling Muxy ExtensionLogTailer.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[258/326] Compiling Muxy ExtensionMarketplaceService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[259/326] Compiling Muxy ExtensionModalService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[260/326] Compiling Muxy ExtensionPanelRegistry.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[261/326] Compiling Muxy ExtensionScaffoldService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[262/326] Compiling Muxy ExtensionScriptRunner.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[263/326] Compiling Muxy ExtensionSettingsStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[264/326] Compiling Muxy ExtensionShortcutStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[265/326] Compiling Muxy ExtensionStorageService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[266/326] Compiling Muxy ExtensionStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[267/326] Compiling Muxy ExtensionSurfaceBridgeRegistry.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[268/326] Compiling Muxy ExtensionThemeSnapshot.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[269/326] Compiling Muxy ExtensionWebBridge.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[270/326] Compiling Muxy ExtensionWebviewModalService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[271/326] Compiling Muxy FileSystemOperations.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[272/326] Compiling Muxy FileSystemWatcher.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[273/326] Compiling Muxy FileTreeService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionHTTPClient.swift:209:34: warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+207 |                 NI_NUMERICHOST
+208 |             ) == 0 {
+209 |                 addresses.append(String(cString: buffer))
+    |                                  `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+210 |             }
+211 |             node = current.pointee.ai_next
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionStore.swift:952:9: warning: result of 'try?' is unused
+ 950 |         }
+ 951 |         guard let handle = try? FileHandle(forWritingTo: url) else { return nil }
+ 952 |         try? handle.seekToEnd()
+     |         `- warning: result of 'try?' is unused
+ 953 |         return handle
+ 954 |     }
+[274/350] Compiling Muxy ProjectPickerWorkflow.swift
+[275/350] Compiling Muxy ClaudeCodeProvider.swift
+[276/350] Compiling Muxy CodexProvider.swift
+[277/350] Compiling Muxy CursorProvider.swift
+[278/350] Compiling Muxy DroidProvider.swift
+[279/350] Compiling Muxy GrokProvider.swift
+[280/350] Compiling Muxy OpenCodeProvider.swift
+[281/350] Compiling Muxy PiProvider.swift
+[282/350] Compiling Muxy ProviderExecutableLocator.swift
+[283/350] Compiling Muxy ActiveWorkspaceContext.swift
+[284/350] Compiling Muxy CommandTransform.swift
+[285/350] Compiling Muxy RemoteCommandBuilder.swift
+[286/350] Compiling Muxy RemoteFileOps.swift
+[287/350] Compiling Muxy RemoteFileService.swift
+[288/350] Compiling Muxy RemoteProjectPickerFileSystem.swift
+[289/350] Compiling Muxy SSHCommandRunner.swift
+[290/350] Compiling Muxy SSHConnectionService.swift
+[291/350] Compiling Muxy SSHDestination.swift
+[292/350] Compiling Muxy SSHEnvironmentText.swift
+[293/350] Compiling Muxy SSHEnvironmentVariables.swift
+[294/350] Compiling Muxy SSHFieldSanitizer.swift
+[295/350] Compiling Muxy WorkspaceContext.swift
+[296/350] Compiling Muxy RichInputDraftStore.swift
+[297/350] Compiling Muxy RichInputImageStorage.swift
+[298/374] Compiling Muxy ProjectLogoStorage.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[299/374] Compiling Muxy ProjectOpenPresentationRouter.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[300/374] Compiling Muxy ProjectOpenService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[301/374] Compiling Muxy ProjectPathConfirmationService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[302/374] Compiling Muxy ProjectPersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[303/374] Compiling Muxy ProjectRemovalService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[304/374] Compiling Muxy ProjectSidebarDropHandler.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[305/374] Compiling Muxy ProjectStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[306/374] Compiling Muxy VCSWorktreeAutoRefresher.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[307/374] Compiling Muxy WorkspaceFileWatcher.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[308/374] Compiling Muxy WorkspacePersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[309/374] Compiling Muxy WorkspaceSelectionService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[310/374] Compiling Muxy WorktreeActionEligibility.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[311/374] Compiling Muxy WorktreeLocationResolver.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[312/374] Compiling Muxy WorktreePersistence.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[313/374] Compiling Muxy WorktreeSetupRunner.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[314/374] Compiling Muxy WorktreeStore.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[315/374] Compiling Muxy WorktreeTeardownRunner.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[316/374] Compiling Muxy ProjectPickerCommand.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[317/374] Compiling Muxy ProjectPickerDefaultLocationSettingsModel.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[318/374] Compiling Muxy ProjectPickerDirectorySnapshot.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[319/374] Compiling Muxy ProjectPickerNavigator.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[320/374] Compiling Muxy ProjectPickerPathService.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[321/374] Compiling Muxy ProjectPickerSession.swift
+/Users/runner/work/muxy/muxy/Muxy/Services/Project/WorktreeStore.swift:204:26: warning: no calls to throwing functions occur within 'try' expression
+202 |             .filter { !$0.isBare && !$0.isPrunable }
+203 |         var list = worktrees[project.id] ?? []
+204 |         let projectKey = try await resolvedProjectKey(project: project, context: context)
+    |                          `- warning: no calls to throwing functions occur within 'try' expression
+205 |         let recordKeys = Set(records.map { GitWorktreeService.canonicalPath($0.path, context: context) })
+206 | 
+[322/398] Compiling Muxy MobilePairingURI.swift
+[323/398] Compiling Muxy MobileServerService.swift
+[324/398] Compiling Muxy PairingRequestCoordinator.swift
+[325/398] Compiling Muxy RemoteDevicePersistence.swift
+[326/398] Compiling Muxy RemoteDeviceStore.swift
+[327/398] Compiling Muxy RemoteServerDelegate.swift
+[328/398] Compiling Muxy FilesDTO.swift
+[329/398] Compiling Muxy GitDTO.swift
+[330/398] Compiling Muxy MuxyAPI.swift
+[331/398] Compiling Muxy MuxyAPIDispatcher.swift
+[332/398] Compiling Muxy MuxyAPIFiles.swift
+[333/398] Compiling Muxy MuxyAPIGit.swift
+[334/398] Compiling Muxy DesktopNotificationService.swift
+[335/398] Compiling Muxy MuxyNotificationHooks.swift
+[336/398] Compiling Muxy NotificationNavigator.swift
+[337/398] Compiling Muxy NotificationSoundPlayer.swift
+[338/398] Compiling Muxy NotificationStore.swift
+[339/398] Compiling Muxy CodableFileStore.swift
+[340/398] Compiling Muxy JSONFilePersistence.swift
+[341/398] Compiling Muxy SettingsJSONStore.swift
+[342/398] Compiling Muxy GitWorktreesWatcher.swift
+[343/398] Compiling Muxy HomeProjectService.swift
+[344/398] Compiling Muxy ProjectGroupPersistence.swift
+[345/398] Compiling Muxy ProjectGroupStore.swift
+[346/422] Compiling Muxy RichInputSubmitter.swift
+[347/422] Compiling Muxy NotificationSocketServer.swift
+[348/422] Compiling Muxy SocketCommandHandler.swift
+[349/422] Compiling Muxy ClientThemeApplier.swift
+[350/422] Compiling Muxy ClientThemeStore.swift
+[351/422] Compiling Muxy GhosttyRuntimeEventAdapter.swift
+[352/422] Compiling Muxy GhosttyService.swift
+[353/422] Compiling Muxy RemoteTerminalSnapshotBuilder.swift
+[354/422] Compiling Muxy RemoteTerminalStreamer.swift
+[355/422] Compiling Muxy TerminalCommandTracker.swift
+[356/422] Compiling Muxy TerminalCommandTrackingInputGate.swift
+[357/422] Compiling Muxy TerminalEnvVarBuilder.swift
+[358/422] Compiling Muxy TerminalLaunchCommand.swift
+[359/422] Compiling Muxy TerminalOfflinePolicy.swift
+[360/422] Compiling Muxy TerminalOfflineService.swift
+[361/422] Compiling Muxy TerminalProgressStore.swift
+[362/422] Compiling Muxy TerminalSurfaceMaterializer.swift
+[363/422] Compiling Muxy TerminalViewRegistry.swift
+[364/422] Compiling Muxy ThemeService.swift
+[365/422] Compiling Muxy PaneOwnershipStore.swift
+[366/422] Compiling Muxy PanelHost.swift
+[367/422] Compiling Muxy PopoverHost.swift
+[368/422] Compiling Muxy SettingsFocusCoordinator.swift
+[369/422] Compiling Muxy SpeechLanguageCatalog.swift
+[370/446] Compiling Muxy VoiceRecorder.swift
+[371/446] Compiling Muxy VoiceRecordingState.swift
+[372/446] Compiling Muxy EditorThemePalette.swift
+[373/446] Compiling Muxy MuxyTheme.swift
+[374/446] Compiling Muxy UIMetrics.swift
+[375/446] Compiling Muxy UIScale.swift
+[376/446] Compiling Muxy CLIAccessor.swift
+[377/446] Compiling Muxy CLIWrapperScript.swift
+[378/446] Compiling Muxy DotEnvLoader.swift
+[379/446] Compiling Muxy DroppedPathsParser.swift
+[380/446] Compiling Muxy FilePermissions.swift
+[381/446] Compiling Muxy HelpLinks.swift
+[382/446] Compiling Muxy LaunchArgumentGuard.swift
+[383/446] Compiling Muxy LoginShellPath.swift
+[384/446] Compiling Muxy ReleaseNotesMarkdown.swift
+[385/446] Compiling Muxy SemanticVersion.swift
+[386/446] Compiling Muxy ShellEscaper.swift
+[387/446] Compiling Muxy SystemPasteboardSnapshot.swift
+[388/446] Compiling Muxy TranscriptInserter.swift
+[389/446] Compiling Muxy BrowserAddressField.swift
+[390/446] Compiling Muxy BrowserErrorView.swift
+[391/446] Compiling Muxy BrowserFindBar.swift
+[392/446] Compiling Muxy BrowserInspectableWebView.swift
+[393/446] Compiling Muxy BrowserPane.swift
+[394/470] Compiling Muxy BrowserStartPage.swift
+[395/470] Compiling Muxy BrowserSuggestionList.swift
+[396/470] Compiling Muxy BrowserSuggestionPanel.swift
+[397/470] Compiling Muxy BrowserToolbar.swift
+[398/470] Compiling Muxy BrowserWebView.swift
+[399/470] Compiling Muxy NotificationBadge.swift
+[400/470] Compiling Muxy UpdateBadge.swift
+[401/470] Compiling Muxy DebugButton.swift
+[402/470] Compiling Muxy IconButton.swift
+[403/470] Compiling Muxy OpenInIDEControl.swift
+[404/470] Compiling Muxy ResourceUsageButton.swift
+[405/470] Compiling Muxy ToolbarIconStrip.swift
+[406/470] Compiling Muxy AppBundleIconView.swift
+[407/470] Compiling Muxy ExtensionIconButton.swift
+[408/470] Compiling Muxy ExtensionIconView.swift
+[409/470] Compiling Muxy ExtensionRemoteIconView.swift
+[410/470] Compiling Muxy ProviderIconView.swift
+[411/470] Compiling Muxy ShortcutIconBadge.swift
+[412/470] Compiling Muxy DoubleClickView.swift
+[413/470] Compiling Muxy MiddleClickView.swift
+[414/470] Compiling Muxy ResizeHandle.swift
+[415/470] Compiling Muxy WindowDragView.swift
+[416/470] Compiling Muxy ExtensionModalOverlay.swift
+[417/470] Compiling Muxy ExtensionWebviewModalOverlay.swift
+[418/494] Compiling Muxy OverlayPanel.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[419/494] Compiling Muxy PaletteOverlay.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[420/494] Compiling Muxy ProjectPickerOverlay.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[421/494] Compiling Muxy TerminalOmniboxOverlay.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[422/494] Compiling Muxy PopoverPicker.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[423/494] Compiling Muxy ProjectPickerPathField.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[424/494] Compiling Muxy ProjectPickerShortcutHint.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[425/494] Compiling Muxy SearchableListPicker.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[426/494] Compiling Muxy SegmentedPicker.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[427/494] Compiling Muxy AppModalWindow.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[428/494] Compiling Muxy AppSidebarBackground.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[429/494] Compiling Muxy ClosureMenuItem.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[430/494] Compiling Muxy ExtensionTopbarItems.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[431/494] Compiling Muxy TruncationHelp.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[432/494] Compiling Muxy UUIDFramePreferenceKey.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[433/494] Compiling Muxy CreateExtensionSheet.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[434/494] Compiling Muxy ExtensionConsentDialog.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[435/494] Compiling Muxy ExtensionFolderPicker.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[436/494] Compiling Muxy ExtensionInstallPage.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[437/494] Compiling Muxy ExtensionOutputPanel.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[438/494] Compiling Muxy ExtensionStorePage.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[439/494] Compiling Muxy ExtensionWebView.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[440/494] Compiling Muxy ExtensionWebViewPane.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[441/494] Compiling Muxy ExtensionsView.swift
+/Users/runner/work/muxy/muxy/Muxy/Views/Extensions/ExtensionsView.swift:402:49: warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 400 | 
+ 401 |     private var enabledBinding: Binding<Bool> {
+ 402 |         Binding(get: { status.isEnabled }, set: onSetEnabled)
+     |                                                 `- warning: converting non-sendable function value to '@isolated(any) @Sendable (Bool) -> Void' may introduce data races
+ 403 |     }
+ 404 | 
+[442/518] Compiling Muxy NotificationPanel.swift
+[443/518] Compiling Muxy PanelContainer.swift
+[444/518] Compiling Muxy VoiceRecordingPanel.swift
+[445/518] Compiling Muxy ExtensionPopoverAnchor.swift
+[446/518] Compiling Muxy ExtensionPopoverView.swift
+[447/518] Compiling Muxy BackupSettingsView.swift
+[448/518] Compiling Muxy BrowserImportSheet.swift
+[449/518] Compiling Muxy BrowserSettingsView.swift
+[450/518] Compiling Muxy CommandsSettingsView.swift
+[451/518] Compiling Muxy ExtensionCustomSettingsView.swift
+[452/518] Compiling Muxy GeneralSettingsView.swift
+[453/518] Compiling Muxy InterfaceSettingsView.swift
+[454/518] Compiling Muxy KeyboardShortcutsSettingsView.swift
+[455/518] Compiling Muxy MobilePairingQRView.swift
+[456/518] Compiling Muxy MobileSettingsView.swift
+[457/518] Compiling Muxy NotificationSettingsView.swift
+[458/518] Compiling Muxy ProjectsSettingsView.swift
+[459/518] Compiling Muxy RecordingSettingsView.swift
+[460/518] Compiling Muxy RemoteDeviceEditorSheet.swift
+[461/518] Compiling Muxy RemoteDevicesSettingsView.swift
+[462/518] Compiling Muxy RichInputSettingsView.swift
+[463/518] Compiling Muxy SettingsJSONEditorView.swift
+[464/518] Compiling Muxy SettingsView.swift
+[465/518] Compiling Muxy SettingsCatalog.swift
+[466/518] Compiling Muxy ExpandedProjectRow.swift
+[467/518] Compiling Muxy ProjectFocusedSidebar.swift
+[468/518] Compiling Muxy ProjectRow.swift
+[469/518] Compiling Muxy WorkspaceSwitcher.swift
+[470/518] Compiling Muxy CreateWorktreeSheet.swift
+[471/518] Compiling Muxy ExtensionSidebarView.swift
+[472/518] Compiling Muxy LogoCropperSheet.swift
+[473/518] Compiling Muxy ProjectIconColorPicker.swift
+[474/518] Compiling Muxy SFSymbolPicker.swift
+[475/518] Compiling Muxy SidebarFooter.swift
+[476/518] Compiling Muxy WorktreePopover.swift
+[477/518] Compiling Muxy WorktreeRefreshHelper.swift
+[478/518] Compiling Muxy WorktreeRemovalConfirmation.swift
+[479/518] Compiling Muxy TabFocusedBranchPopover.swift
+[480/518] Compiling Muxy TabFocusedBreadcrumb.swift
+[481/518] Compiling Muxy TabFocusedProjectPopover.swift
+[482/518] Compiling Muxy TabFocusedProjectRow.swift
+[483/518] Compiling Muxy TabFocusedSidebar.swift
+[484/518] Compiling Muxy TabFocusedSidebarRow.swift
+[485/518] Compiling Muxy TabFocusedTabsList.swift
+[486/518] Compiling Muxy TabFocusedWorkspacePopover.swift
+[487/518] Compiling Muxy MainWindow+Panels.swift
+[488/518] Compiling Muxy MainWindow.swift
+[489/518] Compiling Muxy ExtensionPanelView.swift
+[490/518] Compiling Muxy SettingsComponents.swift
+[491/518] Compiling Muxy ShortcutRecorderView.swift
+[492/518] Compiling Muxy TerminalSettingsView.swift
+[493/518] Compiling Muxy ThemePicker.swift
+[494/518] Compiling Muxy GhosttyTerminalNSView.swift
+[495/518] Compiling Muxy ProjectStatusBar.swift
+[496/518] Compiling Muxy RichInputSidePanel.swift
+[497/518] Compiling Muxy RichInputTextEditor.swift
+[498/518] Compiling Muxy RichInputToolbarButton.swift
+[499/518] Compiling Muxy TerminalPane.swift
+[500/518] Compiling Muxy TerminalProgressCircle.swift
+[501/518] Compiling Muxy TerminalScrollbarOverlay.swift
+[502/518] Compiling Muxy TerminalSearchBar.swift
+[503/518] Compiling Muxy WhatsNewView.swift
+[504/518] Compiling Muxy DropZoneOverlay.swift
+[505/518] Compiling Muxy EmptyProjectPlaceholder.swift
+[506/518] Compiling Muxy LayoutPickerMenu.swift
+[507/518] Compiling Muxy PaneNode.swift
+[508/518] Compiling Muxy SplitContainer.swift
+[509/518] Compiling Muxy TabAreaView.swift
+[510/518] Compiling Muxy TabStrip.swift
+[511/518] Compiling Muxy WelcomeView.swift
+[512/518] Compiling Muxy Workspace.swift
+[513/518] Compiling Muxy resource_bundle_accessor.swift
