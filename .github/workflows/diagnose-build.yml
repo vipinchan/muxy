@@ -20,23 +20,36 @@ jobs:
         run: scripts/setup.sh
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Compare low-concurrency build
+      - name: Isolate build targets
         run: |
           swift package clean
           set +e
-          swift build --build-tests --quiet --jobs 2 > /tmp/build-jobs2.log 2>&1
-          status=$?
+          swift build --target Muxy --quiet > /tmp/muxy-target.log 2>&1
+          muxy_status=$?
+
+          swift package clean
+          swift build --target MuxyTests --jobs 1 -v > /tmp/tests-target.log 2>&1
+          tests_status=$?
           set -e
+
           {
-            echo "jobs2_exit_code=$status"
-            echo "---- jobs=2 log tail ----"
-            tail -n 120 /tmp/build-jobs2.log
-          } > build-concurrency-diagnostics.txt
-          if git diff --quiet -- build-concurrency-diagnostics.txt && git ls-files --error-unmatch build-concurrency-diagnostics.txt >/dev/null 2>&1; then
+            echo "muxy_target_exit_code=$muxy_status"
+            echo "tests_target_exit_code=$tests_status"
+            echo "---- Muxy target tail ----"
+            tail -n 80 /tmp/muxy-target.log
+            echo "---- MuxyTests target tail ----"
+            tail -n 200 /tmp/tests-target.log
+            echo "---- recent swift-frontend commands ----"
+            grep -n 'swift-frontend' /tmp/tests-target.log | tail -n 30 || true
+            echo "---- failure keywords ----"
+            grep -Ei -n 'signal|stack dump|killed|fatal|linker|undefined symbol|emit-module|command failed|crash|segmentation|error:' /tmp/tests-target.log | tail -n 120 || true
+          } > build-target-diagnostics.txt
+
+          if git diff --quiet -- build-target-diagnostics.txt && git ls-files --error-unmatch build-target-diagnostics.txt >/dev/null 2>&1; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add build-concurrency-diagnostics.txt
-          git commit -m "ci: capture low-concurrency build result"
+          git add build-target-diagnostics.txt
+          git commit -m "ci: capture isolated build target diagnostics"
           git push origin HEAD:feature/dedicated-hotkey-window
