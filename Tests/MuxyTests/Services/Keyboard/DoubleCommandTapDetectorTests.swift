@@ -17,6 +17,16 @@ struct DoubleCommandTapDetectorTests {
         #expect(secondUp)
     }
 
+    @Test("configured interval controls double tap recognition")
+    func configuredIntervalControlsRecognition() {
+        var detector = DoubleCommandTapDetector(doubleTapInterval: 0.50)
+        _ = detector.handleFlagsChanged(commandPressed: true, at: 1.00)
+        _ = detector.handleFlagsChanged(commandPressed: false, at: 1.05)
+        _ = detector.handleFlagsChanged(commandPressed: true, at: 1.40)
+        let result = detector.handleFlagsChanged(commandPressed: false, at: 1.45)
+        #expect(result)
+    }
+
     @Test("tap outside interval does not trigger")
     func tapOutsideIntervalDoesNotTrigger() {
         var detector = DoubleCommandTapDetector()
