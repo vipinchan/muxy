@@ -67,18 +67,15 @@ struct DoubleCommandTapDetector {
     }
 }
 
-private final class HotkeyPanel: NSPanel {
-    override var canBecomeKey: Bool { true }
-    override var canBecomeMain: Bool { false }
-}
-
 @MainActor
 final class HotkeyWindowController {
     static let shared = HotkeyWindowController()
 
-    private var panel: HotkeyPanel?
-    private weak var sourceWindow: NSWindow?
-    private var hostedContentView: NSView?
+    private weak var hotkeyWindow: NSWindow?
+    private var originalFrame: NSRect?
+    private var originalLevel: NSWindow.Level?
+    private var originalCollectionBehavior: NSWindow.CollectionBehavior?
+    private var previousApplication: NSRunningApplication?
 
     private(set) var isPresented = false
 
@@ -89,54 +86,68 @@ final class HotkeyWindowController {
     }
 
     func show() {
-        guard !isPresented,
-              let sourceWindow = AppDelegate.mainAppWindow(),
-              let contentView = sourceWindow.contentView
-        else { return }
+        guard !isPresented, let window = AppDelegate.mainAppWindow() else { return }
 
-        let placeholder = NSView(frame: contentView.frame)
-        placeholder.autoresizingMask = [.width, .height]
-        sourceWindow.contentView = placeholder
+        hotkeyWindow = window
+        originalFrame = window.frame
+        originalLevel = window.level
+        originalCollectionBehavior = window.collectionBehavior
 
-        let frame = hotkeyFrame()
-        let panel = HotkeyPanel(
-            contentRect: frame,
-            styleMask: [.borderless, .nonactivatingPanel, .resizable],
-            backing: .buffered,
-            defer: false
-        )
-        panel.level = .floating
-        panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .transient]
-        panel.isFloatingPanel = true
-        panel.hidesOnDeactivate = false
-        panel.becomesKeyOnlyIfNeeded = false
-        panel.animationBehavior = .utilityWindow
-        panel.contentView = contentView
+        if let frontmostApplication = NSWorkspace.shared.frontmostApplication,
+           frontmostApplication.processIdentifier != ProcessInfo.processInfo.processIdentifier
+        {
+            previousApplication = frontmostApplication
+        } else {
+            previousApplication = nil
+        }
 
-        self.sourceWindow = sourceWindow
-        hostedContentView = contentView
-        self.panel = panel
+        var collectionBehavior = window.collectionBehavior
+        collectionBehavior.remove(.moveToActiveSpace)
+        collectionBehavior.insert(.canJoinAllSpaces)
+        collectionBehavior.insert(.fullScreenAuxiliary)
+        collectionBehavior.insert(.transient)
+        window.collectionBehavior = collectionBehavior
+        window.level = .floating
+
+        if !window.styleMask.contains(.fullScreen) {
+            window.setFrame(hotkeyFrame(), display: true)
+        }
+
         isPresented = true
-
-        panel.makeKeyAndOrderFront(nil)
-        panel.orderFrontRegardless()
+        NSApp.activate(ignoringOtherApps: true)
+        window.makeKeyAndOrderFront(nil)
+        window.orderFrontRegardless()
     }
 
     func hide() {
         guard isPresented else { return }
 
-        panel?.orderOut(nil)
+        let window = hotkeyWindow ?? AppDelegate.mainAppWindow()
+        window?.orderOut(nil)
 
-        if let sourceWindow, let hostedContentView {
-            panel?.contentView = nil
-            sourceWindow.contentView = hostedContentView
+        if let window {
+            if let originalLevel {
+                window.level = originalLevel
+            }
+            if let originalCollectionBehavior {
+                window.collectionBehavior = originalCollectionBehavior
+            }
+            if let originalFrame, !window.styleMask.contains(.fullScreen) {
+                window.setFrame(originalFrame, display: false)
+            }
         }
 
-        panel?.close()
-        panel = nil
-        sourceWindow = nil
-        hostedContentView = nil
+        let applicationToRestore = previousApplication
+        hotkeyWindow = nil
+        originalFrame = nil
+        originalLevel = nil
+        originalCollectionBehavior = nil
+        previousApplication = nil
         isPresented = false
+
+        if let applicationToRestore, !applicationToRestore.isTerminated {
+            applicationToRestore.activate(options: [.activateIgnoringOtherApps])
+        }
     }
 
     private func hotkeyFrame() -> NSRect {
