@@ -1,0 +1,19 @@
+name: Diagnose Lint
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install and run SwiftLint
+        run: |
+          SWIFTLINT_VERSION=$(grep '^swiftlint ' .tool-versions | awk '{print $2}')
+          curl -sL "https://github.com/realm/SwiftLint/releases/download/$SWIFTLINT_VERSION/portable_swiftlint.zip" -o /tmp/swiftlint.zip
+          unzip -q -o /tmp/swiftlint.zip -d /tmp/swiftlint
+          cp /tmp/swiftlint/swiftlint /usr/local/bin/swiftlint
+          chmod +x /usr/local/bin/swiftlint
+          swiftlint lint --strict --quiet
