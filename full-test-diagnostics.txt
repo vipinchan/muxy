@@ -1,0 +1,503 @@
+full_test_exit_code=0
+---- explicit test failure lines ----
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[216/278] Compiling Muxy ExtensionBridgeShared.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[217/278] Compiling Muxy ExtensionCommandExecutor.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[218/278] Compiling Muxy ExtensionConsentService.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[219/278] Compiling Muxy ExtensionConsoleHandler.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[220/278] Compiling Muxy ExtensionDevPathStore.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[221/278] Compiling Muxy ExtensionDialogService.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[222/278] Compiling Muxy ExtensionEnabledStore.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[223/278] Compiling Muxy ExtensionEventEmitter.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[224/278] Compiling Muxy ExtensionFileEventEmitter.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[225/278] Compiling Muxy ExtensionGrantStore.swift
+--
+442 |                 let name = String(cString: nameBuf)
+    |                            `- warning: 'init(cString:)' is deprecated: Use String(decoding: array, as: UTF8.self) instead, after truncating the null termination.
+443 |                 let key = name.isEmpty ? "(unnamed)" : name
+444 |                 histogram[key, default: 0] += 1
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:49:35: warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 47 |             let size = (attributes?[.size] as? Int) ?? 0
+ 48 |             if size > Self.maxAssetBytes {
+ 49 |                 self.failIfActive(urlSchemeTask, taskID: taskID, error: URLError(.dataLengthExceedsMaximum))
+    |                                   `- warning: capture of 'urlSchemeTask' with non-sendable type 'any WKURLSchemeTask' in a '@Sendable' closure
+ 50 |                 return
+ 51 |             }
+
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk/System/Library/Frameworks/WebKit.framework/Headers/WKURLSchemeTask.h:33:11: note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+31 | 
+32 | API_AVAILABLE(macos(10.13), ios(11.0))
+33 | @protocol WKURLSchemeTask <NSObject>
+   |           `- note: protocol 'WKURLSchemeTask' does not conform to the 'Sendable' protocol
+34 | 
+35 | /*! @abstract The request to load for this task.
+
+/Users/runner/work/muxy/muxy/Muxy/Services/Extensions/ExtensionAssetSchemeHandler.swift:3:1: warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  1 | import Foundation
+  2 | import UniformTypeIdentifiers
+  3 | import WebKit
+    | `- warning: add '@preconcurrency' to treat 'Sendable'-related errors from module 'WebKit' as warnings
+  4 | 
+  5 | final class ExtensionAssetSchemeHandler: NSObject, WKURLSchemeHandler {
+[226/302] Compiling Muxy ExtensionHTTPClient.swift
+---- full test tail ----
+ 67 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 68 |         #expect(result?.action == "forecast")
+ 69 |         #expect(result?.payload == "a|b|c")
+[630/680] Compiling MuxyTests SentryServiceTests.swift
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:13:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 11 |     func parsesEventWithPayload() {
+ 12 |         let parsed = HostBridge.parseEvent("event|pane.created|paneID=abc|title=hello")
+ 13 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 14 |         #expect(result?.name == "pane.created")
+ 15 |         #expect(result?.payload["paneID"] == "abc")
+
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:51:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 49 |     func parsesInvoke() {
+ 50 |         let parsed = HostBridge.parseInvoke("invoke|call-1|forecast|eyJjaXR5IjoiQmVybGluIn0=")
+ 51 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 52 |         #expect(result?.callID == "call-1")
+ 53 |         #expect(result?.action == "forecast")
+
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:67:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 65 |     func parsesInvokePreservesPayload() {
+ 66 |         let parsed = HostBridge.parseInvoke("invoke|call-1|forecast|a|b|c")
+ 67 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 68 |         #expect(result?.action == "forecast")
+ 69 |         #expect(result?.payload == "a|b|c")
+[631/680] Compiling MuxyTests ExtensionHostBridgeTests.swift
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:13:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 11 |     func parsesEventWithPayload() {
+ 12 |         let parsed = HostBridge.parseEvent("event|pane.created|paneID=abc|title=hello")
+ 13 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 14 |         #expect(result?.name == "pane.created")
+ 15 |         #expect(result?.payload["paneID"] == "abc")
+
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:51:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 49 |     func parsesInvoke() {
+ 50 |         let parsed = HostBridge.parseInvoke("invoke|call-1|forecast|eyJjaXR5IjoiQmVybGluIn0=")
+ 51 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 52 |         #expect(result?.callID == "call-1")
+ 53 |         #expect(result?.action == "forecast")
+
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:67:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 65 |     func parsesInvokePreservesPayload() {
+ 66 |         let parsed = HostBridge.parseInvoke("invoke|call-1|forecast|a|b|c")
+ 67 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 68 |         #expect(result?.action == "forecast")
+ 69 |         #expect(result?.payload == "a|b|c")
+[632/680] Compiling MuxyTests ExtensionBarItemOverrideTests.swift
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:13:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 11 |     func parsesEventWithPayload() {
+ 12 |         let parsed = HostBridge.parseEvent("event|pane.created|paneID=abc|title=hello")
+ 13 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 14 |         #expect(result?.name == "pane.created")
+ 15 |         #expect(result?.payload["paneID"] == "abc")
+
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:51:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 49 |     func parsesInvoke() {
+ 50 |         let parsed = HostBridge.parseInvoke("invoke|call-1|forecast|eyJjaXR5IjoiQmVybGluIn0=")
+ 51 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 52 |         #expect(result?.callID == "call-1")
+ 53 |         #expect(result?.action == "forecast")
+
+/Users/runner/work/muxy/muxy/Tests/MuxyTests/Services/ExtensionHostBridgeTests.swift:67:36: warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 65 |     func parsesInvokePreservesPayload() {
+ 66 |         let parsed = HostBridge.parseInvoke("invoke|call-1|forecast|a|b|c")
+ 67 |         let result = try? #require(parsed)
+    |                                    `- warning: '#require(_:_:)' is redundant because 'parsed' never equals 'nil' (from macro 'require')
+ 68 |         #expect(result?.action == "forecast")
+ 69 |         #expect(result?.payload == "a|b|c")
+[633/702] Compiling MuxyTests RichInputSubmitterTests.swift
+[634/702] Compiling MuxyTests NotificationSocketAcceptLoopTests.swift
+[635/702] Compiling MuxyTests NotificationSocketCommandReplyTests.swift
+[636/702] Compiling MuxyTests NotificationSocketInvokeTests.swift
+[637/702] Compiling MuxyTests NotificationSocketPathTests.swift
+[638/702] Compiling MuxyTests NotificationSocketReadyTests.swift
+[639/702] Compiling MuxyTests SocketCommandHandlerTests.swift
+[640/702] Compiling MuxyTests TerminalCommandTrackerTests.swift
+[641/702] Compiling MuxyTests TerminalCommandTrackingInputGateTests.swift
+[642/702] Compiling MuxyTests TerminalLaunchCommandTests.swift
+[643/702] Compiling MuxyTests TerminalOfflinePolicyTests.swift
+[644/702] Compiling MuxyTests TerminalOfflineServiceTests.swift
+[645/702] Compiling MuxyTests TerminalProgressStoreTests.swift
+[646/702] Compiling MuxyTests ThemeServiceTests.swift
+[647/702] Compiling MuxyTests PanelSharedStateTests.swift
+[648/702] Compiling MuxyTests PopoverHostTests.swift
+[649/702] Compiling MuxyTests SettingsFocusCoordinatorTests.swift
+[650/702] Compiling MuxyTests VoiceRecordingTests.swift
+[651/702] Compiling MuxyTests ExtensionManifestFixture.swift
+[652/702] Compiling MuxyTests InMemoryWorkspaceContextSink.swift
+[653/702] Compiling MuxyTests RepositoryRoot.swift
+[654/702] Compiling MuxyTests UIScaleTests.swift
+[655/724] Compiling MuxyTests CLIWrapperScriptTests.swift
+[656/724] Compiling MuxyTests DroppedPathsParserTests.swift
+[657/724] Compiling MuxyTests LoginShellPathTests.swift
+[658/724] Compiling MuxyTests ReleaseNotesMarkdownTests.swift
+[659/724] Compiling MuxyTests SemanticVersionTests.swift
+[660/724] Compiling MuxyTests ShellEscaperTests.swift
+[661/724] Compiling MuxyTests BrowserAddressFieldTests.swift
+[662/724] Compiling MuxyTests BrowserInspectableWebViewTests.swift
+[663/724] Compiling MuxyTests ExtensionRemoteIconCacheTests.swift
+[664/724] Compiling MuxyTests PaletteSearchFieldTests.swift
+[665/724] Compiling MuxyTests ProjectPickerFooterShortcutTests.swift
+[666/724] Compiling MuxyTests ClosureMenuItemTests.swift
+[667/724] Compiling MuxyTests ExtensionConsentDialogTests.swift
+[668/724] Compiling MuxyTests ExtensionWebViewTests.swift
+[669/724] Compiling MuxyTests SidebarLayoutTests.swift
+[670/724] Compiling MuxyTests WorktreeRemovalConfirmationTests.swift
+[671/724] Compiling MuxyTests SettingsCatalogTests.swift
+[672/724] Compiling MuxyTests ProjectStatusBarTests.swift
+[673/724] Compiling MuxyTests SleepingTabPlaceholderPolicyTests.swift
+[674/724] Compiling MuxyTests TerminalBridgeResolveFilePathTests.swift
+[675/724] Compiling MuxyTests TerminalTextInputClientTests.swift
+[676/724] Compiling MuxyTests WindowConfiguratorTests.swift
+[677/724] Compiling MuxyTests ProjectOpenServiceTests.swift
+[678/724] Compiling MuxyTests ProjectSidebarDropHandlerTests.swift
+[679/724] Compiling MuxyTests ProjectStoreTests.swift
+[680/724] Compiling MuxyTests SidebarGroupTests.swift
+[681/724] Compiling MuxyTests VCSWorktreeAutoRefresherTests.swift
+[682/724] Compiling MuxyTests WorkspaceSelectionServiceTests.swift
+[683/724] Compiling MuxyTests WorktreeLocationResolverTests.swift
+[684/724] Compiling MuxyTests WorktreeStoreTests.swift
+[685/724] Compiling MuxyTests WorktreeTeardownRunnerTests.swift
+[686/724] Compiling MuxyTests ProjectPickerDefaultLocationSettingsModelTests.swift
+[687/724] Compiling MuxyTests ProjectPickerNavigatorTests.swift
+[688/724] Compiling MuxyTests ProjectPickerPathServiceTests.swift
+[689/724] Compiling MuxyTests ProjectPickerPreferencesTests.swift
+[690/724] Compiling MuxyTests ProjectPickerSessionTests.swift
+[691/724] Compiling MuxyTests ProjectPickerWorkflowTests.swift
+[692/724] Compiling MuxyTests ClaudeCodeProviderTests.swift
+[693/724] Compiling MuxyTests CodexProviderTests.swift
+[694/724] Compiling MuxyTests DroidProviderTests.swift
+[695/724] Compiling MuxyTests GrokProviderTests.swift
+[696/724] Compiling MuxyTests PiProviderTests.swift
+[697/724] Compiling MuxyTests ProviderExecutableLocatorTests.swift
+[698/724] Compiling MuxyTests CommandTransformTests.swift
+[699/724] Compiling MuxyTests RemoteProjectPickerTests.swift
+[700/724] Compiling MuxyTests ApprovedDevicesStoreTests.swift
+[701/724] Compiling MuxyTests MobilePairingURITests.swift
+[702/724] Compiling MuxyTests RemoteDeviceStoreTests.swift
+[703/724] Compiling MuxyTests ExtensionVerbRoutingTests.swift
+[704/724] Compiling MuxyTests MuxyAPIBrowserTests.swift
+[705/724] Compiling MuxyTests MuxyAPIFilesTests.swift
+[706/724] Compiling MuxyTests MuxyAPIGitTests.swift
+[707/724] Compiling MuxyTests MuxyAPIGitWorktreeTests.swift
+[708/724] Compiling MuxyTests MuxyAPIPanesMaterializeTests.swift
+[709/724] Compiling MuxyTests MuxyAPIProjectDeleteTests.swift
+[710/724] Compiling MuxyTests MuxyAPIProjectManagementTests.swift
+[711/724] Compiling MuxyTests MuxyAPITabsControlTests.swift
+[712/724] Compiling MuxyTests MuxyAPITabsCustomizeTests.swift
+[713/724] Compiling MuxyTests MuxyAPITabsOpenTests.swift
+[714/724] Compiling MuxyTests MuxyAPITabsResolveDirectoryTests.swift
+[715/724] Compiling MuxyTests MuxyURLOpenTests.swift
+[716/724] Compiling MuxyTests DesktopNotificationServiceTests.swift
+[717/724] Compiling MuxyTests MuxyNotificationHooksTests.swift
+[718/724] Compiling MuxyTests CodableFileStoreTests.swift
+[719/724] Compiling MuxyTests SettingsJSONStoreTests.swift
+[720/724] Compiling MuxyTests GitWorktreesWatcherTests.swift
+[721/724] Compiling MuxyTests HomeProjectServiceTests.swift
+[722/724] Compiling MuxyTests ProjectGroupStoreTests.swift
+[723/726] Compiling MuxyPackageTests runner.swift
+[724/726] Emitting module MuxyPackageTests
+[724/726] Write Objects.LinkFileList
+warning: (arm64)  could not find symbol '_ImFontConfig_ImFontConfig' in object file '/Users/runner/work/muxy/muxy/GhosttyKit.xcframework/macos-arm64_x86_64/ghostty-internal.a(ext.o)'
+warning: (arm64)  could not find symbol '_ImGuiStyle_ImGuiStyle' in object file '/Users/runner/work/muxy/muxy/GhosttyKit.xcframework/macos-arm64_x86_64/ghostty-internal.a(ext.o)'
+[725/726] Linking MuxyPackageTests
+Build complete! (159.29s)
+Test Suite 'All tests' started at 2026-07-12 11:08:39.196.
+Test Suite 'All tests' passed at 2026-07-12 11:08:39.198.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+◇ Test run started.
+↳ Testing Library Version: 124.4
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 1935 tests passed after 14.890 seconds.
