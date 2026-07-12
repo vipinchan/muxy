@@ -72,8 +72,10 @@ private final class HotkeyWorkspaceModel {
     }
 }
 
-private final class HotkeyWorkspaceWindow: NSWindow {
+private final class HotkeyWorkspaceWindow: NSPanel {
     var suppressConfiguratorClose = true
+
+    override var canBecomeKey: Bool { true }
 
     override func close() {
         if suppressConfiguratorClose {
@@ -149,7 +151,6 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
 
         isPresented = true
         window.orderFrontRegardless()
-        NSApp.activate(ignoringOtherApps: true)
         window.makeKeyAndOrderFront(nil)
     }
 
@@ -176,13 +177,23 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
         let model = HotkeyWorkspaceModel()
         let window = HotkeyWorkspaceWindow(
             contentRect: hotkeyFrame(),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            styleMask: [
+                .titled,
+                .closable,
+                .miniaturizable,
+                .resizable,
+                .fullSizeContentView,
+                .nonactivatingPanel,
+            ],
             backing: .buffered,
             defer: false
         )
         window.identifier = ShortcutContext.hotkeyWindowIdentifier
         window.delegate = self
         window.isReleasedWhenClosed = false
+        window.isFloatingPanel = true
+        window.hidesOnDeactivate = false
+        window.becomesKeyOnlyIfNeeded = false
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .hidden
         window.isMovable = false
@@ -204,6 +215,7 @@ final class HotkeyWindowController: NSObject, NSWindowDelegate {
             .environment(ThemeService.shared)
             .environment(ExtensionStore.shared)
             .environment(ExtensionSettingsStore.shared)
+            .environment(\.accessibilityReduceTransparency, true)
             .preferredColorScheme(MuxyTheme.colorScheme)
 
         window.contentViewController = NSHostingController(rootView: rootView)
