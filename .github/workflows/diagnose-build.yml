@@ -20,7 +20,7 @@ jobs:
         run: scripts/setup.sh
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Capture build exit status and tail
+      - name: Capture Swift failure diagnostics
         run: |
           set +e
           swift build --build-tests --quiet > /tmp/build.log 2>&1
@@ -28,14 +28,14 @@ jobs:
           set -e
           {
             echo "exit_code=$status"
-            echo "---- build log tail ----"
-            tail -n 300 /tmp/build.log
-          } > build-tail.txt
-          if git diff --quiet -- build-tail.txt && git ls-files --error-unmatch build-tail.txt >/dev/null 2>&1; then
+            echo "---- failure diagnostics ----"
+            grep -Ei -B 8 -A 20 'stack dump|crash|segmentation|signal [0-9]+|command failed|fatal|killed|terminated|assertion|exception|please submit|swift-frontend.*failed' /tmp/build.log || true
+          } > build-failure-diagnostics.txt
+          if git diff --quiet -- build-failure-diagnostics.txt && git ls-files --error-unmatch build-failure-diagnostics.txt >/dev/null 2>&1; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add build-tail.txt
-          git commit -m "ci: capture Swift build tail"
+          git add build-failure-diagnostics.txt
+          git commit -m "ci: capture Swift failure diagnostics"
           git push origin HEAD:feature/dedicated-hotkey-window
