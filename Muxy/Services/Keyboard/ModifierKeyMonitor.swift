@@ -88,6 +88,9 @@ final class HotkeyWindowController {
     func show() {
         guard !isPresented, let window = AppDelegate.mainAppWindow() else { return }
 
+        // Keep the original SwiftUI WindowGroup NSWindow intact. MainWindow's custom
+        // chrome, shortcut routing, tab strip, and fullscreen tracking are attached to
+        // that window and break when its contentView is rehosted in a separate panel.
         hotkeyWindow = window
         originalFrame = window.frame
         originalLevel = window.level
