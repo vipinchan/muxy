@@ -1,15 +1,8 @@
 import AppKit
 import SwiftUI
 
-private struct HotkeyWorkspaceEnvironmentKey: EnvironmentKey {
-    static let defaultValue = false
-}
-
 extension EnvironmentValues {
-    var isHotkeyWorkspace: Bool {
-        get { self[HotkeyWorkspaceEnvironmentKey.self] }
-        set { self[HotkeyWorkspaceEnvironmentKey.self] = newValue }
-    }
+    @Entry var isHotkeyWorkspace: Bool = false
 }
 
 enum AppSidebarVibrancy {
