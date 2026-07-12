@@ -1,8 +1,8 @@
 name: Diagnose Current Build
 
 on:
-  push:
-    branches: [feature/dedicated-hotkey-window]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
