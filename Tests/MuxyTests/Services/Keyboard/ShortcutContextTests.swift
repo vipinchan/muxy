@@ -12,6 +12,12 @@ struct ShortcutContextTests {
         return window
     }
 
+    private func hotkeyWindow() -> NSWindow {
+        let window = NSWindow()
+        window.identifier = ShortcutContext.hotkeyWindowIdentifier
+        return window
+    }
+
     @Test("non-main window only exposes the global scope")
     func nonMainWindowScopes() {
         let scopes = ShortcutContext.activeScopes(for: NSWindow(), isTerminalFocused: true)
@@ -38,6 +44,15 @@ struct ShortcutContextTests {
             isBrowserFocused: true
         )
         #expect(scopes == [.global, .mainWindow, .browser])
+    }
+
+    @Test("hotkey window exposes workspace and terminal scopes")
+    func hotkeyWindowScopes() {
+        let window = hotkeyWindow()
+        #expect(ShortcutContext.isMainWindow(window))
+        #expect(ShortcutContext.isHotkeyWindow(window))
+        let scopes = ShortcutContext.activeScopes(for: window, isTerminalFocused: true)
+        #expect(scopes == [.global, .mainWindow, .terminal])
     }
 
     @Test("find action is gated to the terminal scope")

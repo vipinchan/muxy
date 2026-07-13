@@ -431,6 +431,42 @@ enum SettingsCatalog {
             defaultValue: TerminalOfflinePreferences.defaultIdleThreshold
         ),
         SettingsCatalogItem(
+            key: GlobalHotkeyPreferences.enabledKey,
+            title: "Enable Global Hotkey",
+            description: "Enables the system-wide hotkey workspace trigger.",
+            category: .shortcuts,
+            section: "Global Hotkey",
+            defaultValue: GlobalHotkeyPreferences.defaultEnabled,
+            aliases: ["hotkey window", "quick terminal", "double command", "double control", "double option"]
+        ),
+        SettingsCatalogItem(
+            key: GlobalHotkeyPreferences.triggerKey,
+            title: "Global Hotkey Trigger",
+            description: "Chooses the modifier double-tap gesture used to show the hotkey workspace.",
+            category: .shortcuts,
+            section: "Global Hotkey",
+            defaultValue: GlobalHotkeyPreferences.defaultTrigger.rawValue,
+            aliases: ["command", "control", "option", "modifier"]
+        ),
+        SettingsCatalogItem(
+            key: GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey,
+            title: "Double Tap Interval",
+            description: "Sets the maximum interval between modifier taps in milliseconds.",
+            category: .shortcuts,
+            section: "Global Hotkey",
+            defaultValue: GlobalHotkeyPreferences.defaultDoubleTapIntervalMilliseconds,
+            aliases: ["timing", "milliseconds", "double tap"]
+        ),
+        SettingsCatalogItem(
+            key: GlobalHotkeyPreferences.toggleToHideKey,
+            title: "Toggle to Hide",
+            description: "Hides the hotkey workspace when the trigger is used while it is visible.",
+            category: .shortcuts,
+            section: "Global Hotkey",
+            defaultValue: GlobalHotkeyPreferences.defaultToggleToHide,
+            aliases: ["show only", "hide", "toggle"]
+        ),
+        SettingsCatalogItem(
             key: "shortcuts.app",
             title: "App Shortcuts",
             description: "Configures Muxy keyboard shortcuts.",
