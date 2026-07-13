@@ -1,0 +1,109 @@
+name: Build and Release Fork
+
+on:
+  push:
+    branches: [release/latest]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-fork-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build ${{ matrix.arch }}
+    runs-on: macos-15
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [arm64, x86_64]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select Xcode
+        run: sudo xcode-select -s "/Applications/Xcode_$(grep '^xcode ' .tool-versions | awk '{print $2}').app"
+
+      - name: Resolve release version
+        run: |
+          BASE_VERSION=$(tr -d '[:space:]' < BETA_VERSION)
+          echo "VERSION=${BASE_VERSION}-beta.${GITHUB_RUN_NUMBER}" >> "$GITHUB_ENV"
+          echo "TAG=v${BASE_VERSION}-beta.${GITHUB_RUN_NUMBER}-vipin" >> "$GITHUB_ENV"
+
+      - name: Setup GhosttyKit
+        run: |
+          chmod +x scripts/setup.sh
+          scripts/setup.sh
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Resolve Swift packages
+        run: swift package resolve
+
+      - name: Install create-dmg
+        run: npm install --global create-dmg
+
+      - name: Build and package
+        run: |
+          chmod +x scripts/build-release.sh scripts/create-icns.sh
+          scripts/build-release.sh \
+            --arch "${{ matrix.arch }}" \
+            --version "$VERSION"
+
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: dmg-${{ matrix.arch }}
+          path: build/Muxy-${{ env.VERSION }}-${{ matrix.arch }}.dmg
+          if-no-files-found: error
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve release version
+        run: |
+          BASE_VERSION=$(tr -d '[:space:]' < BETA_VERSION)
+          echo "VERSION=${BASE_VERSION}-beta.${GITHUB_RUN_NUMBER}" >> "$GITHUB_ENV"
+          echo "TAG=v${BASE_VERSION}-beta.${GITHUB_RUN_NUMBER}-vipin" >> "$GITHUB_ENV"
+
+      - name: Download DMGs
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > /tmp/release-notes.md <<EOF
+          Personal Muxy fork build from \`${GITHUB_SHA}\`.
+
+          Includes the configurable global hotkey workspace from upstream PR #893.
+
+          Artifacts:
+          - Apple Silicon: \`Muxy-${VERSION}-arm64.dmg\`
+          - Intel: \`Muxy-${VERSION}-x86_64.dmg\`
+
+          This fork build is not notarized with the upstream Muxy Developer ID certificate. macOS may require removing the quarantine attribute after installation.
+          EOF
+
+          gh release create "$TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Muxy $TAG" \
+            --notes-file /tmp/release-notes.md \
+            --latest \
+            artifacts/dmg-arm64/*.dmg \
+            artifacts/dmg-x86_64/*.dmg
