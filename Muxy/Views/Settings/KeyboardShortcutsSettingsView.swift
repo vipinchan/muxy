@@ -35,6 +35,7 @@ struct KeyboardShortcutsSettingsView: View {
 
             Button("Reset All") {
                 store.resetToDefaults()
+                GlobalHotkeyPreferences.resetToDefaults()
                 recordingAction = nil
                 conflictWarning = nil
             }
