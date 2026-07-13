@@ -25,7 +25,7 @@ enum GlobalHotkeyPreferences {
     static let doubleTapIntervalMillisecondsKey = "muxy.globalHotkey.doubleTapIntervalMilliseconds"
     static let toggleToHideKey = "muxy.globalHotkey.toggleToHide"
 
-    static let defaultEnabled = true
+    static let defaultEnabled = false
     static let defaultTrigger = GlobalHotkeyTrigger.doubleCommand
     static let defaultDoubleTapIntervalMilliseconds = 300.0
     static let minimumDoubleTapIntervalMilliseconds = 100.0
@@ -59,6 +59,13 @@ enum GlobalHotkeyPreferences {
     static func toggleToHide(defaults: UserDefaults = .standard) -> Bool {
         guard defaults.object(forKey: toggleToHideKey) != nil else { return defaultToggleToHide }
         return defaults.bool(forKey: toggleToHideKey)
+    }
+
+    static func resetToDefaults(defaults: UserDefaults = .standard) {
+        defaults.removeObject(forKey: enabledKey)
+        defaults.removeObject(forKey: triggerKey)
+        defaults.removeObject(forKey: doubleTapIntervalMillisecondsKey)
+        defaults.removeObject(forKey: toggleToHideKey)
     }
 
     static func clampedDoubleTapIntervalMilliseconds(_ value: Double) -> Double {
