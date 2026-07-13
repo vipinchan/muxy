@@ -201,6 +201,7 @@ enum SettingsJSONStore {
         let allowedValues: [String: Set<String>] = [
             UpdateChannel.storageKey: Set(UpdateChannel.allCases.map(\.rawValue)),
             ProjectPickerPreferences.storageKey: Set(ProjectPickerMode.allCases.map(\.rawValue)),
+            GlobalHotkeyPreferences.triggerKey: Set(GlobalHotkeyTrigger.allCases.map(\.rawValue)),
             SentryConsent.storageKey: Set(["", SentryConsent.allowed.rawValue, SentryConsent.denied.rawValue]),
             "muxy.ui.scale": Set(UIScale.Preset.allCases.map(\.rawValue)),
             AppBackgroundStyle.storageKey: Set(AppBackgroundStyle.allCases.map(\.rawValue)),
@@ -226,6 +227,10 @@ enum SettingsJSONStore {
 
     private static func validateAllowedDouble(_ value: Double, key: String) throws {
         switch key {
+        case GlobalHotkeyPreferences.doubleTapIntervalMillisecondsKey:
+            guard (GlobalHotkeyPreferences.minimumDoubleTapIntervalMilliseconds
+                ... GlobalHotkeyPreferences.maximumDoubleTapIntervalMilliseconds).contains(value)
+            else { throw SettingsJSONError.invalidValue(key) }
         case TabWidthPreferences.maxWidthKey:
             guard TabWidthPreferences.isAllowedStoredValue(value) else { throw SettingsJSONError.invalidValue(key) }
         case "editor.richInputLineHeightMultiplier":

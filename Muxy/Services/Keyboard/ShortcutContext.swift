@@ -3,9 +3,15 @@ import AppKit
 @MainActor
 enum ShortcutContext {
     static let mainWindowIdentifier = NSUserInterfaceItemIdentifier("app.muxy.main-window")
+    static let hotkeyWindowIdentifier = NSUserInterfaceItemIdentifier("app.muxy.hotkey-window")
 
     static func isMainWindow(_ window: NSWindow?) -> Bool {
-        window?.identifier == mainWindowIdentifier
+        guard let identifier = window?.identifier else { return false }
+        return identifier == mainWindowIdentifier || identifier == hotkeyWindowIdentifier
+    }
+
+    static func isHotkeyWindow(_ window: NSWindow?) -> Bool {
+        window?.identifier == hotkeyWindowIdentifier
     }
 
     static func activeScopes(
