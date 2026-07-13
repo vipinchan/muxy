@@ -251,7 +251,6 @@ final class ModifierKeyMonitor {
 
         if newConfiguration.isEnabled {
             installGlobalMonitorIfNeeded()
-            HotkeyWindowController.shared.prepareWhenMainWindowAvailable()
         } else {
             removeGlobalMonitor()
             doubleModifierDetector.reset()
