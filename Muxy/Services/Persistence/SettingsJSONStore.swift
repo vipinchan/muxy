@@ -230,8 +230,8 @@ enum SettingsJSONStore {
            let triggerValue = settings[GlobalWorkspacePreferences.triggerKey]
         {
             if triggerValue is NSNull {
-    return
-}
+                return
+            }
             guard let rawValue = triggerValue as? String,
                   let trigger = GlobalWorkspaceTrigger(rawValue: rawValue),
                   trigger != .custom
