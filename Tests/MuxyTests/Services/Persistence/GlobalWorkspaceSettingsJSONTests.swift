@@ -137,6 +137,38 @@ struct GlobalWorkspaceSettingsJSONTests {
     }
 
     @Test
+    func syncedSettingsOmitStaleCustomShortcutForNonCustomTrigger() throws {
+        let keys = [
+            GlobalWorkspacePreferences.triggerKey,
+            GlobalWorkspacePreferences.customShortcutKey,
+        ]
+        let snapshot = GlobalWorkspaceSettingsJSONSnapshot.capture(keys: keys)
+        defer { snapshot.restore() }
+
+        try GlobalWorkspacePreferences.setCustomShortcut(
+            .keyCombo(KeyCombo(key: "space", command: true), virtualKeyCode: 49)
+        )
+        UserDefaults.standard.set(
+            GlobalWorkspaceTrigger.doubleOption.rawValue,
+            forKey: GlobalWorkspacePreferences.triggerKey
+        )
+
+        #expect(SettingsJSONStore.syncUserSettingsFileWithCurrentSettings() != .failed)
+
+        let data = try Data(contentsOf: SettingsJSONStore.userSettingsURL)
+        let object = try JSONSerialization.jsonObject(with: data)
+        guard let dictionary = object as? [String: Any],
+              let shortcut = dictionary[GlobalWorkspacePreferences.jsonShortcutKey] as? [String: Any]
+        else {
+            #expect(Bool(false))
+            return
+        }
+
+        #expect(shortcut["trigger"] as? String == GlobalWorkspaceTrigger.doubleOption.rawValue)
+        #expect(shortcut["customShortcut"] == nil)
+    }
+
+    @Test
     func rejectsCustomShortcutWithoutKeyCombo() throws {
         #expect(throws: SettingsJSONError.self) {
             try SettingsJSONStore.saveUserSettingsText(#"""
