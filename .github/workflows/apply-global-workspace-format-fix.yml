@@ -1,0 +1,41 @@
+name: Apply Global Workspace Format Fix
+
+on:
+  push:
+    branches:
+      - prep/upstream-latest-base
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: prep/upstream-latest-base
+
+      - name: Apply exact SwiftFormat fix
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          path = Path("Muxy/Services/Persistence/SettingsJSONStore.swift")
+          text = path.read_text()
+          old = "        if triggerValue is NSNull { return }"
+          new = """        if triggerValue is NSNull {
+              return
+          }"""
+          if old not in text:
+              raise SystemExit("expected SwiftFormat target not found")
+          path.write_text(text.replace(old, new, 1))
+          PY
+          rm .github/workflows/apply-global-workspace-format-fix.yml
+
+      - name: Commit fix
+        run: |
+          git config user.name "vipinchan"
+          git config user.email "vipinchan@hotmail.com"
+          git add Muxy/Services/Persistence/SettingsJSONStore.swift .github/workflows/apply-global-workspace-format-fix.yml
+          git commit -m "style: satisfy SwiftFormat"
+          git push origin HEAD:prep/upstream-latest-base
